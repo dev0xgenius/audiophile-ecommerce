@@ -1,45 +1,85 @@
-import { SpeakerImageMobile } from "@/lib/img-exports";
-import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardFooter,
-    CardHeader,
-    CardTitle,
-} from "./card";
+import { Card, CardContent, CardTitle } from "./card";
 
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { Button } from "./button";
 
-// TODO: Add Props to ProductCard to change the layout and color of the card
-export default function ProductCard() {
-    return (
-        <Card className="p-14 px-6 shadow-sm items-center text-center rounded-2xl overflow-hidden">
-            <CardHeader className="w-full gap-8 h-max">
-                <CardDescription className="relative w-full flex justify-center items-center m-auto">
-                    <div className="border size-80 rounded-full border-red-700 absolute" />
-                    <div className="border size-[279px] rounded-full border-red-700 absolute" />
-                    <Image
-                        src={SpeakerImageMobile}
-                        width={360}
-                        height={360}
-                        className="w-max"
-                        alt=""
-                    />
-                </CardDescription>
-                <CardTitle className="text-4xl font-normal pt-2">
-                    ZX9 SPEAKER
-                </CardTitle>
-            </CardHeader>
-            <CardContent className="p-0">
-                Upgrade to premium speakers that are phenomenally built to
-                deliver truly remarkable sound
-            </CardContent>
-            <CardFooter>
-                <Button variant="secondary" size="lg">
-                    SEE PRODUCT
-                </Button>
-            </CardFooter>
-        </Card>
-    );
+function ProductCard({ className, children }: React.ComponentProps<"div">) {
+	return (
+		<Card
+			className={cn(
+				"p-14 px-6 shadow-none border-none justify-center items-center rounded-2xl overflow-hidden",
+				className,
+			)}
+		>
+			{children}
+		</Card>
+	);
 }
+
+function ProductContent({ className, ...props }: React.ComponentProps<"div">) {
+	return (
+		<CardContent
+			className={cn(
+				"w-full  [align-items:inherit] flex flex-col gap-6 z-10",
+				className,
+			)}
+			{...props}
+		/>
+	);
+}
+
+function ProductImage({ src, className }: React.ComponentProps<typeof Image>) {
+	return (
+		<Image
+			src={src}
+			width={360}
+			height={360}
+			alt=""
+			className={cn("w-max block", className)}
+		/>
+	);
+}
+
+function ProductTitle({
+	className,
+	children,
+}: React.ComponentProps<typeof CardTitle>) {
+	return (
+		<CardTitle className={cn("text-4xl font-normal", className)}>
+			{children}
+		</CardTitle>
+	);
+}
+
+function ProductDescription({
+	className,
+	...props
+}: React.ComponentProps<"div">) {
+	return <div className={className} {...props}></div>;
+}
+
+function ProductAction({
+	text,
+	className,
+	...props
+}: { text?: string } & React.ComponentProps<typeof Button>) {
+	return (
+		<Button
+			{...props}
+			size="lg"
+			className={cn("font-normal tracking-widest", className)}
+		>
+			{text || "SEE PRODUCT"}
+		</Button>
+	);
+}
+
+export {
+	ProductAction,
+	ProductCard,
+	ProductContent,
+	ProductDescription,
+	ProductImage,
+	ProductTitle,
+};
