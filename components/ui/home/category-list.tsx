@@ -11,7 +11,7 @@ export interface CategoryCardProps {
 function CategoryCard({ hoverImg, category, link }: CategoryCardProps) {
 	return (
 		<Link href={link}>
-			<Card className="rounded-2xl bg-gray border-none">
+			<Card className="shadow-none rounded-2xl bg-gray border-none">
 				<CardContent className="flex flex-col gap-9 items-center">
 					{/* TODO: Add oval shaped shadow */}
 					<span className="w-max block justify-center -mt-20">
