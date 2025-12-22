@@ -1,3 +1,5 @@
+import Footer from "@/components/ui/footer";
+import AboutInfo from "@/components/ui/home/about-info";
 import CategoryList, {
 	CategoryCardProps,
 } from "@/components/ui/home/category-list";
@@ -27,6 +29,9 @@ export default function Page() {
 			<div className="flex flex-col gap-[120px]">
 				<CategoryList data={categories} />
 				<ProductList />
+				<Footer>
+					<AboutInfo />
+				</Footer>
 			</div>
 		</div>
 	);

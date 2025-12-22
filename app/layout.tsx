@@ -1,8 +1,8 @@
-import Footer from "@/components/ui/home/footer";
-import Header from "@/components/ui/home/header";
-import Hero from "@/components/ui/home/hero";
 import type { Metadata } from "next";
 import "./globals.css";
+import Footer from "@/components/ui/footer";
+import Header from "@/components/ui/header";
+import Hero from "@/components/ui/home/hero";
 
 export const metadata: Metadata = {
 	title: "Create Next App",
