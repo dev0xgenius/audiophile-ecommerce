@@ -20,7 +20,7 @@ export default function Hero() {
 						<CardDescription className="text-sm tracking-[10px]">
 							NEW PRODUCT
 						</CardDescription>
-						<CardTitle className="text-4xl font-normal">
+						<CardTitle className="text-4xl font-bold">
 							XX99 MARK II HEADPHONES
 						</CardTitle>
 					</CardHeader>
@@ -30,7 +30,9 @@ export default function Hero() {
 					</CardContent>
 					<CardFooter className="flex justify-center">
 						<CardAction>
-							<Button size="lg">SEE PRODUCT</Button>
+							<Button size="lg" className="font-bold tracking-widest">
+								SEE PRODUCT
+							</Button>
 						</CardAction>
 					</CardFooter>
 				</Card>

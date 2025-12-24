@@ -23,10 +23,8 @@ function CategoryCard({ hoverImg, category, link }: CategoryCardProps) {
 							alt={`${category} Category image`}
 						/>
 					</span>
-					<div className="grid place-items-center gap-5">
-						<span className="font-light tracking-widest">
-							{category.toUpperCase()}
-						</span>
+					<div className="grid place-items-center gap-4 font-bold">
+						<span className="tracking-widest">{category.toUpperCase()}</span>
 						<span className="flex gap-3 text-accent-foreground items-center">
 							<span>SHOP</span>
 							<span>
