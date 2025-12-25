@@ -3,6 +3,7 @@ import "./globals.css";
 import Footer from "@/components/ui/footer";
 import Header from "@/components/ui/header";
 import Hero from "@/components/ui/home/hero";
+import AboutInfo from "@/components/ui/home/about-info";
 
 export const metadata: Metadata = {
 	title: "Create Next App",
@@ -21,7 +22,9 @@ export default function RootLayout({
 					<Hero />
 				</Header>
 				{children}
-				<Footer></Footer>
+				<Footer>
+					<AboutInfo />
+				</Footer>
 			</body>
 		</html>
 	);

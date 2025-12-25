@@ -46,7 +46,7 @@ function ProductTitle({
 	children,
 }: React.ComponentProps<typeof CardTitle>) {
 	return (
-		<CardTitle className={cn("text-4xl font-bold", className)}>
+		<CardTitle className={cn("text-4xl font-semibold", className)}>
 			{children}
 		</CardTitle>
 	);
@@ -68,7 +68,7 @@ function ProductAction({
 		<Button
 			{...props}
 			size="lg"
-			className={cn("font-extrabold tracking-widest", className)}
+			className={cn("font-semibold tracking-widest", className)}
 		>
 			{text || "SEE PRODUCT"}
 		</Button>

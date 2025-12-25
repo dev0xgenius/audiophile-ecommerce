@@ -1,23 +1,22 @@
+import { CategoryCardProps } from "@/components/ui/category-card";
 import Footer from "@/components/ui/footer";
 import AboutInfo from "@/components/ui/home/about-info";
-import CategoryList, {
-	CategoryCardProps,
-} from "@/components/ui/home/category-list";
+import CategoryList from "@/components/ui/home/category-list";
 import ProductList from "@/components/ui/home/product-list";
 
 const categories: CategoryCardProps[] = [
 	{
-		hoverImg: "/headphones-category.svg",
+		hoverImg: "/shared/desktop/image-category-thumbnail-headphones.png",
 		category: "headphones",
 		link: "/category/headphones",
 	},
 	{
-		hoverImg: "/speakers-category.svg",
+		hoverImg: "/shared/desktop/image-category-thumbnail-speakers.png",
 		category: "speakers",
 		link: "/category/speakers",
 	},
 	{
-		hoverImg: "/earphones-category.svg",
+		hoverImg: "/shared/desktop/image-category-thumbnail-earphones.png",
 		category: "earphones",
 		link: "/category/earphones",
 	},
@@ -29,9 +28,6 @@ export default function Page() {
 			<div className="flex flex-col gap-[120px]">
 				<CategoryList data={categories} />
 				<ProductList />
-				<Footer>
-					<AboutInfo />
-				</Footer>
 			</div>
 		</div>
 	);

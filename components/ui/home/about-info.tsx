@@ -13,7 +13,7 @@ export default function AboutInfo() {
 			<CardHeader className="p-0 gap-12">
 				<CardDescription className="overflow-hidden rounded-2xl">
 					<Image
-						src="/image-best-gear.jpg"
+						src="/shared/mobile/image-best-gear.jpg"
 						width={360}
 						height={720}
 						alt="Man with quality headphones"

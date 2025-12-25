@@ -1,5 +1,5 @@
-import HeadphonesImageMobile from "@/assets/home/mobile/image-earphones-yx1.jpg";
-import SpeakerImageMobile from "@/assets/home/mobile/image-speaker-zx9.png";
-import EarphoneImageMobile from "@/assets/home/mobile/image-speaker-zx7.jpg";
+import facebookIcon from "@/assets/shared/icon-facebook.svg";
+import twitterIcon from "@/assets/shared/icon-twitter.svg";
+import instagramIcon from "@/assets/shared/icon-instagram.svg";
 
-export { HeadphonesImageMobile, SpeakerImageMobile, EarphoneImageMobile };
+export { facebookIcon, twitterIcon, instagramIcon };
