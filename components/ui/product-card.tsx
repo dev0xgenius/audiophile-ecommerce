@@ -21,7 +21,7 @@ function ProductContent({ className, ...props }: React.ComponentProps<"div">) {
 	return (
 		<CardContent
 			className={cn(
-				"w-full  [align-items:inherit] flex flex-col gap-6 z-10",
+				"text-center p-0 w-full [align-items:inherit] flex flex-col gap-6 z-10",
 				className,
 			)}
 			{...props}
@@ -46,7 +46,9 @@ function ProductTitle({
 	children,
 }: React.ComponentProps<typeof CardTitle>) {
 	return (
-		<CardTitle className={cn("text-4xl font-semibold", className)}>
+		<CardTitle
+			className={cn("tracking-wider text-4xl font-semibold", className)}
+		>
 			{children}
 		</CardTitle>
 	);

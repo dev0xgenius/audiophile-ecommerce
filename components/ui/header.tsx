@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Button } from "./button";
 import Logo from "./logo";
 
-export default function Header({ children }: React.ComponentProps<"header">) {
+export default function Header() {
 	return (
 		<header className="bg-transparent flex flex-col">
 			<div className="flex justify-between items-center  text-white container px-6 py-8 border-b border-accent-foreground bg-black">
@@ -19,7 +19,6 @@ export default function Header({ children }: React.ComponentProps<"header">) {
 					<Image src="/icon-cart.svg" width={24} height={24} alt="cart icon" />
 				</Button>
 			</div>
-			{children}
 		</header>
 	);
 }

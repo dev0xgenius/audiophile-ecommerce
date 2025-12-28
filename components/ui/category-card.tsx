@@ -23,7 +23,7 @@ export default function CategoryCard({
 							src={hoverImg}
 							width={1024}
 							height={720}
-							className="max-w-full w-40"
+							className="max-w-full w-36"
 							alt={`${category} Category image`}
 						/>
 					</span>
