@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import { Button } from "./button";
 import Logo from "./logo";
+import CartDialog from "./cart-dialog";
 
 export default function Header() {
 	return (
@@ -15,9 +18,7 @@ export default function Header() {
 					/>
 				</Button>
 				<Logo />
-				<Button variant={"ghost"} className="p-0 w-fit">
-					<Image src="/icon-cart.svg" width={24} height={24} alt="cart icon" />
-				</Button>
+				<CartDialog />
 			</div>
 		</header>
 	);
