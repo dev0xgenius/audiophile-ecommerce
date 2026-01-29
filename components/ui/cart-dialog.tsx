@@ -18,6 +18,8 @@ import {
 import ProductCartImage from "@/assets/cart/image-xx99-mark-two-headphones.jpg";
 import Counter from "./counter";
 
+import Link from "next/link";
+
 function CartList() {
 	return (
 		<ul className="flex gap-6 flex-col">
@@ -52,7 +54,8 @@ export default function CartDialog() {
 			<DialogContent
 				className="rounded-2xl gap-8"
 				showCloseButton={false}
-				aria-describedby="User's Cart"
+				aria-describedby="Cart Icon"
+				aria-description="User's Cart"
 			>
 				<DialogHeader className="flex-row items-center justify-between">
 					<DialogTitle>CART (3)</DialogTitle>
@@ -72,7 +75,7 @@ export default function CartDialog() {
 						<span>$ 5,396</span>
 					</div>
 					<Button size={"lg"} className="w-full">
-						CHECKOUT
+						<Link href="/checkout">CHECKOUT</Link>
 					</Button>
 				</div>
 			</DialogContent>

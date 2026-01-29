@@ -20,8 +20,11 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={`antialiased leading-6`}>
-				<Header /> {children}
+			<body
+				className={`antialiased leading-6 flex flex-col justify-between min-h-dvh`}
+			>
+				<Header />
+				<div className="flex-1">{children}</div>
 				<Footer>
 					<AboutInfo />
 				</Footer>

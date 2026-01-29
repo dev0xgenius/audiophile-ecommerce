@@ -1,12 +1,17 @@
+"use client";
+
 import { facebookIcon, instagramIcon, twitterIcon } from "@/lib/img-exports";
 import Logo from "./logo";
 
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 export default function Footer({ children }: { children?: React.ReactNode }) {
+	const pathname = usePathname();
+
 	return (
-		<footer className="flex flex-col gap-[120px] mt-24">
-			<div className="px-6">{children}</div>
+		<footer className="flex flex-col gap-[120px] ">
+			{pathname != "/checkout" && <div className="px-6">{children}</div>}
 			<div className="container bg-black flex flex-col gap-12 items-center py-10 px-6 relative">
 				<div className="absolute w-28 h-1 bg-primary top-0" />
 				<Logo />
