@@ -16,7 +16,7 @@ export default function PaymentInfo() {
 
 	return (
 		<FieldGroup>
-			<h3>PAYMENT DETAILS</h3>
+			<h3 className="text-sm">PAYMENT DETAILS</h3>
 			<Controller
 				name="payment"
 				control={form.control}

@@ -12,7 +12,7 @@ export default function BillingInfo() {
 
 	return (
 		<FieldGroup>
-			<h3>BILLING DETAILS</h3>
+			<h3 className="text-sm text-primary">BILLING DETAILS</h3>
 			<Controller
 				name="username"
 				control={form.control}

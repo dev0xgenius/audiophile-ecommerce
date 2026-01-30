@@ -11,7 +11,7 @@ export default function ShippingInfo() {
 	const form = useFormContext();
 	return (
 		<FieldGroup>
-			<h3>SHIPPING INFO</h3>
+			<h3 className="text-sm">SHIPPING INFO</h3>
 			<Controller
 				name="address"
 				control={form.control}

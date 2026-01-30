@@ -30,7 +30,7 @@ export default function Checkout() {
 	});
 
 	return (
-		<div className="grid place-items-start gap-8 px-6 py-4 mb-24">
+		<div className="grid place-items-start gap-8 px-6 py-4 bg-accent h-full">
 			<Button
 				size="sm"
 				variant={"link"}
@@ -39,7 +39,7 @@ export default function Checkout() {
 				Go Back
 			</Button>
 			<Form {...form}>
-				<form className="flex flex-wrap items-center gap-8 w-full">
+				<form className="flex flex-wrap items-center px-6 py-8 gap-8 w-full bg-white rounded-xl">
 					<h2 className="text-3xl">CHECKOUT</h2>
 					<BillingInfo />
 					<ShippingInfo />

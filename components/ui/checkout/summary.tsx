@@ -63,9 +63,9 @@ function SummaryInfo() {
 
 export default function CheckoutSummary() {
 	return (
-		<Card className="shadow-none gap-8 w-full border-none py-8">
+		<Card className="shadow-none gap-8 w-full border-none px-6 py-8 mb-24 rounded-xl">
 			<CardHeader className="p-0">SUMMARY</CardHeader>
-			<CardContent className="p-0">
+			<CardContent className="p-0 flex flex-col gap-6">
 				{cartItems.map((cartItem) => (
 					<ProductCard
 						key={cartItem.id}
@@ -74,7 +74,7 @@ export default function CheckoutSummary() {
 						<ProductImage
 							src={ProductCartImage}
 							alt="xx99MarkIIHeadphone"
-							className="rounded-2xl"
+							className="rounded-xl"
 						/>
 						<div className="flex w-full items-start">
 							<ProductContent className="p-0 gap-0 text-left items-start">
