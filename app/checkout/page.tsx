@@ -50,7 +50,7 @@ export default function Checkout() {
                 </Form>
                 <CheckoutSummary />
             </div>
-            <ConfirmationDialog isOpen={true} />
+            <ConfirmationDialog isOpen={false} />
         </>
     );
 }
