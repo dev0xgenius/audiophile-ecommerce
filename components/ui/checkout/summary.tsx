@@ -1,4 +1,4 @@
-import { cn, priceFormatter } from "@/lib/utils";
+import { cn, formatPrice } from "@/lib/utils";
 import { Button } from "../button";
 import { Card, CardContent, CardFooter, CardHeader } from "../card";
 import {
@@ -73,7 +73,7 @@ export default function CheckoutSummary() {
                     <CartProductCard
                         image={ProductCartImage}
                         title={cartItem.product}
-                        price={priceFormatter(cartItem.price)}
+                        price={formatPrice(cartItem.price)}
                         count={cartItem.available}
                         hasCounter={false}
                         key={cartItem.id}

@@ -10,7 +10,7 @@ import {
 
 import ProductCartImage from "@/assets/cart/image-xx59-headphones.jpg";
 import confirmationImage from "@/assets/checkout/icon-order-confirmation.svg";
-import { priceFormatter } from "@/lib/utils";
+import { formatPrice } from "@/lib/utils";
 import Link from "next/link";
 import { Button } from "../button";
 import CartProductCard from "../cart-product-card";
@@ -49,7 +49,7 @@ export default function ConfirmationDialog({
                             <CartProductCard
                                 image={ProductCartImage}
                                 title="xx59 mk ii"
-                                price={priceFormatter(2999)}
+                                price={formatPrice(2999)}
                                 count={1}
                             />
                             <Separator />

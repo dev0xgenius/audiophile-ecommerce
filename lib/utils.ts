@@ -5,7 +5,7 @@ export function cn(...inputs: ClassValue[]) {
     return twMerge(clsx(inputs));
 }
 
-export function priceFormatter(price: number, currencySymbol = "$") {
+export function formatPrice(price: number, currencySymbol = "$") {
     const priceStr = price.toString();
 
     return priceStr.length <= 3
