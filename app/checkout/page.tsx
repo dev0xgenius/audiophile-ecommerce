@@ -1,7 +1,6 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import CheckoutSummary from "@/components/ui/checkout/summary";
 import { Form } from "@/components/ui/form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -9,7 +8,8 @@ import * as z from "zod";
 import BillingInfo from "./form/billing";
 import PaymentInfo from "./form/payment-info";
 import ShippingInfo from "./form/shipping-info";
-import ConfirmationDialog from "@/components/ui/checkout/confirmation-dialog";
+import ConfirmationDialog from "./_components/confirmation-dialog";
+import CheckoutSummary from "./_components/summary";
 
 const formSchema = z.object({
     // Billing Info

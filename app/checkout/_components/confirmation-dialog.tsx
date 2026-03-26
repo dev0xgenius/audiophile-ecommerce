@@ -1,20 +1,20 @@
 import Image from "next/image";
-import {
-    Dialog,
-    DialogContent,
-    DialogDescription,
-    DialogFooter,
-    DialogHeader,
-    DialogTitle,
-} from "../dialog";
 
 import ProductCartImage from "@/assets/cart/image-xx59-headphones.jpg";
 import confirmationImage from "@/assets/checkout/icon-order-confirmation.svg";
 import { formatPrice } from "@/lib/utils";
 import Link from "next/link";
-import { Button } from "../button";
-import CartProductCard from "../cart-product-card";
-import { Separator } from "../separator";
+import { Button } from "@/components/ui/button";
+import CartProductCard from "@/components/ui/cart-product-card";
+import {
+    DialogHeader,
+    DialogFooter,
+    DialogContent,
+    DialogDescription,
+    DialogTitle,
+    Dialog,
+} from "@/components/ui/dialog";
+import { Separator } from "@/components/ui/separator";
 
 export default function ConfirmationDialog({
     isOpen = false,

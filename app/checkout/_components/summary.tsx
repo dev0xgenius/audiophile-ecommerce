@@ -1,15 +1,14 @@
 import { cn, formatPrice } from "@/lib/utils";
-import { Button } from "../button";
-import { Card, CardContent, CardFooter, CardHeader } from "../card";
-import {
-    ProductCard,
-    ProductContent,
-    ProductImage,
-    ProductTitle,
-} from "../product-card";
 
 import ProductCartImage from "@/assets/cart/image-xx99-mark-two-headphones.jpg";
-import CartProductCard from "../cart-product-card";
+import { Button } from "@/components/ui/button";
+import {
+    Card,
+    CardHeader,
+    CardContent,
+    CardFooter,
+} from "@/components/ui/card";
+import CartProductCard from "@/components/ui/cart-product-card";
 
 const cartItems = [
     {
