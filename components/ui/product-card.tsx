@@ -36,7 +36,7 @@ function ProductImage({ src, className }: React.ComponentProps<typeof Image>) {
             width={360}
             height={360}
             alt=""
-            className={cn("w-max block", className)}
+            className={cn("w-full block", className)}
         />
     );
 }

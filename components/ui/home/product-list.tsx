@@ -55,7 +55,7 @@ export default function ProductList() {
                 </ProductCard>
             </li>
             <li>
-                <ProductCard className="p-0 shadow-none border-none">
+                <ProductCard className="p-0 shadow-none">
                     <ProductImage
                         src={EarphoneYX1Image}
                         alt=""
