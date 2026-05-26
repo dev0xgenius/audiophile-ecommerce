@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { Button } from "./button";
-import { CardFooter } from "./card";
 import {
     Dialog,
     DialogContent,
@@ -8,15 +7,8 @@ import {
     DialogTitle,
     DialogTrigger,
 } from "./dialog";
-import {
-    ProductCard,
-    ProductContent,
-    ProductImage,
-    ProductTitle,
-} from "./product-card";
 
 import ProductCartImage from "@/assets/cart/image-xx99-mark-two-headphones.jpg";
-import Counter from "./counter";
 
 import Link from "next/link";
 import CartProductCard from "./cart-product-card";
@@ -46,13 +38,13 @@ export default function CartDialog() {
                     width={24}
                     height={24}
                     alt="cart icon"
+                    className="w-auto h-auto"
                 />
             </DialogTrigger>
             <DialogContent
-                className="rounded-2xl gap-8"
                 showCloseButton={false}
-                aria-describedby="Cart Icon"
-                aria-description="User's Cart"
+                className="rounded-2xl gap-8"
+                aria-describedby="dialog-title"
             >
                 <DialogHeader className="flex-row items-center justify-between">
                     <DialogTitle>CART (3)</DialogTitle>

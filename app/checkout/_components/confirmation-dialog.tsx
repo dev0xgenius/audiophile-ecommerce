@@ -26,6 +26,7 @@ export default function ConfirmationDialog({
             <DialogContent
                 className="text-balance rounded-xl"
                 showCloseButton={false}
+                aria-describedby="dialog-description"
             >
                 <DialogHeader className="gap-4">
                     <span>
