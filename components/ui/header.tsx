@@ -39,7 +39,7 @@ export default function Header() {
         setMenuOpen(!menuOpen);
     };
 
-    if (pathname == "/dashboard") {
+    if (pathname.startsWith("/dashboard")) {
         return <></>;
     }
 

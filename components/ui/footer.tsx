@@ -9,7 +9,7 @@ import { usePathname } from "next/navigation";
 export default function Footer({ children }: { children?: React.ReactNode }) {
     const pathname = usePathname();
 
-    if (pathname == "/dashboard") {
+    if (pathname.startsWith("/dashboard")) {
         return <></>;
     }
 
