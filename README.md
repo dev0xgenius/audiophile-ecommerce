@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Audiophile E-Commerce
+
+A premium e-commerce platform for audio equipment built with Next.js 16, React 19, and TypeScript. Features a full product catalog across headphones, speakers, and earphones categories with a responsive design and checkout-ready architecture.
+
+[View Live Demo](https://audiophile-ecommerce.vercel.app) | [Frontend Mentor Profile](https://www.frontendmentor.io/profile/dev0xgenius)
+
+---
+
+## Features
+
+- Product catalog with categories (Headphones, Speakers, Earphones)
+- Featured product showcase with hero section
+- Responsive design with mobile, tablet, and desktop layouts
+- Cart system with checkout form (react-hook-form + Zod validation)
+- Modern UI with Tailwind CSS v4 and custom components
+- Optimized images with Next.js Image component
+
+## Tech Stack
+
+- **Framework:** Next.js 16 (App Router)
+- **Language:** TypeScript
+- **UI:** React 19, Tailwind CSS v4, shadcn/ui-style components
+- **Forms:** react-hook-form, Zod, @radix-ui/react-label
+- **Icons:** lucide-react
+- **Build:** Turbopack (dev), PostCSS
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+git clone https://github.com/dev0xgenius/audiophile-ecommerce.git
+cd audiophile-ecommerce
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+ app/            # Next.js App Router pages
+   layout.tsx    # Root layout with header, hero, footer
+   page.tsx      # Home page with categories + products
+ components/
+   ui/
+     header.tsx         # Navigation with cart + hamburger menu
+     footer.tsx         # Site footer
+     product-card.tsx   # Reusable product card component
+     category-card.tsx  # Category navigation card
+     form.tsx           # Form components (react-hook-form)
+     button.tsx         # Styled button component
+     home/
+       hero.tsx         # Hero section
+       product-list.tsx # Featured products grid
+       category-list.tsx# Category navigation
+       about-info.tsx   # About section
+ assets/          # Images organized by product/category
+ public/          # Static assets
+```
 
-## Learn More
+## Build
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run build
+npm start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Author
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**0xgenius** - [GitHub](https://github.com/dev0xgenius)
