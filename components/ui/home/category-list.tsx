@@ -27,9 +27,15 @@ export default function CategoryList({
     const dataToMap = data instanceof Array ? data : categories;
 
     return (
-        <ul className={cn("flex flex-wrap gap-16", className)} {...props}>
+        <ul
+            className={cn(
+                "flex flex-col gap-16 md:flex-row md:gap-4 lg:gap-8",
+                className,
+            )}
+            {...props}
+        >
             {dataToMap.map((category, i) => (
-                <li key={i} className="min-w-full my-4">
+                <li key={i} className="w-full my-4">
                     <CategoryCard {...category} />
                 </li>
             ))}

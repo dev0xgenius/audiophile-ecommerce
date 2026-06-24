@@ -1,4 +1,6 @@
-import yx1Earphone from "@/assets/product-yx1-earphones/mobile/image-product.jpg";
+import yx1EarphoneMobile from "@/assets/product-yx1-earphones/mobile/image-product.jpg";
+import yx1EarphoneTablet from "@/assets/product-yx1-earphones/tablet/image-product.jpg";
+import yx1EarphoneDesktop from "@/assets/product-yx1-earphones/desktop/image-product.jpg";
 import { notFound } from "next/navigation";
 import CategoryProductCard, {
     CategoryProductCardProps,
@@ -6,7 +8,11 @@ import CategoryProductCard, {
 
 const earphoneProducts: CategoryProductCardProps[] = [
     {
-        src: yx1Earphone,
+        src: {
+            mobile: yx1EarphoneMobile,
+            tablet: yx1EarphoneTablet,
+            desktop: yx1EarphoneDesktop,
+        },
         isNew: true,
         description: `Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.`,
         name: "yx1 wireless earphones",
@@ -33,7 +39,7 @@ export default async function CategoryPage({
 
     return (
         <div>
-            <span className="font-medium text-center w-full block bg-black py-8 text-white text-3xl">
+            <span className="font-medium text-center w-full block bg-darker py-8 text-white text-h1">
                 {category.toUpperCase()}
             </span>
             {earphoneProducts.map((earphoneProduct, index) => (

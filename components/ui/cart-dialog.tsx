@@ -32,7 +32,7 @@ function CartList() {
 export default function CartDialog() {
     return (
         <Dialog modal={true}>
-            <DialogTrigger>
+            <DialogTrigger className="cursor-pointer hover:opacity-80 focus-visible:ring-2 focus-visible:ring-ring rounded-md transition-opacity outline-none">
                 <Image
                     src="/icon-cart.svg"
                     width={24}

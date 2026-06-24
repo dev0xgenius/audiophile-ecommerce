@@ -37,7 +37,7 @@ export default function ConfirmationDialog({
                             alt=""
                         />
                     </span>
-                    <DialogTitle className="text-2xl font-normal text-left tracking-wider">
+                    <DialogTitle className="text-h3 text-left">
                         THANK YOU FOR YOUR ORDER
                     </DialogTitle>
                     <DialogDescription className="text-left leading-6">
@@ -58,7 +58,7 @@ export default function ConfirmationDialog({
                                 and 2 other items
                             </span>
                         </div>
-                        <div className="bg-black text-accent-foreground grid gap-2 p-6">
+                        <div className="bg-secondary text-accent-foreground grid gap-2 p-6">
                             <span>GRAND TOTAL</span>
                             <span className="text-white">$ 5,446</span>
                         </div>

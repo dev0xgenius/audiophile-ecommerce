@@ -23,9 +23,9 @@ const categories: CategoryCardProps[] = [
 
 export default function Page() {
     return (
-        <div>
+        <div className="grid gap-11 md:gap-24">
             <Hero />
-            <div className="flex flex-col gap-[120px] mt-24 px-6">
+            <div className="flex flex-col gap-20 md:gap-[120px] px-6 md:px-10">
                 <CategoryList data={categories} />
                 <ProductList />
             </div>

@@ -1,34 +1,38 @@
 import type { Metadata } from "next";
+import { Manrope } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/ui/footer";
 import Header from "@/components/ui/header";
 import AboutInfo from "@/components/ui/home/about-info";
 
+const manrope = Manrope({
+    subsets: ["latin"],
+    variable: "--font-manrope",
+});
+
 export const metadata: Metadata = {
-	title: {
-		default: "Audiophile Ecommerce Shop",
-		template: "%s | Audiophile Ecommerce Shop",
-	},
-	description:
-		"Get the best offers for your earphones, headphones and speakers.",
+    title: {
+        default: "Audiophile Ecommerce Shop",
+        template: "%s | Audiophile Ecommerce Shop",
+    },
+    description:
+        "Get the best offers for your earphones, headphones and speakers.",
 };
 
 export default function RootLayout({
-	children,
+    children,
 }: Readonly<{
-	children: React.ReactNode;
+    children: React.ReactNode;
 }>) {
-	return (
-		<html lang="en">
-			<body
-				className={`antialiased leading-6 flex flex-col justify-between min-h-dvh`}
-			>
-				<Header />
-				<div className="flex-1">{children}</div>
-				<Footer>
-					<AboutInfo />
-				</Footer>
-			</body>
-		</html>
-	);
+    return (
+        <html lang="en" className={manrope.variable}>
+            <body className={`antialiased leading-6 flex flex-col min-h-dvh`}>
+                <Header />
+                <div className="flex-1">{children}</div>
+                <Footer>
+                    <AboutInfo />
+                </Footer>
+            </body>
+        </html>
+    );
 }

@@ -28,30 +28,30 @@ export default function PaymentInfo() {
 							defaultValue={paymentMethod}
 							onChange={() => console.log("Payment Method: ", paymentMethod)}
 						>
-							<Label
-								htmlFor="r1"
-								className="flex items-center gap-4 px-4 py-5 rounded-2xl border border-input aria-selected:border-primary"
-								aria-selected={paymentMethod == "0"}
-							>
-								<RadioGroupItem
-									value="0"
-									id="r1"
-									onClick={() => setPaymentMethod("0")}
-								/>
-								<span>e-Money</span>
-							</Label>
-							<Label
-								htmlFor="r2"
-								className="flex items-center gap-4 px-4 py-5 rounded-2xl border border-input aria-selected:border-primary"
-								aria-selected={paymentMethod == "1"}
-							>
-								<RadioGroupItem
-									value="1"
-									id="r2"
-									onClick={() => setPaymentMethod("1")}
-								/>
-								<span>Cash On Delivery</span>
-							</Label>
+                            <Label
+                                htmlFor="r1"
+                                className="flex items-center gap-4 px-4 py-5 rounded-2xl border border-input aria-selected:border-primary hover:border-primary/50 focus-within:ring-2 focus-within:ring-ring transition-[color,box-shadow]"
+                                aria-selected={paymentMethod == "0"}
+                            >
+                                <RadioGroupItem
+                                    value="0"
+                                    id="r1"
+                                    onClick={() => setPaymentMethod("0")}
+                                />
+                                <span>e-Money</span>
+                            </Label>
+                            <Label
+                                htmlFor="r2"
+                                className="flex items-center gap-4 px-4 py-5 rounded-2xl border border-input aria-selected:border-primary hover:border-primary/50 focus-within:ring-2 focus-within:ring-ring transition-[color,box-shadow]"
+                                aria-selected={paymentMethod == "1"}
+                            >
+                                <RadioGroupItem
+                                    value="1"
+                                    id="r2"
+                                    onClick={() => setPaymentMethod("1")}
+                                />
+                                <span>Cash On Delivery</span>
+                            </Label>
 						</RadioGroup>
 						{fieldState.invalid && <FieldError errors={[fieldState.error]} />}
 					</Field>

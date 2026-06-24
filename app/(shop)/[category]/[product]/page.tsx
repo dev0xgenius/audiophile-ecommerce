@@ -7,21 +7,29 @@ import {
     ProductCard,
     ProductContent,
     ProductDescription,
-    ProductImage,
     ProductTitle,
 } from "@/components/ui/product-card";
 
-import Image from "next/image";
+import ResponsiveImage from "@/components/ui/responsive-image";
 
-import { xx99MarkIIHeadphone } from "@/lib/img-exports";
+import {
+    xx99MarkIIHeadphoneMobile,
+    xx99MarkIIHeadphoneTablet,
+    xx99MarkIIHeadphoneDesktop,
+} from "@/lib/img-exports";
+
+import bestGearMobile from "@/assets/shared/mobile/image-best-gear.jpg";
+import bestGearTablet from "@/assets/shared/tablet/image-best-gear.jpg";
+import bestGearDesktop from "@/assets/shared/desktop/image-best-gear.jpg";
+
 import { cn } from "@/lib/utils";
 
 function DetailedInfo() {
     return (
-        <div className="grid gap-[inherit]">
+        <div className="grid gap-[inherit] lg:grid-cols-[2fr_1fr] lg:gap-24">
             <section className="grid gap-6 text-pretty text-accent-foreground">
-                <h2 className="text-2xl text-black">FEATURES</h2>
-                <p className="">
+                <h2 className="text-h3">FEATURES</h2>
+                <p>
                     Featuring a genuine leather head strap and premium earcups,
                     these headphones deliver superior comfort for those who like
                     to enjoy endless listening. It includes intuitive controls
@@ -41,7 +49,7 @@ function DetailedInfo() {
                 </p>
             </section>
             <section className="grid gap-6 text-pretty text-accent-foreground">
-                <h2 className="text-2xl text-black"> IN THE BOX</h2>
+                <h2 className="text-h3"> IN THE BOX</h2>
                 <ul className="grid gap-2">
                     <li className="flex gap-6">
                         <span className="text-sm">1x</span>
@@ -60,8 +68,10 @@ function DetailedInfo() {
 function Photo({ className }: { className?: string }) {
     return (
         <span className="block overflow-hidden rounded-2xl">
-            <Image
-                src="/shared/mobile/image-best-gear.jpg"
+            <ResponsiveImage
+                mobileSrc={bestGearMobile}
+                tabletSrc={bestGearTablet}
+                desktopSrc={bestGearDesktop}
                 width={360}
                 height={720}
                 alt="random category photo"
@@ -73,10 +83,10 @@ function Photo({ className }: { className?: string }) {
 
 function ImageGallery() {
     return (
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-5 lg:grid lg:grid-cols-2">
             <Photo />
             <Photo />
-            <Photo className="h-[368px]" />
+            <Photo className="h-[368px] lg:row-span-2" />
         </div>
     );
 }
@@ -84,14 +94,16 @@ function ImageGallery() {
 function ProductRecommendations() {
     return (
         <div>
-            <h2 className="text-2xl text-black text-center">
+            <h2 className="text-h3 text-center">
                 YOU MAY ALSO LIKE
             </h2>
-            <ul>
+            <ul className="lg:grid lg:grid-cols-3 lg:gap-8">
                 <li>
                     <ProductCard>
-                        <ProductImage
-                            src={"/shared/mobile/image-best-gear.jpg"}
+                        <ResponsiveImage
+                            mobileSrc={bestGearMobile}
+                            tabletSrc={bestGearTablet}
+                            desktopSrc={bestGearDesktop}
                             alt=""
                         />
                         <ProductTitle>XX59</ProductTitle>
@@ -113,28 +125,35 @@ export default function ProductPage() {
                 Go Back
             </Button>
             <div className="grid gap-[88]">
-                <ProductCard className="p-0 rounded-none items-start gap-6">
-                    <CardHeader className="w-full p-0 gap-[inherit]">
-                        <ProductImage src={xx99MarkIIHeadphone} alt="" />
-                        <span className="text-sm tracking-[10px] text-primary">
+                <ProductCard className="p-0 rounded-none items-start gap-6 lg:flex-row">
+                    <CardHeader className="w-full p-0 gap-[inherit] lg:w-1/2">
+                        <ResponsiveImage
+                            mobileSrc={xx99MarkIIHeadphoneMobile}
+                            tabletSrc={xx99MarkIIHeadphoneTablet}
+                            desktopSrc={xx99MarkIIHeadphoneDesktop}
+                            alt=""
+                        />
+                    </CardHeader>
+                    <div className="flex flex-col gap-6 lg:w-1/2 lg:justify-center">
+                        <span className="text-overline text-primary">
                             NEW PRODUCT
                         </span>
-                    </CardHeader>
-                    <ProductContent className="text-left">
-                        <ProductTitle className="font-light">
-                            {"xx99 mark ii headphones".toUpperCase()}
-                        </ProductTitle>
+                        <ProductContent className="text-left">
+                            <ProductTitle className="text-h1">
+                                {"xx99 mark ii headphones".toUpperCase()}
+                            </ProductTitle>
                         <ProductDescription className="text-accent-foreground">
                             {`The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.`}
                         </ProductDescription>
-                    </ProductContent>
-                    <CardFooter className="w-full p-0 flex-col items-start gap-8">
-                        <span className="text-lg tracking-[1.29]">$ 2,999</span>
-                        <div className="flex w-full gap-4">
-                            <Counter />
-                            <ProductAction />
-                        </div>
-                    </CardFooter>
+                        </ProductContent>
+                        <CardFooter className="w-full p-0 flex-col items-start gap-8">
+                            <span className="text-lg tracking-[1.29]">$ 2,999</span>
+                            <div className="flex w-full gap-4">
+                                <Counter />
+                                <ProductAction />
+                            </div>
+                        </CardFooter>
+                    </div>
                 </ProductCard>
                 <DetailedInfo />
                 <ImageGallery />

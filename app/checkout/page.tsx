@@ -32,17 +32,17 @@ export default function Checkout() {
 
     return (
         <>
-            <div className="grid place-items-start gap-8 px-6 py-4 bg-accent h-full">
+            <div className="flex flex-col gap-8 px-6 md:px-10 py-4 bg-accent h-full lg:grid lg:grid-cols-[1fr_350px] lg:gap-8">
                 <Button
                     size="sm"
                     variant={"link"}
-                    className="w-max p-0 font-normal text-accent-foreground"
+                    className="w-max p-0 font-normal text-accent-foreground lg:col-span-2"
                 >
                     Go Back
                 </Button>
                 <Form {...form}>
                     <form className="flex flex-wrap items-center px-6 py-8 gap-8 w-full bg-white rounded-xl">
-                        <h2 className="text-3xl">CHECKOUT</h2>
+                        <h2 className="text-h3">CHECKOUT</h2>
                         <BillingInfo />
                         <ShippingInfo />
                         <PaymentInfo />

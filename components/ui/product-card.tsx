@@ -8,7 +8,7 @@ function ProductCard({ className, children }: React.ComponentProps<"div">) {
     return (
         <Card
             className={cn(
-                "p-14 px-6 shadow-none border-none justify-center items-center rounded-2xl overflow-hidden",
+                "p-14 px-6 shadow-none border-0 justify-center items-center rounded-xl overflow-hidden",
                 className,
             )}
         >
@@ -29,12 +29,17 @@ function ProductContent({ className, ...props }: React.ComponentProps<"div">) {
     );
 }
 
-function ProductImage({ src, className }: React.ComponentProps<typeof Image>) {
+function ProductImage({
+    src,
+    className,
+    width,
+    height,
+}: React.ComponentProps<typeof Image>) {
     return (
         <Image
             src={src}
-            width={360}
-            height={360}
+            width={width || 360}
+            height={height || 360}
             alt=""
             className={cn("w-full block", className)}
         />
@@ -46,8 +51,8 @@ function ProductTitle({
     children,
 }: React.ComponentProps<typeof CardTitle>) {
     return (
-        <CardTitle
-            className={cn("tracking-wider text-4xl font-semibold", className)}
+            <CardTitle
+            className={cn("text-h2 font-semibold", className)}
         >
             {children}
         </CardTitle>

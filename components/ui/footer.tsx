@@ -4,6 +4,7 @@ import { facebookIcon, instagramIcon, twitterIcon } from "@/lib/img-exports";
 import Logo from "./logo";
 
 import Image from "next/image";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 export default function Footer({ children }: { children?: React.ReactNode }) {
@@ -16,57 +17,61 @@ export default function Footer({ children }: { children?: React.ReactNode }) {
     return (
         <footer className="flex flex-col gap-[120px] ">
             {pathname != "/checkout" && <div className="px-6">{children}</div>}
-            <div className="container bg-black flex flex-col gap-12 items-center py-10 px-6 relative">
+            <div className="container bg-darker flex flex-col gap-12 items-center md:items-start py-10 px-6 relative">
                 <div className="absolute w-28 h-1 bg-primary top-0" />
-                <Logo />
-                <ul className="text-white flex flex-col gap-4 text-center font-semibold tracking-widest text-sm">
+                <Link href="/" className="hover:opacity-80 transition-opacity">
+                    <Logo />
+                </Link>
+                <ul className="text-white flex flex-col md:flex-row gap-4 text-center font-semibold tracking-widest text-sm">
                     <li>
-                        <a href="">HOME</a>
+                        <Link href="/" className="hover:text-primary focus-visible:ring-2 focus-visible:ring-ring rounded-md transition-colors outline-none">HOME</Link>
                     </li>
                     <li>
-                        <a href="">HEADPHONES</a>
+                        <Link href="/headphones" className="hover:text-primary focus-visible:ring-2 focus-visible:ring-ring rounded-md transition-colors outline-none">HEADPHONES</Link>
                     </li>
                     <li>
-                        <a href="">SPEAKERS</a>
+                        <Link href="/speakers" className="hover:text-primary focus-visible:ring-2 focus-visible:ring-ring rounded-md transition-colors outline-none">SPEAKERS</Link>
                     </li>
                     <li>
-                        <a href="">EARPHONES</a>
+                        <Link href="/earphones" className="hover:text-primary focus-visible:ring-2 focus-visible:ring-ring rounded-md transition-colors outline-none">EARPHONES</Link>
                     </li>
                 </ul>
-                <p className="text-accent-foreground text-center">{`
+                <p className="text-accent-foreground text-center md:text-left">{`
 					Audiophile is an all in one stop to fulfill your your audio needs.
 					We're a small team of music lovers and sound specialists who are
 					devoted to helping you get the most out of personal audio. Come and
 					visit our demo facility - we're open 7 days a week.
 			`}</p>
-                <span className="font-semibold text-accent-foreground">
-                    Copyright 2025. All Rights Reserved.
-                </span>
-                <div className="flex gap-4 items-center">
-                    <span>
-                        <Image
-                            src={facebookIcon}
-                            width={24}
-                            height={24}
-                            alt=""
-                        />
+                <div className="w-full flex flex-col gap-4 md:flex-row md:justify-between">
+                    <span className="font-semibold text-accent-foreground block">
+                        Copyright 2025. All Rights Reserved.
                     </span>
-                    <span>
-                        <Image
-                            src={twitterIcon}
-                            width={24}
-                            height={24}
-                            alt=""
-                        />
-                    </span>
-                    <span>
-                        <Image
-                            src={instagramIcon}
-                            width={24}
-                            height={24}
-                            alt=""
-                        />
-                    </span>
+                    <div className="flex gap-4 items-center">
+                        <a href="#" className="hover:opacity-80 focus-visible:ring-2 focus-visible:ring-ring rounded-md transition-opacity outline-none">
+                            <Image
+                                src={facebookIcon}
+                                width={24}
+                                height={24}
+                                alt="Facebook"
+                            />
+                        </a>
+                        <a href="#" className="hover:opacity-80 focus-visible:ring-2 focus-visible:ring-ring rounded-md transition-opacity outline-none">
+                            <Image
+                                src={twitterIcon}
+                                width={24}
+                                height={24}
+                                alt="Twitter"
+                            />
+                        </a>
+                        <a href="#" className="hover:opacity-80 focus-visible:ring-2 focus-visible:ring-ring rounded-md transition-opacity outline-none">
+                            <Image
+                                src={instagramIcon}
+                                width={24}
+                                height={24}
+                                alt="Instagram"
+                            />
+                        </a>
+                    </div>
                 </div>
             </div>
         </footer>
