@@ -19,7 +19,7 @@ function HeaderContent({ onMenuToggle }: { onMenuToggle: () => void }) {
     ];
 
     return (
-        <div className="flex items-center justify-between text-white px-6 py-8 border-b border-white/20 bg-secondary">
+        <div className="flex items-center justify-between text-white xl:px-0 px-6 py-8 border-b border-white/20 w-full">
             <div className="flex items-center max-md:contents md:gap-11">
                 <Button
                     variant={"ghost"}
@@ -65,23 +65,25 @@ export default function Header() {
     }
 
     return (
-        <header className="bg-transparent flex flex-col gap-2 justify-center">
-            <HeaderContent onMenuToggle={handleMenuToggle} />
-            <Dialog modal={true} open={menuOpen}>
-                <DialogContent
-                    showCloseButton={false}
-                    className="min-w-full p-0 border-0 translate-x-0 translate-y-0 left-0 top-0 rounded-b-xl"
-                    aria-describedby="dialog-title"
-                >
-                    <DialogHeader>
-                        <HeaderContent onMenuToggle={handleMenuToggle} />
-                    </DialogHeader>
-                    <div className="px-6 py-8">
-                        <DialogTitle className="hidden">Menu</DialogTitle>
-                        <CategoryList />
-                    </div>
-                </DialogContent>
-            </Dialog>
+        <header className="bg-secondary flex flex-col gap-2 justify-center">
+            <div className="container m-auto">
+                <HeaderContent onMenuToggle={handleMenuToggle} />
+                <Dialog modal={true} open={menuOpen}>
+                    <DialogContent
+                        showCloseButton={false}
+                        className="min-w-full p-0 border-0 translate-x-0 translate-y-0 left-0 top-0 rounded-b-xl"
+                        aria-describedby="dialog-title"
+                    >
+                        <DialogHeader>
+                            <HeaderContent onMenuToggle={handleMenuToggle} />
+                        </DialogHeader>
+                        <div className="px-6 py-8">
+                            <DialogTitle className="hidden">Menu</DialogTitle>
+                            <CategoryList />
+                        </div>
+                    </DialogContent>
+                </Dialog>
+            </div>
         </header>
     );
 }

@@ -42,7 +42,7 @@ export default function CartDialog() {
                 />
             </DialogTrigger>
             <DialogContent
-                showCloseButton={false}
+                showCloseButton={true}
                 className="rounded-2xl gap-8"
                 aria-describedby="dialog-title"
             >

@@ -25,7 +25,7 @@ export default function Page() {
     return (
         <div className="grid gap-11 md:gap-24">
             <Hero />
-            <div className="flex flex-col gap-20 md:gap-[120px] px-6 md:px-10">
+            <div className="container xl:px-0 m-auto flex flex-col gap-20 md:gap-[120px] px-6 md:px-10">
                 <CategoryList data={categories} />
                 <ProductList />
             </div>

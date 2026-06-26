@@ -7,7 +7,9 @@ import ImageHeaderTablet from "@/assets/home/tablet/image-header.jpg";
 import ImageHeaderDesktop from "@/assets/home/desktop/image-hero.jpg";
 
 export default function HeaderImage() {
-    const [currentSrc, setCurrentSrc] = useState<string>(ImageHeaderDesktop.src);
+    const [currentSrc, setCurrentSrc] = useState<string>(
+        ImageHeaderDesktop.src,
+    );
 
     useEffect(() => {
         const handleResize = () => {
@@ -21,13 +23,14 @@ export default function HeaderImage() {
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
+    // FIX: header image overflow
     return (
         <Image
             width={1240}
             height={720}
             src={currentSrc}
             alt="A Headset"
-            className="w-full h-auto block object-cover overscroll-contain"
+            className="w-full h-auto max-w-full block object-cover overscroll-contain"
         />
     );
 }

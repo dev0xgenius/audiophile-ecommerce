@@ -78,7 +78,7 @@ export default function ProductList() {
                         className="rounded-2xl md:w-1/2"
                     />
                     <ProductContent className="flex items-start rounded-2xl gap-8 p-6 py-10 bg-off-white md:w-1/2 md:p-[51px] md:justify-center">
-                        <ProductTitle className="text-h4">
+                        <ProductTitle className="md:min-w-max text-h4">
                             YX1 EARPHONES
                         </ProductTitle>
                         <ProductAction variant={"outline"} />
