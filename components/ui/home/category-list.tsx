@@ -1,13 +1,44 @@
+import { cn } from "@/lib/utils";
 import CategoryCard, { CategoryCardProps } from "../category-card";
 
-export default function CategoryList({ data }: { data: CategoryCardProps[] }) {
-	return (
-		<ul className="flex flex-wrap gap-16">
-			{data.map((category, i) => (
-				<li key={i} className="min-w-full my-4">
-					<CategoryCard {...category} />
-				</li>
-			))}
-		</ul>
-	);
+const categories: CategoryCardProps[] = [
+    {
+        hoverImg: "/shared/desktop/image-category-thumbnail-headphones.png",
+        category: "headphones",
+        link: "/category/headphones",
+    },
+    {
+        hoverImg: "/shared/desktop/image-category-thumbnail-speakers.png",
+        category: "speakers",
+        link: "/category/speakers",
+    },
+    {
+        hoverImg: "/shared/desktop/image-category-thumbnail-earphones.png",
+        category: "earphones",
+        link: "/category/earphones",
+    },
+];
+
+export default function CategoryList({
+    data,
+    className,
+    ...props
+}: { data?: CategoryCardProps[] } & React.ComponentProps<"ul">) {
+    const dataToMap = data instanceof Array ? data : categories;
+
+    return (
+        <ul
+            className={cn(
+                "flex flex-col gap-16 md:flex-row md:gap-4 lg:gap-8",
+                className,
+            )}
+            {...props}
+        >
+            {dataToMap.map((category, i) => (
+                <li key={i} className="w-full my-4">
+                    <CategoryCard {...category} />
+                </li>
+            ))}
+        </ul>
+    );
 }
