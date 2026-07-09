@@ -60,15 +60,15 @@ export default function Footer({ children }: { children?: React.ReactNode }) {
                             </Link>
                         </li>
                     </ul>
-                    <p className="text-accent-foreground text-center md:text-left">{`
-					Audiophile is an all in one stop to fulfill your your audio needs.
-					We're a small team of music lovers and sound specialists who are
-					devoted to helping you get the most out of personal audio. Come and
-					visit our demo facility - we're open 7 days a week.
-			`}</p>
+                    <p className="text-accent-foreground/50 text-center md:text-left">{`
+ 					Audiophile is an all in one stop to fulfill your audio needs.
+ 					We're a small team of music lovers and sound specialists who are
+ 					devoted to helping you get the most out of personal audio. Come and
+ 					visit our demo facility - we're open 7 days a week.
+ 			`}</p>
                     <div className="w-full flex flex-col gap-4 md:flex-row md:justify-between">
                         <span className="font-semibold text-accent-foreground block">
-                            Copyright 2025. All Rights Reserved.
+                            Copyright 2021. All Rights Reserved.
                         </span>
                         <div className="flex gap-4 items-center">
                             <a

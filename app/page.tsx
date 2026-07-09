@@ -1,6 +1,5 @@
 import { CategoryCardProps } from "@/components/ui/category-card";
 import CategoryList from "@/components/ui/home/category-list";
-import Hero from "@/components/ui/home/hero";
 import ProductList from "@/components/ui/home/product-list";
 
 const categories: CategoryCardProps[] = [
@@ -23,9 +22,8 @@ const categories: CategoryCardProps[] = [
 
 export default function Page() {
     return (
-        <div className="grid gap-11 md:gap-24">
-            <Hero />
-            <div className="container xl:px-0 m-auto flex flex-col gap-20 md:gap-[120px] px-6 md:px-10">
+        <div className="flex flex-col">
+            <div className="mt-24 container xl:px-0 m-auto flex flex-col gap-20 md:gap-[120px] px-6 md:px-10">
                 <CategoryList data={categories} />
                 <ProductList />
             </div>

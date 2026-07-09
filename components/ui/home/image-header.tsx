@@ -23,14 +23,13 @@ export default function HeaderImage() {
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
-    // FIX: header image overflow
     return (
         <Image
             width={1240}
             height={720}
             src={currentSrc}
             alt="A Headset"
-            className="w-full h-auto max-w-full block object-cover overscroll-contain"
+            className="w-full h-full left-0 object-cover lg:absolute"
         />
     );
 }

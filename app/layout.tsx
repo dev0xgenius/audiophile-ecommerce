@@ -4,6 +4,7 @@ import "./globals.css";
 import Footer from "@/components/ui/footer";
 import Header from "@/components/ui/header";
 import AboutInfo from "@/components/ui/home/about-info";
+import Hero from "@/components/ui/home/hero";
 
 const manrope = Manrope({
     subsets: ["latin"],
@@ -24,10 +25,15 @@ export default function RootLayout({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
+    {
+        /* <html lang="en" className={`${manrope.variable} font-sans`}> */
+    }
     return (
-        <html lang="en" className={manrope.variable}>
+        <html lang="en" className="">
             <body className={`antialiased leading-6 flex flex-col min-h-dvh`}>
-                <Header />
+                <Header>
+                    <Hero />
+                </Header>
                 <div className="flex-1">{children}</div>
                 <Footer>
                     <AboutInfo />

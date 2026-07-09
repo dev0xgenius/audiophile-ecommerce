@@ -17,7 +17,7 @@ export default function CategoryCard({
     return (
         <Link
             href={link}
-            className="block focus-visible:ring-2 focus-visible:ring-ring rounded-xl outline-none active:scale-[0.98] transition-transform duration-300"
+            className="block focus-visible:ring-2 focus-visible:ring-ring max-w-[350] mx-auto rounded-xl outline-none active:scale-[0.98] transition-transform duration-300"
         >
             <Card className="shadow-none h-full rounded-xl bg-gray border-0 hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
                 <CardContent className="flex flex-col items-center">

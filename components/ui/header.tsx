@@ -19,7 +19,7 @@ function HeaderContent({ onMenuToggle }: { onMenuToggle: () => void }) {
     ];
 
     return (
-        <div className="flex items-center justify-between text-white xl:px-0 px-6 py-8 border-b border-white/20 w-full">
+        <div className="flex items-center justify-between text-white px-6 py-8 border-b border-white/20 w-full">
             <div className="flex items-center max-md:contents md:gap-11">
                 <Button
                     variant={"ghost"}
@@ -52,7 +52,7 @@ function HeaderContent({ onMenuToggle }: { onMenuToggle: () => void }) {
     );
 }
 
-export default function Header() {
+export default function Header({ children }: { children: React.ReactNode }) {
     const [menuOpen, setMenuOpen] = useState(false);
     const pathname = usePathname();
 
@@ -65,7 +65,7 @@ export default function Header() {
     }
 
     return (
-        <header className="bg-secondary flex flex-col gap-2 justify-center">
+        <header className="h-auto bg-secondary flex flex-col">
             <div className="container m-auto">
                 <HeaderContent onMenuToggle={handleMenuToggle} />
                 <Dialog modal={true} open={menuOpen}>
@@ -84,6 +84,7 @@ export default function Header() {
                     </DialogContent>
                 </Dialog>
             </div>
+            {pathname == "/" && children}
         </header>
     );
 }
