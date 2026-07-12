@@ -23,7 +23,7 @@ const categories: CategoryCardProps[] = [
 export default function Page() {
     return (
         <div className="flex flex-col">
-            <div className="mt-24 container xl:px-0 m-auto flex flex-col gap-20 md:gap-[120px] px-6 md:px-10">
+            <div className="mt-24 container xl:max-w-[1110] xl:px-0 m-auto flex flex-col gap-20 md:gap-[120px] px-6 md:px-10">
                 <CategoryList data={categories} />
                 <ProductList />
             </div>

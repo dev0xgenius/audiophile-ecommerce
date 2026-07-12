@@ -33,7 +33,6 @@ enum Category {
 
 model Cart {
     id        String     @id @default(uuid())
-    user      User[]
     items     CartItem[]
     createdAt DateTime   @default(now())
     updatedAt DateTime   @updatedAt
@@ -52,13 +51,13 @@ model CartItem {
     @@unique([cartId, productId]) // Prevent duplicate rows for the same product in a cart
 }
 
-model User {
-    id        String   @id @default(uuid())
-    email     String   @unique
-    name      String?
-    password  String
-    cart      Cart?    @relation(fields: [cartId], references: [id])
-    createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
-    cartId    String?
-}
+// model User {
+//     id        String   @id @default(uuid())
+//     email     String   @unique
+//     name      String?
+//     password  String
+//     cart      Cart?    @relation(fields: [cartId], references: [id])
+//     createdAt DateTime @default(now())
+//     updatedAt DateTime @updatedAt
+//     cartId    String?
+// }

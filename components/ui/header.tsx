@@ -19,7 +19,7 @@ function HeaderContent({ onMenuToggle }: { onMenuToggle: () => void }) {
     ];
 
     return (
-        <div className="flex items-center justify-between text-white px-6 py-8 border-b border-white/20 w-full">
+        <div className="flex items-center justify-between text-white px-6 xl:px-0 py-8 border-b border-white/20 w-full">
             <div className="flex items-center max-md:contents md:gap-11">
                 <Button
                     variant={"ghost"}
@@ -66,7 +66,7 @@ export default function Header({ children }: { children: React.ReactNode }) {
 
     return (
         <header className="h-auto bg-secondary flex flex-col">
-            <div className="container m-auto">
+            <div className="container m-auto xl:max-w-[1110] ">
                 <HeaderContent onMenuToggle={handleMenuToggle} />
                 <Dialog modal={true} open={menuOpen}>
                     <DialogContent

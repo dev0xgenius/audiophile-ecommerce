@@ -5,15 +5,15 @@ import { Form } from "@/components/ui/form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
+import ConfirmationDialog from "./_components/confirmation-dialog";
+import CheckoutSummary from "./_components/summary";
 import BillingInfo from "./form/billing";
 import PaymentInfo from "./form/payment-info";
 import ShippingInfo from "./form/shipping-info";
-import ConfirmationDialog from "./_components/confirmation-dialog";
-import CheckoutSummary from "./_components/summary";
 
 const formSchema = z.object({
     username: z.string(),
-    email: z.string().email(),
+    email: z.email(),
     phone: z.string(),
     address: z.string(),
     zipCode: z.string(),
@@ -35,6 +35,7 @@ export default function Checkout() {
     return (
         <>
             <div className="flex flex-col gap-8 px-6 md:px-10 py-4 bg-gray h-full lg:grid lg:grid-cols-[1fr_350px] lg:gap-8">
+                <div></div>
                 <Button
                     size="sm"
                     variant={"link"}
@@ -52,7 +53,7 @@ export default function Checkout() {
                 </Form>
                 <CheckoutSummary />
             </div>
-            <ConfirmationDialog isOpen={false} />
+            <ConfirmationDialog isOpen={true} />
         </>
     );
 }

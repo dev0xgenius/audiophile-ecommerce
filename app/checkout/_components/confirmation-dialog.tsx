@@ -1,22 +1,20 @@
 import Image from "next/image";
 
-import ProductXX99MK2 from "@/assets/cart/image-xx99-mark-two-headphones.jpg";
 import ProductXX59 from "@/assets/cart/image-xx59-headphones.jpg";
+import ProductXX99MK2 from "@/assets/cart/image-xx99-mark-two-headphones.jpg";
 import ProductYX1 from "@/assets/cart/image-yx1-earphones.jpg";
 import confirmationImage from "@/assets/checkout/icon-order-confirmation.svg";
-import { formatPrice } from "@/lib/utils";
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import CartProductCard from "@/components/ui/cart-product-card";
 import {
-    DialogHeader,
-    DialogFooter,
+    Dialog,
     DialogContent,
     DialogDescription,
+    DialogFooter,
+    DialogHeader,
     DialogTitle,
-    Dialog,
 } from "@/components/ui/dialog";
-import { Separator } from "@/components/ui/separator";
+import Link from "next/link";
 
 const orderItems = [
     { image: ProductXX99MK2, title: "xx99 mk ii", price: 2999, count: 1 },
@@ -52,31 +50,36 @@ export default function ConfirmationDialog({
                         You will receive an email confirmation shortly.
                     </DialogDescription>
                 </DialogHeader>
-                <DialogFooter className="flex-col gap-6">
-                    <div className="rounded-xl overflow-hidden flex md:flex-row">
+                <DialogFooter className="flex sm:flex-col gap-6">
+                    <div className="rounded-xl overflow-hidden flex">
                         <div className="bg-gray p-6 flex-1">
                             <div className="grid gap-3">
-                                {orderItems.map((item, i) => (
-                                    <div key={i}>
-                                        <CartProductCard
-                                            image={item.image}
-                                            title={item.title}
-                                            price={formatPrice(item.price)}
-                                            count={item.count}
-                                        />
-                                        {i < orderItems.length - 1 && <Separator className="mt-3" />}
-                                    </div>
-                                ))}
+                                <div>
+                                    <CartProductCard
+                                        image={orderItems[0].image}
+                                        title={orderItems[0].title}
+                                        price={new Intl.NumberFormat("en-US", {
+                                            style: "currency",
+                                            currency: "USD",
+                                        }).format(orderItems[0].price)}
+                                        count={orderItems[0].count}
+                                    />
+                                </div>
                                 {orderItems.length > 1 && (
                                     <span className="text-center text-accent-foreground text-sm pt-2">
-                                        and {orderItems.length - 1} other item(s)
+                                        and {orderItems.length - 1} other
+                                        item(s)
                                     </span>
                                 )}
                             </div>
                         </div>
                         <div className="bg-secondary flex flex-col justify-end p-6 md:w-[198px]">
-                            <span className="text-accent-foreground text-sm">GRAND TOTAL</span>
-                            <span className="text-white text-lg font-bold">$ 5,446</span>
+                            <span className="text-accent-foreground text-sm">
+                                GRAND TOTAL
+                            </span>
+                            <span className="text-white text-lg font-bold">
+                                $ 5,446
+                            </span>
                         </div>
                     </div>
                     <Button size="lg" asChild>

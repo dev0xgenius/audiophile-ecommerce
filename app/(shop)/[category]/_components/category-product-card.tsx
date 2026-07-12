@@ -32,7 +32,9 @@ export default function CategoryProductCard({
 
     return (
         <div className="container mx-auto px-6 md:px-10 xl:px-0 py-8 md:py-16">
-            <div className={`flex flex-col md:flex-row gap-8 md:gap-16 items-center ${isReversed ? "md:flex-row-reverse" : ""}`}>
+            <div
+                className={`flex flex-col md:flex-row gap-8 md:gap-16 items-center ${isReversed ? "md:flex-row-reverse" : ""}`}
+            >
                 <div className="w-full md:w-1/2">
                     <ResponsiveImage
                         mobileSrc={src.mobile}
@@ -42,7 +44,9 @@ export default function CategoryProductCard({
                         className="rounded-xl w-full"
                     />
                 </div>
-                <ProductContent className={`text-center p-0 md:w-1/2 ${isReversed ? "md:text-left md:pl-8" : "md:text-left md:pr-8"}`}>
+                <ProductContent
+                    className={`text-center p-0 md:w-1/2 ${isReversed ? "md:text-left md:pl-8" : "md:text-left md:pr-8"}`}
+                >
                     {isNew && (
                         <span className="text-overline text-primary">
                             NEW PRODUCT

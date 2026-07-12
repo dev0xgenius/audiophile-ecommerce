@@ -94,9 +94,7 @@ function ImageGallery() {
 function ProductRecommendations() {
     return (
         <div>
-            <h2 className="text-h3 text-center">
-                YOU MAY ALSO LIKE
-            </h2>
+            <h2 className="text-h3 text-center">YOU MAY ALSO LIKE</h2>
             <ul className="lg:grid lg:grid-cols-3 lg:gap-8">
                 <li>
                     <ProductCard>
@@ -142,15 +140,17 @@ export default function ProductPage() {
                             <ProductTitle className="text-h1">
                                 {"xx99 mark ii headphones".toUpperCase()}
                             </ProductTitle>
-                        <ProductDescription className="text-accent-foreground">
-                            {`The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.`}
-                        </ProductDescription>
+                            <ProductDescription className="text-accent-foreground">
+                                {`The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.`}
+                            </ProductDescription>
                         </ProductContent>
                         <CardFooter className="w-full p-0 flex-col items-start gap-8">
-                            <span className="text-lg tracking-[1.29]">$ 2,999</span>
+                            <span className="text-lg tracking-[1.29]">
+                                $ 2,999
+                            </span>
                             <div className="flex w-full gap-4">
                                 <Counter />
-                                <ProductAction />
+                                <ProductAction text="ADD TO CART" />
                             </div>
                         </CardFooter>
                     </div>
