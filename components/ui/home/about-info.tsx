@@ -13,7 +13,7 @@ import bestGearDesktop from "@/assets/shared/desktop/image-best-gear.jpg";
 
 export default function AboutInfo() {
     return (
-        <Card className="container m-auto p-0 px-6 shadow-none border-0 text-center mt-20 md:mt-[120] gap-8 md:gap-16 lg:flex-row-reverse lg:text-left lg:items-center lg:gap-24">
+        <Card className="container max-w-[1110] m-auto p-0 shadow-none border-0 text-center mt-20 md:mt-[120] gap-8 md:gap-16 lg:flex-row-reverse lg:text-left lg:items-center lg:gap-24">
             <CardHeader className="p-0 lg:w-1/2">
                 <CardDescription className="overflow-hidden rounded-2xl">
                     <ResponsiveImage
@@ -32,7 +32,7 @@ export default function AboutInfo() {
                     BRINGING YOU THE <span className="text-primary">BEST</span>{" "}
                     AUDIO GEAR
                 </CardTitle>
-                <p className="text-balance block text-accent-foreground tracking-tighter">
+                <p className="text-balance block text-accent-foreground">
                     Located at the heart of New York City. Audiophile is the
                     premier store for high end headphones, earphones, speakers,
                     and audio accessories. We have a large showroom and luxury

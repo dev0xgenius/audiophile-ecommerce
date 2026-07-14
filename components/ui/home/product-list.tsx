@@ -24,7 +24,7 @@ import PatternCircles from "@/components/pattern-circles";
 
 export default function ProductList() {
     return (
-        <ul className="grid gap-6 md:gap-8">
+        <ul className="flex flex-col gap-6 md:gap-8">
             <li>
                 <ProductCard className="bg-primary text-white relative lg:flex-row lg:items-center lg:gap-16">
                     <div className="relative w-full flex justify-center items-center m-auto lg:w-1/2">
@@ -40,10 +40,10 @@ export default function ProductList() {
                         />
                     </div>
                     <ProductContent className="max-w-[350] w-full lg:text-left lg:items-start">
-                        <ProductTitle className="px-5 pt-4 text-h1">
+                        <ProductTitle className="px-0 pt-4 text-h1">
                             ZX9 SPEAKER
                         </ProductTitle>
-                        <ProductDescription>
+                        <ProductDescription className="">
                             Upgrade to premium speakers that are phenomenally
                             built to deliver truly remarkable sound.
                         </ProductDescription>

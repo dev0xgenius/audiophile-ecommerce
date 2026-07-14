@@ -1,20 +1,26 @@
 import Image from "next/image";
 
-import ProductCartImage from "@/assets/cart/image-xx59-headphones.jpg";
+import ProductXX59 from "@/assets/cart/image-xx59-headphones.jpg";
+import ProductXX99MK2 from "@/assets/cart/image-xx99-mark-two-headphones.jpg";
+import ProductYX1 from "@/assets/cart/image-yx1-earphones.jpg";
 import confirmationImage from "@/assets/checkout/icon-order-confirmation.svg";
-import { formatPrice } from "@/lib/utils";
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import CartProductCard from "@/components/ui/cart-product-card";
 import {
-    DialogHeader,
-    DialogFooter,
+    Dialog,
     DialogContent,
     DialogDescription,
+    DialogFooter,
+    DialogHeader,
     DialogTitle,
-    Dialog,
 } from "@/components/ui/dialog";
-import { Separator } from "@/components/ui/separator";
+import Link from "next/link";
+
+const orderItems = [
+    { image: ProductXX99MK2, title: "xx99 mk ii", price: 2999, count: 1 },
+    { image: ProductXX59, title: "xx59", price: 899, count: 2 },
+    { image: ProductYX1, title: "yx1", price: 599, count: 1 },
+];
 
 export default function ConfirmationDialog({
     isOpen = false,
@@ -24,7 +30,7 @@ export default function ConfirmationDialog({
     return (
         <Dialog modal={true} open={isOpen}>
             <DialogContent
-                className="text-balance rounded-xl"
+                className="text-balance rounded-xl max-w-[540px]"
                 showCloseButton={false}
                 aria-describedby="dialog-description"
             >
@@ -44,26 +50,39 @@ export default function ConfirmationDialog({
                         You will receive an email confirmation shortly.
                     </DialogDescription>
                 </DialogHeader>
-                <DialogFooter className="flex-col gap-6">
-                    <div className="bg-accent rounded-xl overflow-y-hidden flex flex-col">
-                        <div className="grid gap-3 p-6 pb-0">
-                            <CartProductCard
-                                image={ProductCartImage}
-                                title="xx59 mk ii"
-                                price={formatPrice(2999)}
-                                count={1}
-                            />
-                            <Separator />
-                            <span className="text-center text-accent-foreground">
-                                and 2 other items
+                <DialogFooter className="flex sm:flex-col gap-6">
+                    <div className="rounded-xl overflow-hidden flex">
+                        <div className="bg-gray p-6 flex-1">
+                            <div className="grid gap-3">
+                                <div>
+                                    <CartProductCard
+                                        image={orderItems[0].image}
+                                        title={orderItems[0].title}
+                                        price={new Intl.NumberFormat("en-US", {
+                                            style: "currency",
+                                            currency: "USD",
+                                        }).format(orderItems[0].price)}
+                                        count={orderItems[0].count}
+                                    />
+                                </div>
+                                {orderItems.length > 1 && (
+                                    <span className="text-center text-accent-foreground text-sm pt-2">
+                                        and {orderItems.length - 1} other
+                                        item(s)
+                                    </span>
+                                )}
+                            </div>
+                        </div>
+                        <div className="bg-secondary flex flex-col justify-end p-6 md:w-[198px]">
+                            <span className="text-accent-foreground text-sm">
+                                GRAND TOTAL
+                            </span>
+                            <span className="text-white text-lg font-bold">
+                                $ 5,446
                             </span>
                         </div>
-                        <div className="bg-secondary text-accent-foreground grid gap-2 p-6">
-                            <span>GRAND TOTAL</span>
-                            <span className="text-white">$ 5,446</span>
-                        </div>
                     </div>
-                    <Button size="lg">
+                    <Button size="lg" asChild>
                         <Link href="/">BACK TO HOME</Link>
                     </Button>
                 </DialogFooter>

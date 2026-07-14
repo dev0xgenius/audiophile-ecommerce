@@ -1,6 +1,8 @@
 import { cn, formatPrice } from "@/lib/utils";
 
-import ProductCartImage from "@/assets/cart/image-xx99-mark-two-headphones.jpg";
+import ProductXX99MK2 from "@/assets/cart/image-xx99-mark-two-headphones.jpg";
+import ProductXX59 from "@/assets/cart/image-xx59-headphones.jpg";
+import ProductYX1 from "@/assets/cart/image-yx1-earphones.jpg";
 import { Button } from "@/components/ui/button";
 import {
     Card,
@@ -16,12 +18,21 @@ const cartItems = [
         product: "xx99 mk ii",
         price: 2999,
         available: 1,
+        image: ProductXX99MK2,
     },
     {
         id: 2,
-        product: "xx99 mk ii",
-        price: 200,
+        product: "xx59",
+        price: 899,
         available: 2,
+        image: ProductXX59,
+    },
+    {
+        id: 3,
+        product: "yx1",
+        price: 599,
+        available: 1,
+        image: ProductYX1,
     },
 ];
 
@@ -65,12 +76,14 @@ function SummaryInfo() {
 
 export default function CheckoutSummary() {
     return (
-        <Card className="shadow-none gap-8 w-full border-0 px-6 py-8 mb-24 rounded-xl">
-            <CardHeader className="p-0">SUMMARY</CardHeader>
+        <Card className="shadow-none gap-8 w-full border-0 px-6 py-8 mb-24 rounded-xl h-fit">
+            <CardHeader className="p-0 text-lg font-bold tracking-wider">
+                SUMMARY
+            </CardHeader>
             <CardContent className="p-0 flex flex-col gap-6">
                 {cartItems.map((cartItem) => (
                     <CartProductCard
-                        image={ProductCartImage}
+                        image={cartItem.image}
                         title={cartItem.product}
                         price={formatPrice(cartItem.price)}
                         count={cartItem.available}

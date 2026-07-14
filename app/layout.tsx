@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
-import { Manrope } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
+
+const inter = Inter({
+    subsets: ["latin"],
+    variable: "--font-inter",
+});
+
 import Footer from "@/components/ui/footer";
 import Header from "@/components/ui/header";
 import AboutInfo from "@/components/ui/home/about-info";
-
-const manrope = Manrope({
-    subsets: ["latin"],
-    variable: "--font-manrope",
-});
+import Hero from "@/components/ui/home/hero";
 
 export const metadata: Metadata = {
     title: {
@@ -25,9 +27,11 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en" className={manrope.variable}>
+        <html lang="en" className={`${inter.variable} font-sans`}>
             <body className={`antialiased leading-6 flex flex-col min-h-dvh`}>
-                <Header />
+                <Header>
+                    <Hero />
+                </Header>
                 <div className="flex-1">{children}</div>
                 <Footer>
                     <AboutInfo />

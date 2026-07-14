@@ -1,18 +1,14 @@
 "use client";
 
 import {
-    IconCamera,
-    IconChartBar,
     IconDashboard,
     IconDeviceAudioTape,
-    IconFileAi,
-    IconFileDescription,
     IconHelp,
+    IconPackage,
     IconPackages,
     IconSearch,
     IconSettings,
     IconShoppingBag,
-    IconUsers,
 } from "@tabler/icons-react";
 import * as React from "react";
 
@@ -38,76 +34,23 @@ const data = {
     navMain: [
         {
             title: "Overview",
-            url: "#",
+            url: "",
             icon: IconDashboard,
         },
         {
             title: "Products",
-            url: "/products",
+            url: "products",
             icon: IconShoppingBag,
         },
         {
             title: "Orders",
-            url: "#",
+            url: "orders",
             icon: IconPackages,
         },
         {
-            title: "Analytics",
-            url: "#",
-            icon: IconChartBar,
-        },
-        {
-            title: "Users",
-            url: "#",
-            icon: IconUsers,
-        },
-    ],
-    navClouds: [
-        {
-            title: "Capture",
-            icon: IconCamera,
-            isActive: true,
-            url: "#",
-            items: [
-                {
-                    title: "Active Proposals",
-                    url: "#",
-                },
-                {
-                    title: "Archived",
-                    url: "#",
-                },
-            ],
-        },
-        {
-            title: "Proposal",
-            icon: IconFileDescription,
-            url: "#",
-            items: [
-                {
-                    title: "Active Proposals",
-                    url: "#",
-                },
-                {
-                    title: "Archived",
-                    url: "#",
-                },
-            ],
-        },
-        {
-            title: "Prompts",
-            icon: IconFileAi,
-            url: "#",
-            items: [
-                {
-                    title: "Active Proposals",
-                    url: "#",
-                },
-                {
-                    title: "Archived",
-                    url: "#",
-                },
-            ],
+            title: "Inventory",
+            url: "inventory",
+            icon: IconPackage,
         },
     ],
     navSecondary: [
@@ -131,7 +74,7 @@ const data = {
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     return (
-        <Sidebar collapsible="offcanvas" {...props}>
+        <Sidebar collapsible="offcanvas" className="glass-sidebar" {...props}>
             <SidebarHeader>
                 <SidebarMenu>
                     <SidebarMenuItem>
