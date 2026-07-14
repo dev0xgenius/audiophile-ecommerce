@@ -27,8 +27,10 @@ export default function CartProductCard({
         <ProductCard className="flex-row justify-evenly gap-4 p-0 rounded-none bg-transparent">
             <ProductImage
                 src={image}
+                width={64}
+                height={64}
                 alt="cart product item"
-                className="rounded-2xl"
+                className="rounded-xl w-max"
             />
             <ProductContent className="p-0 gap-0 text-left items-start">
                 <ProductTitle className="text-base  font-normal tracking-normal">

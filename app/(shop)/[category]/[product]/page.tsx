@@ -1,3 +1,4 @@
+// TODO: Refactor through extraction
 import { Button } from "@/components/ui/button";
 import { CardFooter, CardHeader } from "@/components/ui/card";
 import Counter from "@/components/ui/counter";
@@ -26,9 +27,9 @@ import { cn } from "@/lib/utils";
 
 function DetailedInfo() {
     return (
-        <div className="grid gap-[inherit] lg:grid-cols-[2fr_1fr] lg:gap-24">
+        <div className="grid gap-[inherit] xl:grid-cols-[2fr_1fr] xl:gap-24">
             <section className="grid gap-6 text-pretty text-accent-foreground">
-                <h2 className="text-h3">FEATURES</h2>
+                <h2 className="text-h3 text-secondary">FEATURES</h2>
                 <p>
                     Featuring a genuine leather head strap and premium earcups,
                     these headphones deliver superior comfort for those who like
@@ -48,15 +49,15 @@ function DetailedInfo() {
                     aesthetic.
                 </p>
             </section>
-            <section className="grid gap-6 text-pretty text-accent-foreground">
-                <h2 className="text-h3"> IN THE BOX</h2>
-                <ul className="grid gap-2">
+            <section className="flex flex-col md:flex-row xl:flex-col items-start gap-6 text-pretty text-accent-foreground">
+                <h2 className="text-h3 text-secondary w-full">IN THE BOX</h2>
+                <ul className="flex flex-col gap-2 w-full">
                     <li className="flex gap-6">
-                        <span className="text-sm">1x</span>
+                        <span className="text-sm text-primary">1x</span>
                         <span>Headphone Unit</span>
                     </li>
                     <li className="flex gap-6">
-                        <span>2x</span>
+                        <span className="text-sm text-primary">2x</span>
                         <span>Replacement Earcups</span>
                     </li>
                 </ul>
@@ -65,9 +66,17 @@ function DetailedInfo() {
     );
 }
 
-function Photo({ className }: { className?: string }) {
+function Photo({
+    className,
+    blockClassName,
+}: {
+    className?: string;
+    blockClassName?: string;
+}) {
     return (
-        <span className="block overflow-hidden rounded-2xl">
+        <span
+            className={cn("block overflow-hidden rounded-xl", blockClassName)}
+        >
             <ResponsiveImage
                 mobileSrc={bestGearMobile}
                 tabletSrc={bestGearTablet}
@@ -75,7 +84,7 @@ function Photo({ className }: { className?: string }) {
                 width={360}
                 height={720}
                 alt="random category photo"
-                className={cn("block w-full h-[174px]", className)}
+                className={cn("block w-full h-[174px] object-cover", className)}
             />
         </span>
     );
@@ -83,10 +92,13 @@ function Photo({ className }: { className?: string }) {
 
 function ImageGallery() {
     return (
-        <div className="flex flex-col gap-5 lg:grid lg:grid-cols-2">
-            <Photo />
-            <Photo />
-            <Photo className="h-[368px] lg:row-span-2" />
+        <div className="flex flex-col md:max-h-[368] xl:max-h-[592] gap-5 md:grid md:grid-cols-2 md:grid-rows-2">
+            <Photo className="h-[174px] md:h-full" />
+            <Photo
+                className="h-[174px] md:h-full"
+                blockClassName="row-span-2"
+            />
+            <Photo className="h-[368px] md:min-h-[174] md:h-full" />
         </div>
     );
 }
@@ -95,13 +107,40 @@ function ProductRecommendations() {
     return (
         <div>
             <h2 className="text-h3 text-center">YOU MAY ALSO LIKE</h2>
-            <ul className="lg:grid lg:grid-cols-3 lg:gap-8">
+            <ul className="md:grid md:grid-cols-3 md:gap-8">
                 <li>
                     <ProductCard>
                         <ResponsiveImage
                             mobileSrc={bestGearMobile}
                             tabletSrc={bestGearTablet}
                             desktopSrc={bestGearDesktop}
+                            className="rounded-xl"
+                            alt=""
+                        />
+                        <ProductTitle>XX59</ProductTitle>
+                        <ProductAction />
+                    </ProductCard>
+                </li>
+                <li>
+                    <ProductCard>
+                        <ResponsiveImage
+                            mobileSrc={bestGearMobile}
+                            tabletSrc={bestGearTablet}
+                            desktopSrc={bestGearDesktop}
+                            className="rounded-xl"
+                            alt=""
+                        />
+                        <ProductTitle>XX59</ProductTitle>
+                        <ProductAction />
+                    </ProductCard>
+                </li>
+                <li>
+                    <ProductCard>
+                        <ResponsiveImage
+                            mobileSrc={bestGearMobile}
+                            tabletSrc={bestGearTablet}
+                            desktopSrc={bestGearDesktop}
+                            className="rounded-xl"
                             alt=""
                         />
                         <ProductTitle>XX59</ProductTitle>
@@ -115,29 +154,30 @@ function ProductRecommendations() {
 
 export default function ProductPage() {
     return (
-        <div className="leading-7 gap-6 p-6 py-2 flex flex-col items-start">
+        <div className="leading-7 gap-6 p-6 py-2 flex flex-col items-start container mx-auto max-w-[1110]">
             <Button
                 variant={"ghost"}
                 className="text-accent-foreground font-normal p-0"
             >
                 Go Back
             </Button>
-            <div className="grid gap-[88]">
-                <ProductCard className="p-0 rounded-none items-start gap-6 lg:flex-row">
-                    <CardHeader className="w-full p-0 gap-[inherit] lg:w-1/2">
+            <div className="grid gap-[88px] md:gap-32">
+                <ProductCard className="p-0 rounded-none items-start md:items-center gap-6 md:gap-16 xl:gap-[124.5] md:flex-row">
+                    <CardHeader className="w-full p-0 gap-0">
                         <ResponsiveImage
                             mobileSrc={xx99MarkIIHeadphoneMobile}
                             tabletSrc={xx99MarkIIHeadphoneTablet}
                             desktopSrc={xx99MarkIIHeadphoneDesktop}
+                            className=""
                             alt=""
                         />
                     </CardHeader>
-                    <div className="flex flex-col gap-6 lg:w-1/2 lg:justify-center">
-                        <span className="text-overline text-primary">
+                    <div className="flex flex-col gap-6 md:gap-8 w-full lg:justify-center">
+                        <span className="text-overline text-primary text-xs">
                             NEW PRODUCT
                         </span>
                         <ProductContent className="text-left">
-                            <ProductTitle className="text-h1">
+                            <ProductTitle className="text-h4 xl:text-h2">
                                 {"xx99 mark ii headphones".toUpperCase()}
                             </ProductTitle>
                             <ProductDescription className="text-accent-foreground">

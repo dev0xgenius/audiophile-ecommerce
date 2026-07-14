@@ -25,22 +25,37 @@ import yx1Desktop from "@/assets/product-yx1-earphones/desktop/image-category-pa
 const products: Record<string, CategoryProductCardProps[]> = {
     headphones: [
         {
-            src: { mobile: xx99m2Mobile, tablet: xx99m2Tablet, desktop: xx99m2Desktop },
+            src: {
+                mobile: xx99m2Mobile,
+                tablet: xx99m2Tablet,
+                desktop: xx99m2Desktop,
+            },
             isNew: true,
             name: "xx99 mark ii headphones",
-            description: "The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.",
+            description:
+                "The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.",
         },
         {
-            src: { mobile: xx99m1Mobile, tablet: xx99m1Tablet, desktop: xx99m1Desktop },
+            src: {
+                mobile: xx99m1Mobile,
+                tablet: xx99m1Tablet,
+                desktop: xx99m1Desktop,
+            },
             isNew: false,
             name: "xx99 mark i headphones",
-            description: "As the gold standard for headphones, the classic XX99 Mark I offers detailed and natural audio with an active noise cancellation design. A truly one‑of‑a‑kind listening experience.",
+            description:
+                "As the gold standard for headphones, the classic XX99 Mark I offers detailed and natural audio with an active noise cancellation design. A truly one‑of‑a‑kind listening experience.",
         },
         {
-            src: { mobile: xx59Mobile, tablet: xx59Tablet, desktop: xx59Desktop },
+            src: {
+                mobile: xx59Mobile,
+                tablet: xx59Tablet,
+                desktop: xx59Desktop,
+            },
             isNew: false,
             name: "xx59 headphones",
-            description: "Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.",
+            description:
+                "Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.",
         },
     ],
     speakers: [
@@ -48,13 +63,15 @@ const products: Record<string, CategoryProductCardProps[]> = {
             src: { mobile: zx9Mobile, tablet: zx9Tablet, desktop: zx9Desktop },
             isNew: true,
             name: "zx9 speaker",
-            description: "Upgrade your sound system with the all new ZX9 active speaker. It's a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups.",
+            description:
+                "Upgrade your sound system with the all new ZX9 active speaker. It's a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups.",
         },
         {
             src: { mobile: zx7Mobile, tablet: zx7Tablet, desktop: zx7Desktop },
             isNew: false,
             name: "zx7 speaker",
-            description: "Stream high quality sound wirelessly with minimal loss. The ZX7 bookshelf speaker uses high-end audiophile components that represents the top of the line powered speakers for home or studio use.",
+            description:
+                "Stream high quality sound wirelessly with minimal loss. The ZX7 bookshelf speaker uses high-end audiophile components that represents the top of the line powered speakers for home or studio use.",
         },
     ],
     earphones: [
@@ -62,7 +79,8 @@ const products: Record<string, CategoryProductCardProps[]> = {
             src: { mobile: yx1Mobile, tablet: yx1Tablet, desktop: yx1Desktop },
             isNew: true,
             name: "yx1 wireless earphones",
-            description: "Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.",
+            description:
+                "Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.",
         },
     ],
 };
@@ -82,18 +100,20 @@ export default async function CategoryPage({
     return (
         <div>
             <div className="bg-darker py-8 md:py-16">
-                <h1 className="text-h2 md:text-h1 text-white text-center">
+                <span className="text-h4 block mx-auto md:text-h2 text-white text-center">
                     {category.toUpperCase()}
-                </h1>
+                </span>
             </div>
-            {categoryProducts.map((product, index) => (
-                <CategoryProductCard
-                    {...product}
-                    metadataTitle={category}
-                    index={index}
-                    key={index}
-                />
-            ))}
+            <div className="container max-w-[1110] mx-auto flex flex-col gap-16 py-16 md:gap-[120] md:py-[120] xl:gap-40 xl:py-40">
+                {categoryProducts.map((product, index) => (
+                    <CategoryProductCard
+                        {...product}
+                        metadataTitle={category}
+                        index={index}
+                        key={index}
+                    />
+                ))}
+            </div>
         </div>
     );
 }

@@ -7,7 +7,8 @@ export default function DashboardLayout({
     children,
 }: Readonly<{ children: React.ReactNode }>) {
     return (
-        <SidebarProvider className="dashboard-grid"
+        <SidebarProvider
+            className="dashboard-grid"
             style={
                 {
                     "--sidebar-width": "calc(var(--spacing) * 72)",

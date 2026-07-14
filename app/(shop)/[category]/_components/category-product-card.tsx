@@ -1,8 +1,10 @@
+import { CardHeader } from "@/components/ui/card";
 import {
     ProductContent,
     ProductTitle,
     ProductDescription,
     ProductAction,
+    ProductCard,
 } from "@/components/ui/product-card";
 import ResponsiveImage from "@/components/ui/responsive-image";
 import { StaticImageData } from "next/image";
@@ -31,11 +33,11 @@ export default function CategoryProductCard({
     const isReversed = index % 2 !== 0;
 
     return (
-        <div className="container mx-auto px-6 md:px-10 xl:px-0 py-8 md:py-16">
-            <div
-                className={`flex flex-col md:flex-row gap-8 md:gap-16 items-center ${isReversed ? "md:flex-row-reverse" : ""}`}
+        <div className="container mx-auto px-6 md:px-10 xl:px-0">
+            <ProductCard
+                className={`flex-col lg:flex-row gap-8 md:gap-16 items-center p-0 ${isReversed ? "lg:flex-row-reverse" : ""}`}
             >
-                <div className="w-full md:w-1/2">
+                <CardHeader className="p-0 w-full">
                     <ResponsiveImage
                         mobileSrc={src.mobile}
                         tabletSrc={src.tablet}
@@ -43,16 +45,16 @@ export default function CategoryProductCard({
                         alt={`${metadataTitle} product image`}
                         className="rounded-xl w-full"
                     />
-                </div>
+                </CardHeader>
                 <ProductContent
-                    className={`text-center p-0 md:w-1/2 ${isReversed ? "md:text-left md:pl-8" : "md:text-left md:pr-8"}`}
+                    className={`text-center p-0 md:px-14 lg:items-start ${isReversed ? "lg:text-left " : "lg:text-left"}`}
                 >
                     {isNew && (
-                        <span className="text-overline text-primary">
+                        <span className="text-overline text-primary text-xs">
                             NEW PRODUCT
                         </span>
                     )}
-                    <ProductTitle className="text-h2 md:text-h1">
+                    <ProductTitle className="text-h4 md:text-h2">
                         {name.toUpperCase()}
                     </ProductTitle>
                     <ProductDescription className="text-accent-foreground">
@@ -60,7 +62,7 @@ export default function CategoryProductCard({
                     </ProductDescription>
                     <ProductAction className="w-max" />
                 </ProductContent>
-            </div>
+            </ProductCard>
         </div>
     );
 }

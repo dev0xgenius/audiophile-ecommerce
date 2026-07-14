@@ -76,8 +76,10 @@ function SummaryInfo() {
 
 export default function CheckoutSummary() {
     return (
-        <Card className="shadow-none gap-8 w-full border-0 px-6 py-8 mb-24 rounded-xl">
-            <CardHeader className="p-0 text-lg font-bold tracking-wider">SUMMARY</CardHeader>
+        <Card className="shadow-none gap-8 w-full border-0 px-6 py-8 mb-24 rounded-xl h-fit">
+            <CardHeader className="p-0 text-lg font-bold tracking-wider">
+                SUMMARY
+            </CardHeader>
             <CardContent className="p-0 flex flex-col gap-6">
                 {cartItems.map((cartItem) => (
                     <CartProductCard

@@ -5,17 +5,17 @@ const categories: CategoryCardProps[] = [
     {
         hoverImg: "/shared/desktop/image-category-thumbnail-headphones.png",
         category: "headphones",
-        link: "/category/headphones",
+        link: "/headphones",
     },
     {
         hoverImg: "/shared/desktop/image-category-thumbnail-speakers.png",
         category: "speakers",
-        link: "/category/speakers",
+        link: "/speakers",
     },
     {
         hoverImg: "/shared/desktop/image-category-thumbnail-earphones.png",
         category: "earphones",
-        link: "/category/earphones",
+        link: "/earphones",
     },
 ];
 
