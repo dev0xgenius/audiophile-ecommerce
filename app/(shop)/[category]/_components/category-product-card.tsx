@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { CardHeader } from "@/components/ui/card";
 import {
     ProductContent,
@@ -6,20 +7,22 @@ import {
     ProductAction,
     ProductCard,
 } from "@/components/ui/product-card";
+import { Button } from "@/components/ui/button";
 import ResponsiveImage from "@/components/ui/responsive-image";
-import { StaticImageData } from "next/image";
 
 export interface CategoryProductCardProps {
     name: string;
     src: {
-        mobile: string | StaticImageData;
-        tablet: string | StaticImageData;
-        desktop: string | StaticImageData;
+        mobile: string;
+        tablet: string;
+        desktop: string;
     };
     metadataTitle?: string;
     isNew: boolean;
     description: string;
     index?: number;
+    slug?: string;
+    categorySlug?: string;
 }
 
 export default function CategoryProductCard({
@@ -29,8 +32,11 @@ export default function CategoryProductCard({
     isNew,
     description,
     index = 0,
+    slug,
+    categorySlug,
 }: CategoryProductCardProps) {
     const isReversed = index % 2 !== 0;
+    const productLink = slug && categorySlug ? `/${categorySlug}/${slug}` : "#";
 
     return (
         <div className="container mx-auto px-6 md:px-10 xl:px-0">
@@ -60,7 +66,11 @@ export default function CategoryProductCard({
                     <ProductDescription className="text-accent-foreground">
                         {description}
                     </ProductDescription>
-                    <ProductAction className="w-max" />
+                    <Link href={productLink}>
+                        <Button size="lg" className="font-semibold tracking-widest">
+                            SEE PRODUCT
+                        </Button>
+                    </Link>
                 </ProductContent>
             </ProductCard>
         </div>
