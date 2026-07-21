@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Button } from "./button";
 import CartDialog from "./cart-dialog";
 import Logo from "./logo";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "./dialog";
+import { Dialog, DialogContent, DialogTitle } from "./dialog";
 import CategoryList from "./home/category-list";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
@@ -25,18 +25,19 @@ function HeaderContent({ onMenuToggle }: { onMenuToggle: () => void }) {
                     variant={"ghost"}
                     className="p-0 w-fit lg:hidden"
                     onClick={onMenuToggle}
+                    aria-label="Toggle navigation menu"
                 >
                     <Image
                         src="/icon-hamburger.svg"
                         width={16}
                         height={16}
-                        alt="menu icon"
+                        alt=""
                         className="w-full h-auto"
                     />
                 </Button>
                 <Logo />
             </div>
-            <nav className="hidden lg:flex items-center gap-8 text-white text-sm font-semibold tracking-widest">
+            <nav className="hidden lg:flex items-center gap-8 text-white text-sm font-semibold tracking-widest" aria-label="Main navigation">
                 {links.map((link) => (
                     <Link
                         key={link.href}
@@ -68,17 +69,17 @@ export default function Header({ children }: { children: React.ReactNode }) {
         <header className="h-auto bg-secondary flex flex-col">
             <div className="container m-auto xl:max-w-[1110] ">
                 <HeaderContent onMenuToggle={handleMenuToggle} />
-                <Dialog modal={true} open={menuOpen}>
+                <Dialog modal={true} open={menuOpen} onOpenChange={setMenuOpen}>
                     <DialogContent
                         showCloseButton={false}
                         className="min-w-full p-0 border-0 translate-x-0 translate-y-0 left-0 top-0 rounded-b-xl"
-                        aria-describedby="dialog-title"
+                        aria-label="Navigation menu"
                     >
-                        <DialogHeader>
+                        <div className="px-6 py-2">
                             <HeaderContent onMenuToggle={handleMenuToggle} />
-                        </DialogHeader>
+                        </div>
                         <div className="px-6 py-8">
-                            <DialogTitle className="hidden">Menu</DialogTitle>
+                            <DialogTitle className="sr-only">Menu</DialogTitle>
                             <CategoryList />
                         </div>
                     </DialogContent>

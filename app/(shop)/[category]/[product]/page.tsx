@@ -44,7 +44,7 @@ export default async function ProductPage({
                                 tabletSrc={images.tablet}
                                 desktopSrc={images.desktop}
                                 className=""
-                                alt=""
+                                alt={product.name}
                             />
                         )}
                     </CardHeader>

@@ -1,5 +1,6 @@
 import { Card, CardContent, CardTitle } from "./card";
 
+import Link from "next/link";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { Button } from "./button";
@@ -67,8 +68,17 @@ function ProductDescription({
 function ProductAction({
     text,
     className,
+    href,
     ...props
-}: { text?: string } & React.ComponentProps<typeof Button>) {
+}: { text?: string; href?: string } & React.ComponentProps<typeof Button>) {
+    if (href) {
+        return (
+            <Button asChild size="lg" className={cn("font-semibold tracking-widest", className)} {...props}>
+                <Link href={href}>{text || "SEE PRODUCT"}</Link>
+            </Button>
+        );
+    }
+
     return (
         <Button
             {...props}
