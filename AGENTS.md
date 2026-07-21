@@ -15,8 +15,9 @@ No test, typecheck (`tsc --noEmit`), or format scripts exist. `next build` runs 
 - **Next.js 16 App Router** with `@/` path alias mapping to project root.
 - **Tailwind CSS v4** — no `tailwind.config.*`; all theme in `app/globals.css` via `@theme inline {}`. Custom color `--color-gray: #f1f1f1`, radius `--radius: 0.25rem`.
 - **shadcn/ui (New York style)** — components under `components/ui/`, aliases in `components.json`.
-- **Prisma** — schema at `prisma/schema.prisma`, client generated to `generated/prisma`. Migrations exist but Prisma is **not imported anywhere in app/components/lib/hooks**. Database layer is scaffolded but unwired.
-- **Redux Toolkit** in dependencies but not connected to components yet.
+- **Prisma** — schema at `prisma/schema.prisma`, client generated to `generated/prisma`. Database is PostgreSQL. Dashboard and storefront share the same DB tightly coupled (no separate API backend).
+- **Redux Toolkit** — used for client-side dashboard state (form state, UI state, optimistic updates). Store configured in `app/store.ts`. Server data fetched via Server Components + Prisma directly.
+- **Auth** — NextAuth.js (Auth.js) v5 with Prisma adapter and credentials provider. RBAC enforced server-side via middleware. Session management via JWT.
 
 ## Layout & Navigation
 
@@ -41,7 +42,7 @@ No test, typecheck (`tsc --noEmit`), or format scripts exist. `next build` runs 
 
 ## Design System
 
-- **Font**: Manrope via `next/font/google`, loaded in `app/layout.tsx` as `--font-manrope`.
+- **Font**: Inter via `next/font/google`, loaded in `app/layout.tsx` as `--font-inter`.
 - **Color tokens** (in `app/globals.css`):
   - `bg-primary` / `text-primary` → `#D87D4A` (orange accent)
   - `bg-primary-hover` → `#FBAF85` (light orange hover)
