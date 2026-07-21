@@ -2,21 +2,25 @@
 
 import * as React from "react"
 import {
+    IconChevronDown,
+    IconChevronRight,
     IconAdjustmentsHorizontal,
     IconChevronLeft,
-    IconChevronRight,
+    IconChevronRight as IconChevronRight2,
     IconChevronsLeft,
     IconChevronsRight,
 } from "@tabler/icons-react"
 import {
     flexRender,
     getCoreRowModel,
+    getExpandedRowModel,
     getFilteredRowModel,
     getPaginationRowModel,
     getSortedRowModel,
     useReactTable,
     type ColumnDef,
     type ColumnFiltersState,
+    type ExpandedState,
     type SortingState,
     type VisibilityState,
 } from "@tanstack/react-table"
@@ -41,12 +45,32 @@ import {
 import { Label } from "@/components/ui/label"
 import { DataTableColumnHeader } from "@/components/dashboard/data-table-column-header"
 import { DataTableToolbar } from "@/components/dashboard/data-table-toolbar"
-import { InventoryAdjustDialog } from "@/components/dashboard/inventory-adjust-dialog"
-import type { Product } from "@/app/dashboard/_data/products"
+
+interface VariantRow {
+    id: string
+    sku: string
+    name: string
+    priceDelta: number
+    stock: number
+    lowStockThreshold: number
+    weightDelta: number | null
+    isActive: boolean
+}
+
+interface ProductRow {
+    id: string
+    name: string
+    sku: string | null
+    brand: string | null
+    category: { id: string; name: string; slug: string } | null
+    variants: VariantRow[]
+    basePrice: number
+    status: string
+}
 
 interface InventoryTableProps {
-    products: Product[]
-    onAdjust: (productId: string, newQuantity: number) => void
+    products: ProductRow[]
+    onAdjust: (variantId: string, variantName: string, currentStock: number) => void
 }
 
 export function InventoryTable({ products, onAdjust }: InventoryTableProps) {
@@ -54,13 +78,32 @@ export function InventoryTable({ products, onAdjust }: InventoryTableProps) {
     const [columnVisibility, setColumnVisibility] = React.useState<VisibilityState>({})
     const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>([])
     const [sorting, setSorting] = React.useState<SortingState>([
-        { id: "stockQuantity", desc: false },
+        { id: "name", desc: false },
     ])
     const [pagination, setPagination] = React.useState({ pageIndex: 0, pageSize: 10 })
     const [globalFilter, setGlobalFilter] = React.useState("")
-    const [adjustProduct, setAdjustProduct] = React.useState<Product | null>(null)
+    const [expanded, setExpanded] = React.useState<ExpandedState>({})
 
-    const columns: ColumnDef<Product>[] = [
+    const columns: ColumnDef<ProductRow>[] = [
+        {
+            id: "expander",
+            header: () => null,
+            cell: ({ row }) => {
+                if (!row.original.variants?.length) return null
+                return (
+                    <button
+                        onClick={(e) => { e.stopPropagation(); row.toggleExpanded() }}
+                        className="p-1 hover:text-primary"
+                    >
+                        {row.getIsExpanded() ? (
+                            <IconChevronDown className="size-4" />
+                        ) : (
+                            <IconChevronRight className="size-4" />
+                        )}
+                    </button>
+                )
+            },
+        },
         {
             accessorKey: "name",
             header: ({ column }) => (
@@ -69,41 +112,32 @@ export function InventoryTable({ products, onAdjust }: InventoryTableProps) {
             cell: ({ row }) => (
                 <div>
                     <p className="font-medium">{row.original.name}</p>
-                    <Badge variant="outline" className="mt-0.5 capitalize text-xs">
-                        {row.original.category}
-                    </Badge>
+                    {row.original.category && (
+                        <Badge variant="outline" className="mt-0.5 capitalize text-xs">
+                            {row.original.category.name}
+                        </Badge>
+                    )}
                 </div>
             ),
         },
         {
-            accessorKey: "stockQuantity",
+            id: "totalStock",
             header: ({ column }) => (
-                <DataTableColumnHeader column={column} title="In Stock" />
+                <DataTableColumnHeader column={column} title="Total Stock" />
             ),
             cell: ({ row }) => {
-                const qty = row.original.stockQuantity
-                const threshold = row.original.lowStockThreshold
-                const isLow = qty > 0 && qty <= threshold
-                const isOut = qty === 0
+                const total = row.original.variants?.reduce((s, v) => s + v.stock, 0) ?? 0
                 return (
-                    <span
-                        className={`tabular-nums text-lg font-bold ${
-                            isOut ? "text-error" : isLow ? "text-amber-600" : ""
-                        }`}
-                    >
-                        {qty}
-                    </span>
+                    <span className="tabular-nums text-lg font-bold">{total}</span>
                 )
             },
         },
         {
-            accessorKey: "lowStockThreshold",
-            header: ({ column }) => (
-                <DataTableColumnHeader column={column} title="Threshold" />
-            ),
+            id: "variants",
+            header: "Variants",
             cell: ({ row }) => (
-                <span className="tabular-nums text-muted-foreground">
-                    {row.original.lowStockThreshold}
+                <span className="text-muted-foreground">
+                    {row.original.variants?.length ?? 0}
                 </span>
             ),
         },
@@ -111,75 +145,11 @@ export function InventoryTable({ products, onAdjust }: InventoryTableProps) {
             accessorKey: "status",
             header: "Status",
             cell: ({ row }) => {
-                const qty = row.original.stockQuantity
-                const threshold = row.original.lowStockThreshold
-                if (qty === 0)
-                    return (
-                        <Badge variant="destructive">
-                            <span className="flex items-center gap-1">
-                                <span className="size-1.5 rounded-full bg-current" />
-                                Out of Stock
-                            </span>
-                        </Badge>
-                    )
-                if (qty <= threshold)
-                    return (
-                        <Badge
-                            variant="outline"
-                            className="border-amber-400 text-amber-700 bg-amber-50"
-                        >
-                            <span className="flex items-center gap-1">
-                                <span className="size-1.5 rounded-full bg-amber-500" />
-                                Low Stock
-                            </span>
-                        </Badge>
-                    )
-                return (
-                    <Badge
-                        variant="outline"
-                        className="border-green-400 text-green-700 bg-green-50"
-                    >
-                        <span className="flex items-center gap-1">
-                            <span className="size-1.5 rounded-full bg-green-500" />
-                            In Stock
-                        </span>
-                    </Badge>
-                )
+                const status = row.original.status
+                if (status === "active") return <Badge variant="default">Active</Badge>
+                if (status === "draft") return <Badge variant="outline">Draft</Badge>
+                return <Badge variant="secondary">Archived</Badge>
             },
-        },
-        {
-            accessorKey: "price",
-            header: ({ column }) => (
-                <DataTableColumnHeader column={column} title="Unit Price" />
-            ),
-            cell: ({ row }) => (
-                <span className="tabular-nums">
-                    ${row.original.price.toLocaleString()}
-                </span>
-            ),
-        },
-        {
-            id: "stockValue",
-            header: "Stock Value",
-            cell: ({ row }) => (
-                <span className="tabular-nums">
-                    ${(row.original.stockQuantity * row.original.price).toLocaleString()}
-                </span>
-            ),
-        },
-        {
-            id: "actions",
-            cell: ({ row }) => (
-                <Button
-                    variant="outline"
-                    size="sm"
-                    className="gap-1"
-                    onClick={() => setAdjustProduct(row.original)}
-                >
-                    <IconAdjustmentsHorizontal className="size-3" />
-                    Adjust
-                </Button>
-            ),
         },
     ]
 
@@ -193,18 +163,22 @@ export function InventoryTable({ products, onAdjust }: InventoryTableProps) {
             columnFilters,
             pagination,
             globalFilter,
+            expanded,
         },
         getRowId: (row) => row.id,
+        getRowCanExpand: (row) => (row.original.variants?.length ?? 0) > 0,
         onRowSelectionChange: setRowSelection,
         onSortingChange: setSorting,
         onColumnFiltersChange: setColumnFilters,
         onColumnVisibilityChange: setColumnVisibility,
         onPaginationChange: setPagination,
         onGlobalFilterChange: setGlobalFilter,
+        onExpandedChange: setExpanded,
         getCoreRowModel: getCoreRowModel(),
         getFilteredRowModel: getFilteredRowModel(),
         getPaginationRowModel: getPaginationRowModel(),
         getSortedRowModel: getSortedRowModel(),
+        getExpandedRowModel: getExpandedRowModel(),
     })
 
     return (
@@ -218,7 +192,7 @@ export function InventoryTable({ products, onAdjust }: InventoryTableProps) {
                         value={
                             (table.getColumn("status")?.getFilterValue() as string) ?? "all"
                         }
-                        onValueChange={(value) =>
+                        onValueChange={(value: string) =>
                             table
                                 .getColumn("status")
                                 ?.setFilterValue(value === "all" ? "" : value)
@@ -229,9 +203,9 @@ export function InventoryTable({ products, onAdjust }: InventoryTableProps) {
                         </SelectTrigger>
                         <SelectContent>
                             <SelectItem value="all">All Stock</SelectItem>
-                            <SelectItem value="in">In Stock</SelectItem>
-                            <SelectItem value="low">Low Stock</SelectItem>
-                            <SelectItem value="out">Out of Stock</SelectItem>
+                            <SelectItem value="active">Active</SelectItem>
+                            <SelectItem value="draft">Draft</SelectItem>
+                            <SelectItem value="archived">Archived</SelectItem>
                         </SelectContent>
                     </Select>
                 }
@@ -246,9 +220,9 @@ export function InventoryTable({ products, onAdjust }: InventoryTableProps) {
                                         {header.isPlaceholder
                                             ? null
                                             : flexRender(
-                                                  header.column.columnDef.header,
-                                                  header.getContext()
-                                              )}
+                                                header.column.columnDef.header,
+                                                header.getContext()
+                                            )}
                                     </TableHead>
                                 ))}
                             </TableRow>
@@ -257,16 +231,59 @@ export function InventoryTable({ products, onAdjust }: InventoryTableProps) {
                     <TableBody>
                         {table.getRowModel().rows.length ? (
                             table.getRowModel().rows.map((row) => (
-                                <TableRow key={row.id}>
-                                    {row.getVisibleCells().map((cell) => (
-                                        <TableCell key={cell.id}>
-                                            {flexRender(
-                                                cell.column.columnDef.cell,
-                                                cell.getContext()
-                                            )}
-                                        </TableCell>
-                                    ))}
-                                </TableRow>
+                                <React.Fragment key={row.id}>
+                                    <TableRow>
+                                        {row.getVisibleCells().map((cell) => (
+                                            <TableCell key={cell.id}>
+                                                {flexRender(
+                                                    cell.column.columnDef.cell,
+                                                    cell.getContext()
+                                                )}
+                                            </TableCell>
+                                        ))}
+                                    </TableRow>
+                                    {row.getIsExpanded() && (
+                                        <TableRow>
+                                            <TableCell colSpan={columns.length} className="bg-muted/30 p-0">
+                                                <div className="divide-y border-t">
+                                                    {row.original.variants?.map((v) => (
+                                                        <div key={v.id} className="flex items-center justify-between px-10 py-3 text-sm">
+                                                            <div className="flex items-center gap-3">
+                                                                <span className="font-medium">{v.name}</span>
+                                                                <span className="text-muted-foreground">({v.sku})</span>
+                                                            </div>
+                                                            <div className="flex items-center gap-6">
+                                                                <span
+                                                                    className={`tabular-nums font-bold ${
+                                                                        v.stock === 0 ? "text-error" :
+                                                                        v.stock <= v.lowStockThreshold ? "text-warning" : ""
+                                                                    }`}
+                                                                >
+                                                                    {v.stock}
+                                                                </span>
+                                                                <span className="text-muted-foreground">
+                                                                    Threshold: {v.lowStockThreshold}
+                                                                </span>
+                                                                <span className="tabular-nums text-muted-foreground">
+                                                                    {v.priceDelta >= 0 ? "+" : ""}${v.priceDelta.toFixed(2)}
+                                                                </span>
+                                                                <Button
+                                                                    variant="outline"
+                                                                    size="sm"
+                                                                    className="gap-1"
+                                                                    onClick={() => onAdjust(v.id, `${row.original.name} - ${v.name}`, v.stock)}
+                                                                >
+                                                                    <IconAdjustmentsHorizontal className="size-3" />
+                                                                    Adjust
+                                                                </Button>
+                                                            </div>
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            </TableCell>
+                                        </TableRow>
+                                    )}
+                                </React.Fragment>
                             ))
                         ) : (
                             <TableRow>
@@ -292,7 +309,7 @@ export function InventoryTable({ products, onAdjust }: InventoryTableProps) {
                         </Label>
                         <Select
                             value={`${table.getState().pagination.pageSize}`}
-                            onValueChange={(value) => table.setPageSize(Number(value))}
+                            onValueChange={(value: string) => table.setPageSize(Number(value))}
                         >
                             <SelectTrigger size="sm" className="w-20" id="rows-per-page">
                                 <SelectValue
@@ -338,7 +355,7 @@ export function InventoryTable({ products, onAdjust }: InventoryTableProps) {
                                 onClick={() => table.nextPage()}
                                 disabled={!table.getCanNextPage()}
                             >
-                                <IconChevronRight />
+                                <IconChevronRight2 />
                             </Button>
                             <Button
                                 variant="outline"
@@ -353,16 +370,6 @@ export function InventoryTable({ products, onAdjust }: InventoryTableProps) {
                     </div>
                 </div>
             </div>
-            <InventoryAdjustDialog
-                open={!!adjustProduct}
-                onOpenChange={(open) => !open && setAdjustProduct(null)}
-                productName={adjustProduct?.name ?? ""}
-                currentStock={adjustProduct?.stockQuantity ?? 0}
-                onConfirm={(newQuantity) => {
-                    if (adjustProduct) onAdjust(adjustProduct.id, newQuantity)
-                    setAdjustProduct(null)
-                }}
-            />
         </div>
     )
 }

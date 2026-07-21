@@ -9,6 +9,14 @@ import {
     IconSearch,
     IconSettings,
     IconShoppingBag,
+    IconUsers,
+    IconPhoto,
+    IconCreditCard,
+    IconTags,
+    IconBuildingWarehouse,
+    IconUserCog,
+    IconShield,
+    IconHistory,
 } from "@tabler/icons-react";
 import * as React from "react";
 
@@ -51,6 +59,46 @@ const data = {
             title: "Inventory",
             url: "inventory",
             icon: IconPackage,
+        },
+        {
+            title: "Customers",
+            url: "customers",
+            icon: IconUsers,
+        },
+        {
+            title: "Payments",
+            url: "payments",
+            icon: IconCreditCard,
+        },
+        {
+            title: "Gallery",
+            url: "gallery",
+            icon: IconPhoto,
+        },
+        {
+            title: "Bundles",
+            url: "bundles",
+            icon: IconTags,
+        },
+        {
+            title: "Suppliers",
+            url: "suppliers",
+            icon: IconBuildingWarehouse,
+        },
+        {
+            title: "Users",
+            url: "users",
+            icon: IconUserCog,
+        },
+        {
+            title: "Roles",
+            url: "roles",
+            icon: IconShield,
+        },
+        {
+            title: "Audit Log",
+            url: "audit-logs",
+            icon: IconHistory,
         },
     ],
     navSecondary: [

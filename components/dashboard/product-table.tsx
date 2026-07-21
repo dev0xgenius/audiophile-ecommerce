@@ -14,7 +14,6 @@ import {
     flexRender,
     getCoreRowModel,
     getFilteredRowModel,
-    getPaginationRowModel,
     getSortedRowModel,
     useReactTable,
     type ColumnDef,
@@ -33,33 +32,29 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table"
-import {
-    Select,
-    SelectContent,
-    SelectItem,
-    SelectTrigger,
-    SelectValue,
-} from "@/components/ui/select"
 import { Label } from "@/components/ui/label"
 import { DataTableColumnHeader } from "@/components/dashboard/data-table-column-header"
 import { DataTableToolbar } from "@/components/dashboard/data-table-toolbar"
-import type { Product } from "@/app/dashboard/_data/products"
+import type { ProductRow } from "@/app/dashboard/products/page"
 
 interface ProductTableProps {
-    products: Product[]
-    onEdit: (product: Product) => void
-    onDelete: (product: Product) => void
+    products: ProductRow[]
+    loading?: boolean
+    onEdit: (product: ProductRow) => void
+    onDelete: (product: ProductRow) => void
+    page: number
+    totalPages: number
+    onPageChange: (page: number) => void
 }
 
-export function ProductTable({ products, onEdit, onDelete }: ProductTableProps) {
+export function ProductTable({ products, loading, onEdit, onDelete, page, totalPages, onPageChange }: ProductTableProps) {
     const [rowSelection, setRowSelection] = React.useState({})
     const [columnVisibility, setColumnVisibility] = React.useState<VisibilityState>({})
     const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>([])
     const [sorting, setSorting] = React.useState<SortingState>([])
-    const [pagination, setPagination] = React.useState({ pageIndex: 0, pageSize: 10 })
     const [globalFilter, setGlobalFilter] = React.useState("")
 
-    const columns: ColumnDef<Product>[] = [
+    const columns: ColumnDef<ProductRow>[] = [
         {
             accessorKey: "name",
             header: ({ column }) => (
@@ -73,81 +68,57 @@ export function ProductTable({ products, onEdit, onDelete }: ProductTableProps) 
             ),
         },
         {
+            accessorKey: "brand",
+            header: ({ column }) => (
+                <DataTableColumnHeader column={column} title="Brand" />
+            ),
+            cell: ({ row }) => (
+                <span className="text-muted-foreground">{row.original.brand ?? "—"}</span>
+            ),
+        },
+        {
             accessorKey: "category",
             header: ({ column }) => (
                 <DataTableColumnHeader column={column} title="Category" />
             ),
             cell: ({ row }) => (
                 <Badge variant="outline" className="capitalize">
-                    {row.original.category}
+                    {row.original.category?.name ?? "—"}
                 </Badge>
             ),
             filterFn: "equals",
         },
         {
-            accessorKey: "price",
+            accessorKey: "basePrice",
             header: ({ column }) => (
-                <DataTableColumnHeader column={column} title="Price" />
+                <DataTableColumnHeader column={column} title="Base Price" />
             ),
             cell: ({ row }) => (
                 <div className="tabular-nums">
-                    ${row.original.price.toLocaleString()}
+                    ${row.original.basePrice.toLocaleString()}
                 </div>
             ),
-        },
-        {
-            accessorKey: "stockQuantity",
-            header: ({ column }) => (
-                <DataTableColumnHeader column={column} title="Stock" />
-            ),
-            cell: ({ row }) => {
-                const qty = row.original.stockQuantity
-                const threshold = row.original.lowStockThreshold
-                const isLow = qty > 0 && qty <= threshold
-                const isOut = qty === 0
-                return (
-                    <span
-                        className={`tabular-nums font-medium ${
-                            isOut ? "text-error" : isLow ? "text-amber-600" : ""
-                        }`}
-                    >
-                        {qty}
-                    </span>
-                )
-            },
         },
         {
             accessorKey: "status",
             header: "Status",
             cell: ({ row }) => {
-                const qty = row.original.stockQuantity
-                const threshold = row.original.lowStockThreshold
-                if (qty === 0)
-                    return <Badge variant="destructive">Out of Stock</Badge>
-                if (qty <= threshold)
-                    return (
-                        <Badge
-                            variant="outline"
-                            className="border-amber-400 text-amber-700 bg-amber-50"
-                        >
-                            Low Stock
-                        </Badge>
-                    )
-                return (
-                    <Badge variant="outline" className="border-green-400 text-green-700 bg-green-50">
-                        In Stock
-                    </Badge>
-                )
+                const status = row.original.status
+                if (status === "active")
+                    return <Badge variant="outline" className="border-green-400 text-green-700 bg-green-50">Active</Badge>
+                if (status === "archived")
+                    return <Badge variant="destructive">Archived</Badge>
+                return <Badge variant="outline">Draft</Badge>
             },
         },
         {
-            accessorKey: "addedAt",
+            accessorKey: "createdAt",
             header: ({ column }) => (
-                <DataTableColumnHeader column={column} title="Added" />
+                <DataTableColumnHeader column={column} title="Created" />
             ),
             cell: ({ row }) => (
                 <span className="text-muted-foreground text-sm">
-                    {new Date(row.original.addedAt).toLocaleDateString()}
+                    {new Date(row.original.createdAt).toLocaleDateString()}
                 </span>
             ),
         },
@@ -186,7 +157,7 @@ export function ProductTable({ products, onEdit, onDelete }: ProductTableProps) 
             columnVisibility,
             rowSelection,
             columnFilters,
-            pagination,
+            pagination: { pageIndex: page - 1, pageSize: 20 },
             globalFilter,
         },
         getRowId: (row) => row.id,
@@ -194,11 +165,10 @@ export function ProductTable({ products, onEdit, onDelete }: ProductTableProps) 
         onSortingChange: setSorting,
         onColumnFiltersChange: setColumnFilters,
         onColumnVisibilityChange: setColumnVisibility,
-        onPaginationChange: setPagination,
         onGlobalFilterChange: setGlobalFilter,
+        manualPagination: true,
         getCoreRowModel: getCoreRowModel(),
         getFilteredRowModel: getFilteredRowModel(),
-        getPaginationRowModel: getPaginationRowModel(),
         getSortedRowModel: getSortedRowModel(),
     })
 
@@ -208,28 +178,6 @@ export function ProductTable({ products, onEdit, onDelete }: ProductTableProps) 
                 searchPlaceholder="Search products..."
                 searchValue={globalFilter}
                 onSearchChange={setGlobalFilter}
-                filters={
-                    <Select
-                        value={
-                            (table.getColumn("category")?.getFilterValue() as string) ?? "all"
-                        }
-                        onValueChange={(value) =>
-                            table
-                                .getColumn("category")
-                                ?.setFilterValue(value === "all" ? "" : value)
-                        }
-                    >
-                        <SelectTrigger size="sm" className="w-32">
-                            <SelectValue placeholder="Category" />
-                        </SelectTrigger>
-                        <SelectContent>
-                            <SelectItem value="all">All Categories</SelectItem>
-                            <SelectItem value="headphone">Headphones</SelectItem>
-                            <SelectItem value="earphone">Earphones</SelectItem>
-                            <SelectItem value="speaker">Speakers</SelectItem>
-                        </SelectContent>
-                    </Select>
-                }
             />
             <div className="overflow-hidden rounded-xl glass-table">
                 <Table>
@@ -269,7 +217,7 @@ export function ProductTable({ products, onEdit, onDelete }: ProductTableProps) 
                                     colSpan={columns.length}
                                     className="h-24 text-center text-muted-foreground"
                                 >
-                                    No products found.
+                                    {loading ? "Loading..." : "No products found."}
                                 </TableCell>
                             </TableRow>
                         )}
@@ -278,42 +226,24 @@ export function ProductTable({ products, onEdit, onDelete }: ProductTableProps) 
             </div>
             <div className="flex items-center justify-between px-4">
                 <div className="text-sm text-muted-foreground">
-                    {table.getFilteredRowModel().rows.length} product(s)
+                    {products.length} product(s)
                 </div>
                 <div className="flex items-center gap-12">
                     <div className="hidden items-center gap-2 lg:flex">
-                        <Label htmlFor="rows-per-page" className="text-sm font-medium">
-                            Rows per page
+                        <Label className="text-sm font-medium">
+                            Rows per page: 20
                         </Label>
-                        <Select
-                            value={`${table.getState().pagination.pageSize}`}
-                            onValueChange={(value) => table.setPageSize(Number(value))}
-                        >
-                            <SelectTrigger size="sm" className="w-20" id="rows-per-page">
-                                <SelectValue
-                                    placeholder={table.getState().pagination.pageSize}
-                                />
-                            </SelectTrigger>
-                            <SelectContent side="top">
-                                {[10, 20, 30, 40, 50].map((pageSize) => (
-                                    <SelectItem key={pageSize} value={`${pageSize}`}>
-                                        {pageSize}
-                                    </SelectItem>
-                                ))}
-                            </SelectContent>
-                        </Select>
                     </div>
                     <div className="flex items-center gap-2">
                         <span className="text-sm font-medium">
-                            Page {table.getState().pagination.pageIndex + 1} of{" "}
-                            {table.getPageCount()}
+                            Page {page} of {totalPages}
                         </span>
                         <div className="flex items-center gap-1">
                             <Button
                                 variant="outline"
                                 className="hidden size-8 p-0 lg:flex"
-                                onClick={() => table.setPageIndex(0)}
-                                disabled={!table.getCanPreviousPage()}
+                                onClick={() => onPageChange(1)}
+                                disabled={page <= 1}
                             >
                                 <IconChevronsLeft />
                             </Button>
@@ -321,8 +251,8 @@ export function ProductTable({ products, onEdit, onDelete }: ProductTableProps) 
                                 variant="outline"
                                 className="size-8"
                                 size="icon"
-                                onClick={() => table.previousPage()}
-                                disabled={!table.getCanPreviousPage()}
+                                onClick={() => onPageChange(page - 1)}
+                                disabled={page <= 1}
                             >
                                 <IconChevronLeft />
                             </Button>
@@ -330,8 +260,8 @@ export function ProductTable({ products, onEdit, onDelete }: ProductTableProps) 
                                 variant="outline"
                                 className="size-8"
                                 size="icon"
-                                onClick={() => table.nextPage()}
-                                disabled={!table.getCanNextPage()}
+                                onClick={() => onPageChange(page + 1)}
+                                disabled={page >= totalPages}
                             >
                                 <IconChevronRight />
                             </Button>
@@ -339,8 +269,8 @@ export function ProductTable({ products, onEdit, onDelete }: ProductTableProps) 
                                 variant="outline"
                                 className="hidden size-8 lg:flex"
                                 size="icon"
-                                onClick={() => table.setPageIndex(table.getPageCount() - 1)}
-                                disabled={!table.getCanNextPage()}
+                                onClick={() => onPageChange(totalPages)}
+                                disabled={page >= totalPages}
                             >
                                 <IconChevronsRight />
                             </Button>

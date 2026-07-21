@@ -2,11 +2,14 @@ import "./dashboard.css";
 import { AppSidebar } from "@/components/app-sidebar";
 import { SiteHeader } from "@/components/site-header";
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
+import { Toaster } from "@/components/ui/sonner";
+import StoreProvider from "@/components/store-provider";
 
 export default function DashboardLayout({
     children,
 }: Readonly<{ children: React.ReactNode }>) {
     return (
+        <StoreProvider>
         <SidebarProvider
             className="dashboard-grid"
             style={
@@ -21,6 +24,8 @@ export default function DashboardLayout({
                 <SiteHeader />
                 {children}
             </SidebarInset>
+            <Toaster />
         </SidebarProvider>
+        </StoreProvider>
     );
 }
