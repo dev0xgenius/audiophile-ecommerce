@@ -1,6 +1,6 @@
 import { StaticImageData } from "next/image";
 import { CardFooter } from "./card";
-import Counter from "./counter";
+import { Counter } from "./counter";
 import {
     ProductCard,
     ProductContent,
@@ -40,7 +40,7 @@ export default function CartProductCard({
             </ProductContent>
             <CardFooter className="p-0">
                 {count && hasCounter ? (
-                    <Counter className="py-2 px-3" />
+                    <Counter value={count} onChange={() => {}} className="py-2 px-3" />
                 ) : (
                     <span className="text-accent-foreground -mt-5">{`x${count}`}</span>
                 )}
