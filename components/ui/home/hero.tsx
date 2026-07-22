@@ -42,7 +42,7 @@ export default async function Hero() {
                         </CardAction>
                     </CardFooter>
                 </Card>
-                <HeaderImage />
+                <HeaderImage className="lg:absolute w-full h-full" />
             </div>
         </div>
     );

@@ -47,24 +47,30 @@ export default function ProductList() {
                             Upgrade to premium speakers that are phenomenally
                             built to deliver truly remarkable sound.
                         </ProductDescription>
-                        <ProductAction className="bg-secondary" />
+                        <ProductAction
+                            href="/speakers/zx9"
+                            className="bg-secondary"
+                        />
                     </ProductContent>
                 </ProductCard>
             </li>
             <li>
-                <ProductCard className="relative h-auto max-h-80 items-start p-0">
+                <ProductCard className="relative w-full h-auto max-h-80 items-start p-0">
                     <ResponsiveImage
                         mobileSrc={SpeakerZX7ImageMobile}
                         tabletSrc={SpeakerZX7ImageTablet}
                         desktopSrc={SpeakerZX7ImageDesktop}
                         className="w-full h-full object-cover"
-                        alt=""
+                        alt="ZX7 speaker"
                     />
-                    <ProductContent className="absolute p-6 lg:w-1/2 lg:p-16 lg:justify-center">
+                    <ProductContent className="w-full absolute p-6 lg:w-1/2 lg:p-16 lg:justify-center">
                         <ProductTitle className="text-h4">
                             ZX7 SPEAKER
                         </ProductTitle>
-                        <ProductAction variant={"outline"} />
+                        <ProductAction
+                            href="/speakers/zx7"
+                            variant={"outline"}
+                        />
                     </ProductContent>
                 </ProductCard>
             </li>
@@ -74,14 +80,17 @@ export default function ProductList() {
                         mobileSrc={EarphoneYX1ImageMobile}
                         tabletSrc={EarphoneYX1ImageTablet}
                         desktopSrc={EarphoneYX1ImageDesktop}
-                        alt=""
+                        alt="YX1 earphones"
                         className="rounded-2xl md:w-1/2"
                     />
                     <ProductContent className="flex items-start rounded-2xl gap-8 p-6 py-10 bg-off-white md:w-1/2 md:p-[51px] md:justify-center">
                         <ProductTitle className="md:min-w-max text-h4">
                             YX1 EARPHONES
                         </ProductTitle>
-                        <ProductAction variant={"outline"} />
+                        <ProductAction
+                            href="/earphones/yx1"
+                            variant={"outline"}
+                        />
                     </ProductContent>
                 </ProductCard>
             </li>

@@ -42,7 +42,7 @@ No test, typecheck (`tsc --noEmit`), or format scripts exist. `next build` runs 
 
 ## Design System
 
-- **Font**: Inter via `next/font/google`, loaded in `app/layout.tsx` as `--font-inter`.
+- **Font**: Manrope via `next/font/google`, loaded in `app/layout.tsx` as `--font-sans`.
 - **Color tokens** (in `app/globals.css`):
   - `bg-primary` / `text-primary` → `#D87D4A` (orange accent)
   - `bg-primary-hover` → `#FBAF85` (light orange hover)
