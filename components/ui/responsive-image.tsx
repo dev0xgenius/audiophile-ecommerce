@@ -23,10 +23,15 @@ export default function ResponsiveImage({
         typeof src === "string" ? src : src.src;
 
     return (
-        <picture className={cn(className)}>
+        <picture className={cn("block", className)}>
             <source media="(min-width: 1024px)" srcSet={getSrc(desktopSrc)} />
             <source media="(min-width: 768px)" srcSet={getSrc(tabletSrc)} />
-            <Image src={mobileSrc} alt={alt} {...props} />
+            <Image
+                src={mobileSrc}
+                className="w-full h-full object-cover"
+                alt={alt}
+                {...props}
+            />
         </picture>
     );
 }
