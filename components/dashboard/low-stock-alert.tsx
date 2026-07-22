@@ -1,35 +1,53 @@
 "use client"
 
 import { IconAlertTriangle } from "@tabler/icons-react"
-import type { Product } from "@/app/dashboard/_data/products"
+
+interface VariantStock {
+    stock: number
+    lowStockThreshold: number
+}
+
+interface ProductWithVariants {
+    id: string
+    name: string
+    variants: VariantStock[]
+}
 
 interface LowStockAlertProps {
-    products: Product[]
+    products: ProductWithVariants[]
 }
 
 export function LowStockAlert({ products }: LowStockAlertProps) {
-    const lowStock = products.filter(
-        (p) => p.stockQuantity > 0 && p.stockQuantity <= p.lowStockThreshold
-    )
-    const outOfStock = products.filter((p) => p.stockQuantity === 0)
+    let lowStockCount = 0
+    let outOfStockCount = 0
 
-    if (!lowStock.length && !outOfStock.length) return null
+    for (const p of products) {
+        for (const v of p.variants ?? []) {
+            if (v.stock === 0) {
+                outOfStockCount++
+            } else if (v.stock <= v.lowStockThreshold) {
+                lowStockCount++
+            }
+        }
+    }
+
+    if (!lowStockCount && !outOfStockCount) return null
 
     return (
         <div className="flex flex-wrap gap-2">
-            {outOfStock.length > 0 && (
+            {outOfStockCount > 0 && (
                 <div className="flex items-center gap-2 rounded-lg glass px-4 py-2.5 text-sm text-red-400">
                     <IconAlertTriangle className="size-4 shrink-0" />
                     <span>
-                        <strong>{outOfStock.length}</strong> product{outOfStock.length > 1 ? "s" : ""} out of stock
+                        <strong>{outOfStockCount}</strong> variant{outOfStockCount > 1 ? "s" : ""} out of stock
                     </span>
                 </div>
             )}
-            {lowStock.length > 0 && (
+            {lowStockCount > 0 && (
                 <div className="flex items-center gap-2 rounded-lg glass px-4 py-2.5 text-sm text-amber-400">
                     <IconAlertTriangle className="size-4 shrink-0" />
                     <span>
-                        <strong>{lowStock.length}</strong> product{lowStock.length > 1 ? "s" : ""} low on stock
+                        <strong>{lowStockCount}</strong> variant{lowStockCount > 1 ? "s" : ""} low on stock
                     </span>
                 </div>
             )}

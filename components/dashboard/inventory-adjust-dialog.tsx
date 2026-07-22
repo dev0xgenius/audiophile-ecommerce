@@ -12,6 +12,22 @@ import {
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import {
+    Select,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
+} from "@/components/ui/select"
+
+const reasonOptions = [
+    { value: "restock", label: "Restock" },
+    { value: "sale", label: "Sale" },
+    { value: "adjustment", label: "Adjustment" },
+    { value: "return", label: "Return" },
+    { value: "damaged", label: "Damaged" },
+    { value: "correction", label: "Correction" },
+] as const
 
 interface InventoryAdjustDialogProps {
     open: boolean
@@ -28,16 +44,25 @@ export function InventoryAdjustDialog({
     currentStock,
     onConfirm,
 }: InventoryAdjustDialogProps) {
-    const [quantity, setQuantity] = useState(String(currentStock))
+    const [delta, setDelta] = useState("")
+    const [reason, setReason] = useState("adjustment")
     const [error, setError] = useState("")
 
     const handleConfirm = () => {
-        const n = parseInt(quantity, 10)
-        if (isNaN(n) || n < 0) {
-            setError("Please enter a valid non-negative number")
+        const d = parseInt(delta, 10)
+        if (isNaN(d) || d === 0) {
+            setError("Please enter a non-zero delta value")
             return
         }
-        onConfirm(n)
+        const newQty = currentStock + d
+        if (newQty < 0) {
+            setError(`Insufficient stock: current is ${currentStock}, cannot decrease by ${Math.abs(d)}`)
+            return
+        }
+        onConfirm(newQty)
+        setDelta("")
+        setReason("adjustment")
+        setError("")
         onOpenChange(false)
     }
 
@@ -47,23 +72,47 @@ export function InventoryAdjustDialog({
                 <DialogHeader>
                     <DialogTitle>Adjust Stock</DialogTitle>
                     <DialogDescription>
-                        Update stock quantity for <strong>{productName}</strong>.
-                        Current stock: {currentStock}
+                        Update stock for <strong>{productName}</strong>.
+                        Current stock: <strong>{currentStock}</strong>
                     </DialogDescription>
                 </DialogHeader>
-                <div className="grid gap-2">
-                    <Label htmlFor="quantity">New Stock Quantity</Label>
-                    <Input
-                        id="quantity"
-                        type="number"
-                        min="0"
-                        value={quantity}
-                        onChange={(e) => {
-                            setQuantity(e.target.value)
-                            setError("")
-                        }}
-                    />
-                    {error && <p className="text-sm text-error">{error}</p>}
+                <div className="grid gap-4">
+                    <div className="grid gap-2">
+                        <Label htmlFor="reason">Reason</Label>
+                        <Select value={reason} onValueChange={(v: string) => setReason(v)}>
+                            <SelectTrigger id="reason">
+                                <SelectValue placeholder="Select reason" />
+                            </SelectTrigger>
+                            <SelectContent>
+                                {reasonOptions.map((opt) => (
+                                    <SelectItem key={opt.value} value={opt.value}>
+                                        {opt.label}
+                                    </SelectItem>
+                                ))}
+                            </SelectContent>
+                        </Select>
+                    </div>
+                    <div className="grid gap-2">
+                        <Label htmlFor="delta">
+                            Delta (positive to add, negative to remove)
+                        </Label>
+                        <Input
+                            id="delta"
+                            type="number"
+                            value={delta}
+                            onChange={(e) => {
+                                setDelta(e.target.value)
+                                setError("")
+                            }}
+                            placeholder="e.g. 10 or -5"
+                        />
+                        {delta && !isNaN(parseInt(delta, 10)) && parseInt(delta, 10) !== 0 && (
+                            <p className="text-sm text-muted-foreground">
+                                New stock will be: {currentStock + parseInt(delta, 10)}
+                            </p>
+                        )}
+                        {error && <p className="text-sm text-error">{error}</p>}
+                    </div>
                 </div>
                 <DialogFooter>
                     <Button variant="outline" onClick={() => onOpenChange(false)}>

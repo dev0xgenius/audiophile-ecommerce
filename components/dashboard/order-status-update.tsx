@@ -7,38 +7,38 @@ import {
     SelectTrigger,
     SelectValue,
 } from "@/components/ui/select"
-import type { OrderStatus } from "@/app/dashboard/_data/orders"
 
-const statusLabels: Record<OrderStatus, { label: string; color: string }> = {
-    pending: { label: "Pending", color: "text-amber-600" },
-    processing: { label: "Processing", color: "text-blue-600" },
-    shipped: { label: "Shipped", color: "text-purple-600" },
-    delivered: { label: "Delivered", color: "text-green-600" },
-    cancelled: { label: "Cancelled", color: "text-red-600" },
+const statusLabels: Record<string, { label: string; color: string }> = {
+    pending_payment: { label: "Pending Payment", color: "text-warning" },
+    paid: { label: "Paid", color: "text-info" },
+    processing: { label: "Processing", color: "text-info" },
+    shipped: { label: "Shipped", color: "text-info" },
+    delivered: { label: "Delivered", color: "text-success" },
+    cancelled: { label: "Cancelled", color: "text-danger" },
+    refunded: { label: "Refunded", color: "text-danger" },
+    partially_refunded: { label: "Partially Refunded", color: "text-warning" },
 }
 
 interface OrderStatusUpdateProps {
-    value: OrderStatus
-    onChange: (value: OrderStatus) => void
+    value: string
+    onChange: (value: string) => void
 }
 
 export function OrderStatusUpdate({ value, onChange }: OrderStatusUpdateProps) {
     const current = statusLabels[value]
 
     return (
-        <Select value={value} onValueChange={(v) => onChange(v as OrderStatus)}>
+        <Select value={value} onValueChange={onChange}>
             <SelectTrigger
                 size="sm"
-                className={`w-32 border-0 bg-transparent font-medium shadow-none hover:bg-accent/50 ${current.color}`}
+                className={`w-36 border-0 bg-transparent font-medium shadow-none hover:bg-accent/50 ${current?.color ?? ""}`}
             >
                 <SelectValue placeholder="Status" />
             </SelectTrigger>
             <SelectContent align="end">
-                {(Object.keys(statusLabels) as OrderStatus[]).map((status) => (
+                {Object.entries(statusLabels).map(([status, info]) => (
                     <SelectItem key={status} value={status}>
-                        <span className={statusLabels[status].color}>
-                            {statusLabels[status].label}
-                        </span>
+                        <span className={info.color}>{info.label}</span>
                     </SelectItem>
                 ))}
             </SelectContent>

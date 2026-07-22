@@ -1,51 +1,99 @@
 "use client"
 
-import { useState } from "react"
+import { useCallback, useEffect, useState } from "react"
 import { IconPlus } from "@tabler/icons-react"
 import { Button } from "@/components/ui/button"
 import { ProductTable } from "@/components/dashboard/product-table"
 import { ProductFormDialog } from "@/components/dashboard/product-form-dialog"
 import { ProductDeleteDialog } from "@/components/dashboard/product-delete-dialog"
-import { products as initialProducts, type Product } from "@/app/dashboard/_data/products"
-import type { ProductFormValues } from "@/components/dashboard/product-form-dialog"
+import type { CreateProductInput, UpdateProductInput } from "@/lib/validations/product"
+
+interface CategoryInfo {
+    id: string
+    name: string
+    slug: string
+}
+
+export interface ProductRow {
+    id: string
+    name: string
+    slug: string
+    sku: string | null
+    brand: string | null
+    description: string | null
+    basePrice: number
+    costPrice: number | null
+    taxClass: string | null
+    weight: number | null
+    status: string
+    category: CategoryInfo | null
+    createdAt: string
+    updatedAt: string
+}
+
+interface ProductsResponse {
+    data: ProductRow[]
+    meta: { page: number; pageSize: number; total: number; totalPages: number }
+}
 
 export default function ProductsPage() {
-    const [products, setProducts] = useState<Product[]>(initialProducts)
+    const [products, setProducts] = useState<ProductRow[]>([])
+    const [loading, setLoading] = useState(true)
+    const [page, setPage] = useState(1)
+    const [totalPages, setTotalPages] = useState(1)
     const [formOpen, setFormOpen] = useState(false)
     const [deleteOpen, setDeleteOpen] = useState(false)
-    const [editingProduct, setEditingProduct] = useState<Product | undefined>()
-    const [deletingProduct, setDeletingProduct] = useState<Product | undefined>()
+    const [editingProduct, setEditingProduct] = useState<ProductRow | undefined>()
+    const [deletingProduct, setDeletingProduct] = useState<ProductRow | undefined>()
 
-    const handleAdd = (data: ProductFormValues) => {
-        const newProduct: Product = {
-            id: `prod-${Date.now()}`,
-            name: data.name,
-            category: data.category,
-            price: data.price,
-            stockQuantity: data.stockQuantity,
-            lowStockThreshold: data.lowStockThreshold,
-            description: data.description,
-            isNew: data.isNew,
-            addedAt: new Date().toISOString(),
+    const fetchProducts = useCallback(async () => {
+        setLoading(true)
+        try {
+            const res = await fetch(`/api/products?page=${page}&pageSize=20`)
+            if (!res.ok) throw new Error("Failed to fetch")
+            const json: ProductsResponse = await res.json()
+            setProducts(json.data)
+            setTotalPages(json.meta.totalPages)
+        } catch {
+            // silent
+        } finally {
+            setLoading(false)
         }
-        setProducts((prev) => [newProduct, ...prev])
+    }, [page])
+
+    useEffect(() => {
+        fetchProducts()
+    }, [fetchProducts])
+
+    const handleAdd = async (data: CreateProductInput) => {
+        const res = await fetch("/api/products", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data),
+        })
+        if (!res.ok) throw new Error("Failed to create")
+        await fetchProducts()
     }
 
-    const handleEdit = (data: ProductFormValues) => {
+    const handleEdit = async (data: UpdateProductInput) => {
         if (!editingProduct) return
-        setProducts((prev) =>
-            prev.map((p) =>
-                p.id === editingProduct.id
-                    ? { ...p, ...data, id: p.id, addedAt: p.addedAt }
-                    : p
-            )
-        )
+        const res = await fetch(`/api/products/${editingProduct.id}`, {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data),
+        })
+        if (!res.ok) throw new Error("Failed to update")
+        await fetchProducts()
     }
 
-    const handleDelete = () => {
+    const handleDelete = async () => {
         if (!deletingProduct) return
-        setProducts((prev) => prev.filter((p) => p.id !== deletingProduct.id))
+        const res = await fetch(`/api/products/${deletingProduct.id}`, {
+            method: "DELETE",
+        })
+        if (!res.ok) throw new Error("Failed to delete")
         setDeletingProduct(undefined)
+        await fetchProducts()
     }
 
     const openAdd = () => {
@@ -53,12 +101,12 @@ export default function ProductsPage() {
         setFormOpen(true)
     }
 
-    const openEdit = (product: Product) => {
+    const openEdit = (product: ProductRow) => {
         setEditingProduct(product)
         setFormOpen(true)
     }
 
-    const openDelete = (product: Product) => {
+    const openDelete = (product: ProductRow) => {
         setDeletingProduct(product)
         setDeleteOpen(true)
     }
@@ -68,7 +116,7 @@ export default function ProductsPage() {
             <div className="flex items-center justify-between">
                 <div className="space-y-1.5">
                     <h2 className="text-2xl font-semibold tracking-tight gradient-text">Products</h2>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-sm text-secondary">
                         Manage your product catalog, stock levels, and pricing.
                     </p>
                 </div>
@@ -77,12 +125,12 @@ export default function ProductsPage() {
                     Add Product
                 </Button>
             </div>
-            <ProductTable products={products} onEdit={openEdit} onDelete={openDelete} />
+            <ProductTable products={products} loading={loading} onEdit={openEdit} onDelete={openDelete} page={page} totalPages={totalPages} onPageChange={setPage} />
             <ProductFormDialog
                 open={formOpen}
                 onOpenChange={setFormOpen}
                 product={editingProduct}
-                onSubmit={editingProduct ? handleEdit : handleAdd}
+                onSubmit={(editingProduct ? handleEdit : handleAdd) as (data: CreateProductInput | UpdateProductInput) => Promise<void>}
             />
             <ProductDeleteDialog
                 open={deleteOpen}

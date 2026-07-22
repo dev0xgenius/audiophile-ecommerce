@@ -7,12 +7,12 @@ import {
     IconChevronRight,
     IconChevronsLeft,
     IconChevronsRight,
+    IconDownload,
 } from "@tabler/icons-react"
 import {
     flexRender,
     getCoreRowModel,
     getFilteredRowModel,
-    getPaginationRowModel,
     getSortedRowModel,
     useReactTable,
     type ColumnDef,
@@ -23,6 +23,12 @@ import {
 
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 import {
     Table,
     TableBody,
@@ -43,33 +49,61 @@ import { DataTableColumnHeader } from "@/components/dashboard/data-table-column-
 import { DataTableToolbar } from "@/components/dashboard/data-table-toolbar"
 import { OrderStatusUpdate } from "@/components/dashboard/order-status-update"
 import { OrderDetailDialog } from "@/components/dashboard/order-detail-dialog"
-import type { Order, OrderStatus } from "@/app/dashboard/_data/orders"
+import { Checkbox } from "@/components/ui/checkbox"
+import type { OrderRow } from "@/app/dashboard/orders/page"
 
-const statusBadge: Record<OrderStatus, { label: string; variant: "outline" | "secondary" | "default" | "destructive" }> = {
-    pending: { label: "Pending", variant: "outline" },
+const statusOptions = [
+    "all", "pending_payment", "paid", "processing", "shipped", "delivered", "cancelled", "refunded",
+]
+
+const statusBadge: Record<string, { label: string; variant: "outline" | "secondary" | "default" | "destructive" }> = {
+    pending_payment: { label: "Pending Payment", variant: "outline" },
+    paid: { label: "Paid", variant: "secondary" },
     processing: { label: "Processing", variant: "secondary" },
     shipped: { label: "Shipped", variant: "default" },
     delivered: { label: "Delivered", variant: "default" },
     cancelled: { label: "Cancelled", variant: "destructive" },
+    refunded: { label: "Refunded", variant: "destructive" },
+    partially_refunded: { label: "Partially Refunded", variant: "outline" },
 }
 
 interface OrderTableProps {
-    orders: Order[]
-    onStatusChange: (orderId: string, status: OrderStatus) => void
+    orders: OrderRow[]
+    onStatusChange: (orderId: string, status: string) => void
+    page: number
+    totalPages: number
+    onPageChange: (page: number) => void
 }
 
-export function OrderTable({ orders, onStatusChange }: OrderTableProps) {
+export function OrderTable({ orders, onStatusChange, page, totalPages, onPageChange }: OrderTableProps) {
     const [rowSelection, setRowSelection] = React.useState({})
     const [columnVisibility, setColumnVisibility] = React.useState<VisibilityState>({})
     const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>([])
     const [sorting, setSorting] = React.useState<SortingState>([
         { id: "createdAt", desc: true },
     ])
-    const [pagination, setPagination] = React.useState({ pageIndex: 0, pageSize: 10 })
     const [globalFilter, setGlobalFilter] = React.useState("")
-    const [detailOrder, setDetailOrder] = React.useState<Order | null>(null)
+    const [detailOrderId, setDetailOrderId] = React.useState<string | null>(null)
 
-    const columns: ColumnDef<Order>[] = [
+    const columns: ColumnDef<OrderRow>[] = [
+        {
+            id: "select",
+            header: ({ table }) => (
+                <Checkbox
+                    checked={table.getIsAllPageRowsSelected()}
+                    onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
+                    aria-label="Select all"
+                />
+            ),
+            cell: ({ row }) => (
+                <Checkbox
+                    checked={row.getIsSelected()}
+                    onCheckedChange={(value) => row.toggleSelected(!!value)}
+                    aria-label="Select row"
+                />
+            ),
+            size: 28,
+        },
         {
             accessorKey: "orderNumber",
             header: ({ column }) => (
@@ -103,11 +137,11 @@ export function OrderTable({ orders, onStatusChange }: OrderTableProps) {
             ),
         },
         {
-            accessorKey: "items",
+            accessorKey: "itemCount",
             header: "Items",
             cell: ({ row }) => (
                 <Badge variant="outline">
-                    {row.original.items.length} item{row.original.items.length > 1 ? "s" : ""}
+                    {row.original.itemCount} item{row.original.itemCount !== 1 ? "s" : ""}
                 </Badge>
             ),
         },
@@ -126,7 +160,7 @@ export function OrderTable({ orders, onStatusChange }: OrderTableProps) {
             accessorKey: "status",
             header: "Status",
             cell: ({ row }) => {
-                const info = statusBadge[row.original.status]
+                const info = statusBadge[row.original.status] ?? { label: row.original.status, variant: "outline" as const }
                 return (
                     <Badge variant={info.variant} className="capitalize">
                         {info.label}
@@ -147,7 +181,7 @@ export function OrderTable({ orders, onStatusChange }: OrderTableProps) {
                         variant="ghost"
                         size="icon"
                         className="size-8"
-                        onClick={() => setDetailOrder(row.original)}
+                        onClick={() => setDetailOrderId(row.original.id)}
                     >
                         <IconEye className="size-4" />
                         <span className="sr-only">View</span>
@@ -165,7 +199,7 @@ export function OrderTable({ orders, onStatusChange }: OrderTableProps) {
             columnVisibility,
             rowSelection,
             columnFilters,
-            pagination,
+            pagination: { pageIndex: page - 1, pageSize: 20 },
             globalFilter,
         },
         getRowId: (row) => row.id,
@@ -173,45 +207,110 @@ export function OrderTable({ orders, onStatusChange }: OrderTableProps) {
         onSortingChange: setSorting,
         onColumnFiltersChange: setColumnFilters,
         onColumnVisibilityChange: setColumnVisibility,
-        onPaginationChange: setPagination,
         onGlobalFilterChange: setGlobalFilter,
+        manualPagination: true,
         getCoreRowModel: getCoreRowModel(),
         getFilteredRowModel: getFilteredRowModel(),
-        getPaginationRowModel: getPaginationRowModel(),
         getSortedRowModel: getSortedRowModel(),
     })
 
+    const selectedCount = table.getSelectedRowModel().rows.length;
+
+    const handleBulkAction = async (value: string) => {
+        const selectedIds = table.getSelectedRowModel().rows.map((r) => r.original.id);
+        if (selectedIds.length === 0) return;
+
+        let action: string;
+        let status: string | undefined;
+
+        if (value.startsWith("status:")) {
+            action = "status";
+            status = value.replace("status:", "");
+        } else {
+            action = value;
+        }
+
+        try {
+            const res = await fetch("/api/orders/batch", {
+                method: "PUT",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ orderIds: selectedIds, action, status }),
+            });
+            if (!res.ok) throw new Error("Batch operation failed");
+            table.resetRowSelection();
+            onStatusChange("", ""); // trigger refresh
+        } catch {
+            // silent
+        }
+    };
+
     return (
         <div className="flex flex-col gap-6">
-            <DataTableToolbar
-                searchPlaceholder="Search orders..."
-                searchValue={globalFilter}
-                onSearchChange={setGlobalFilter}
-                filters={
-                    <Select
-                        value={
-                            (table.getColumn("status")?.getFilterValue() as string) ?? "all"
-                        }
-                        onValueChange={(value) =>
-                            table
-                                .getColumn("status")
-                                ?.setFilterValue(value === "all" ? "" : value)
-                        }
-                    >
-                        <SelectTrigger size="sm" className="w-32">
-                            <SelectValue placeholder="Status" />
+            <div className="flex flex-wrap items-center justify-between gap-4">
+                <DataTableToolbar
+                    searchPlaceholder="Search orders..."
+                    searchValue={globalFilter}
+                    onSearchChange={setGlobalFilter}
+                    filters={
+                        <Select
+                            value={
+                                (table.getColumn("status")?.getFilterValue() as string) ?? "all"
+                            }
+                            onValueChange={(value) =>
+                                table
+                                    .getColumn("status")
+                                    ?.setFilterValue(value === "all" ? "" : value)
+                            }
+                        >
+                            <SelectTrigger size="sm" className="w-32">
+                                <SelectValue placeholder="Status" />
+                            </SelectTrigger>
+                            <SelectContent>
+                                <SelectItem value="all">All Status</SelectItem>
+                                <SelectItem value="pending">Pending</SelectItem>
+                                <SelectItem value="processing">Processing</SelectItem>
+                                <SelectItem value="shipped">Shipped</SelectItem>
+                                <SelectItem value="delivered">Delivered</SelectItem>
+                                <SelectItem value="cancelled">Cancelled</SelectItem>
+                            </SelectContent>
+                        </Select>
+                    }
+                />
+                <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                        <Button variant="outline" size="sm">
+                            <IconDownload className="size-4 mr-2" />
+                            Export
+                        </Button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent align="end" className="w-48">
+                        <DropdownMenuItem onClick={() => window.open("/api/orders/export?format=csv")}>
+                            CSV (filtered)
+                        </DropdownMenuItem>
+                        <DropdownMenuItem onClick={() => window.open("/api/orders/export?format=csv&pageSize=10000")}>
+                            CSV (all)
+                        </DropdownMenuItem>
+                    </DropdownMenuContent>
+                </DropdownMenu>
+            </div>
+            {selectedCount > 0 && (
+                <div className="flex items-center gap-2 px-1">
+                    <span className="text-sm text-muted-foreground">{selectedCount} selected</span>
+                    <Select onValueChange={(value) => handleBulkAction(value)}>
+                        <SelectTrigger className="w-40 h-8 text-xs">
+                            <SelectValue placeholder="Bulk actions" />
                         </SelectTrigger>
                         <SelectContent>
-                            <SelectItem value="all">All Status</SelectItem>
-                            <SelectItem value="pending">Pending</SelectItem>
-                            <SelectItem value="processing">Processing</SelectItem>
-                            <SelectItem value="shipped">Shipped</SelectItem>
-                            <SelectItem value="delivered">Delivered</SelectItem>
-                            <SelectItem value="cancelled">Cancelled</SelectItem>
+                            {statusOptions.filter(s => s !== "all").map((s) => (
+                                <SelectItem key={s} value={`status:${s}`} className="text-xs capitalize">
+                                    Set {s.replace(/_/g, " ")}
+                                </SelectItem>
+                            ))}
+                            <SelectItem value="refund" className="text-xs">Refund selected</SelectItem>
                         </SelectContent>
                     </Select>
-                }
-            />
+                </div>
+            )}
             <div className="overflow-hidden rounded-xl glass-table">
                 <Table>
                     <TableHeader className="sticky top-0 z-10 bg-muted">
@@ -259,42 +358,24 @@ export function OrderTable({ orders, onStatusChange }: OrderTableProps) {
             </div>
             <div className="flex items-center justify-between px-4">
                 <div className="text-sm text-muted-foreground">
-                    {table.getFilteredRowModel().rows.length} order(s)
+                    {orders.length} order(s)
                 </div>
                 <div className="flex items-center gap-12">
                     <div className="hidden items-center gap-2 lg:flex">
-                        <Label htmlFor="rows-per-page" className="text-sm font-medium">
-                            Rows per page
+                        <Label className="text-sm font-medium">
+                            Rows per page: 20
                         </Label>
-                        <Select
-                            value={`${table.getState().pagination.pageSize}`}
-                            onValueChange={(value) => table.setPageSize(Number(value))}
-                        >
-                            <SelectTrigger size="sm" className="w-20" id="rows-per-page">
-                                <SelectValue
-                                    placeholder={table.getState().pagination.pageSize}
-                                />
-                            </SelectTrigger>
-                            <SelectContent side="top">
-                                {[10, 20, 30, 40, 50].map((pageSize) => (
-                                    <SelectItem key={pageSize} value={`${pageSize}`}>
-                                        {pageSize}
-                                    </SelectItem>
-                                ))}
-                            </SelectContent>
-                        </Select>
                     </div>
                     <div className="flex items-center gap-2">
                         <span className="text-sm font-medium">
-                            Page {table.getState().pagination.pageIndex + 1} of{" "}
-                            {table.getPageCount()}
+                            Page {page} of {totalPages}
                         </span>
                         <div className="flex items-center gap-1">
                             <Button
                                 variant="outline"
                                 className="hidden size-8 p-0 lg:flex"
-                                onClick={() => table.setPageIndex(0)}
-                                disabled={!table.getCanPreviousPage()}
+                                onClick={() => onPageChange(1)}
+                                disabled={page <= 1}
                             >
                                 <IconChevronsLeft />
                             </Button>
@@ -302,8 +383,8 @@ export function OrderTable({ orders, onStatusChange }: OrderTableProps) {
                                 variant="outline"
                                 className="size-8"
                                 size="icon"
-                                onClick={() => table.previousPage()}
-                                disabled={!table.getCanPreviousPage()}
+                                onClick={() => onPageChange(page - 1)}
+                                disabled={page <= 1}
                             >
                                 <IconChevronLeft />
                             </Button>
@@ -311,8 +392,8 @@ export function OrderTable({ orders, onStatusChange }: OrderTableProps) {
                                 variant="outline"
                                 className="size-8"
                                 size="icon"
-                                onClick={() => table.nextPage()}
-                                disabled={!table.getCanNextPage()}
+                                onClick={() => onPageChange(page + 1)}
+                                disabled={page >= totalPages}
                             >
                                 <IconChevronRight />
                             </Button>
@@ -320,8 +401,8 @@ export function OrderTable({ orders, onStatusChange }: OrderTableProps) {
                                 variant="outline"
                                 className="hidden size-8 lg:flex"
                                 size="icon"
-                                onClick={() => table.setPageIndex(table.getPageCount() - 1)}
-                                disabled={!table.getCanNextPage()}
+                                onClick={() => onPageChange(totalPages)}
+                                disabled={page >= totalPages}
                             >
                                 <IconChevronsRight />
                             </Button>
@@ -330,9 +411,9 @@ export function OrderTable({ orders, onStatusChange }: OrderTableProps) {
                 </div>
             </div>
             <OrderDetailDialog
-                open={!!detailOrder}
-                onOpenChange={(open) => !open && setDetailOrder(null)}
-                order={detailOrder}
+                open={!!detailOrderId}
+                onOpenChange={(open) => !open && setDetailOrderId(null)}
+                orderId={detailOrderId}
             />
         </div>
     )
