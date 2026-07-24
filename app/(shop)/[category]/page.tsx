@@ -1,9 +1,25 @@
 import { notFound } from "next/navigation";
 import { prisma } from "@/lib/prisma";
-import { getCategoryPreviewImage } from "@/lib/product-assets";
 import CategoryProductCard from "./_components/category-product-card";
 
 const validCategories = ["headphones", "speakers", "earphones"];
+
+function getVariantUrl(
+    media: Array<{ mediaAsset: { variants: unknown; url: string } | null }> | undefined,
+    size: "mobile" | "tablet" | "desktop",
+): string {
+    const asset = media?.[0]?.mediaAsset;
+    if (!asset) return "";
+
+    const variants = asset.variants as Record<string, { webp?: string; original?: string }> | null;
+    if (variants) {
+        const sizeVariants = variants[size] || variants.desktop || variants.original;
+        if (sizeVariants?.original) return sizeVariants.original;
+        if (sizeVariants?.webp) return sizeVariants.webp;
+    }
+
+    return asset.url;
+}
 
 export default async function CategoryPage({
     params,
@@ -30,22 +46,29 @@ export default async function CategoryPage({
                 where: { isActive: true },
                 take: 1,
             },
+            media: {
+                where: { purpose: "default", isPrimary: true },
+                include: { mediaAsset: true },
+                take: 1,
+            },
         },
     });
 
-    const productCards = products.map((product) => {
-        const images = getCategoryPreviewImage(product.slug);
-        return {
-            name: product.name,
-            src: images ?? { mobile: "", tablet: "", desktop: "" },
-            isNew:
-                product.createdAt >
-                new Date(Date.now() - 30 * 24 * 60 * 60 * 1000),
-            description: product.description ?? "",
-            slug: product.slug,
-            categorySlug: category,
-        };
-    });
+    const cutoffDate = new Date();
+    cutoffDate.setDate(cutoffDate.getDate() - 30);
+
+    const productCards = products.map((product) => ({
+        name: product.name,
+        src: {
+            mobile: getVariantUrl(product.media, "mobile"),
+            tablet: getVariantUrl(product.media, "tablet"),
+            desktop: getVariantUrl(product.media, "desktop"),
+        },
+        isNew: product.createdAt > cutoffDate,
+        description: product.description ?? "",
+        slug: product.slug,
+        categorySlug: category,
+    }));
 
     return (
         <div>
@@ -58,7 +81,7 @@ export default async function CategoryPage({
                 {productCards.map((product, index) => (
                     <CategoryProductCard
                         name={product.name}
-                        src={product.src as any}
+                        src={product.src}
                         metadataTitle={category}
                         isNew={product.isNew}
                         description={product.description}

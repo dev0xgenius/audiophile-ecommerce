@@ -4,7 +4,7 @@ import type { WebhookEvent } from "@/lib/psp/types";
 async function processEvent(
     event: WebhookEvent,
     signature: string,
-    payload: string
+    _payload: string
 ) {
     const { prisma } = await import("@/lib/prisma");
     const { reserveStock, releaseStock } = await import("@/lib/services/stock");

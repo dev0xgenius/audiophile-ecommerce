@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { useCallback, useRef, useState } from "react"
 import { IconPhoto, IconUpload, IconX, IconEdit, IconTrash } from "@tabler/icons-react"
 import { Button } from "@/components/ui/button"
@@ -203,11 +204,12 @@ export function MediaGallery({
                             }`}
                             onClick={() => selectable ? toggleSelect(asset.id) : onSelect?.(asset)}
                         >
-                            <img
+                            <Image
                                 src={getDisplayUrl(asset)}
                                 alt={asset.altText ?? asset.filename}
-                                className="size-full object-cover"
-                                loading="lazy"
+                                fill
+                                sizes="(max-width: 768px) 50vw, 25vw"
+                                className="object-cover"
                             />
                             <div className="absolute inset-0 flex items-end gap-1 bg-black/0 p-2 opacity-0 transition-all group-hover:bg-black/40 group-hover:opacity-100">
                                 <button

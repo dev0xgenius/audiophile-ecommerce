@@ -1,6 +1,5 @@
 import { notFound } from "next/navigation";
 import { prisma } from "@/lib/prisma";
-import { getProductDetailImage, getProductGallery } from "@/lib/product-assets";
 import { AddToCart } from "@/components/ui/add-to-cart";
 import { Button } from "@/components/ui/button";
 import { CardFooter, CardHeader } from "@/components/ui/card";
@@ -12,6 +11,19 @@ import {
 } from "@/components/ui/product-card";
 import ResponsiveImage from "@/components/ui/responsive-image";
 import { cn } from "@/lib/utils";
+
+interface AssetWithUrl {
+    url: string;
+    variants: Record<string, { webp?: string; original?: string }> | null;
+}
+
+function getAssetUrl(asset: AssetWithUrl | null | undefined, size: string): string {
+    if (!asset) return "";
+    if (asset.variants?.[size]?.original) return asset.variants[size].original;
+    if (asset.variants?.[size]?.webp) return asset.variants[size].webp;
+    if (asset.variants?.desktop?.original) return asset.variants.desktop.original;
+    return asset.url;
+}
 
 export default async function ProductPage({
     params,
@@ -25,15 +37,34 @@ export default async function ProductPage({
         include: {
             category: true,
             variants: { where: { isActive: true } },
+            media: {
+                include: { mediaAsset: true },
+                orderBy: [{ purpose: "asc" }, { displayOrder: "asc" }],
+            },
         },
     });
 
     if (!product) notFound();
 
-    const images = getProductDetailImage(product.slug);
-    const gallery = getProductGallery(product.slug);
+    const detailMedia = product.media
+        .filter((m) => m.purpose === "default" && m.isPrimary)
+        .map((m) => m.mediaAsset)[0];
+
+    const gallery = product.media
+        .filter((m) => m.purpose === "gallery")
+        .map((m) => m.mediaAsset);
+
     const defaultVariant = product.variants[0];
     const box = product.box as Array<{ name: string; quantity: number }> | null;
+
+    const detailAsset = detailMedia
+        ? { url: detailMedia.url, variants: detailMedia.variants as Record<string, { webp?: string; original?: string }> | null }
+        : null;
+
+    const galleryAssets = gallery.map((g) => ({
+        url: g.url,
+        variants: g.variants as Record<string, { webp?: string; original?: string }> | null,
+    }));
 
     return (
         <div className="leading-7 gap-6 p-6 md:px-10 xl:px-0 py-2 lg:py-20 flex flex-col items-start container mx-auto max-w-[1110] lg:px-0">
@@ -46,11 +77,11 @@ export default async function ProductPage({
             <div className="grid gap-[88px] md:gap-32">
                 <ProductCard className="p-0 rounded-none items-start md:items-center gap-6 md:gap-16 xl:gap-[124.5] md:flex-row">
                     <CardHeader className="w-full p-0 gap-0">
-                        {images && (
+                        {detailAsset && (
                             <ResponsiveImage
-                                mobileSrc={images.mobile}
-                                tabletSrc={images.tablet}
-                                desktopSrc={images.desktop}
+                                mobileSrc={getAssetUrl(detailAsset, "mobile")}
+                                tabletSrc={getAssetUrl(detailAsset, "tablet")}
+                                desktopSrc={getAssetUrl(detailAsset, "desktop")}
                                 className=""
                                 alt={product.name}
                             />
@@ -110,13 +141,13 @@ export default async function ProductPage({
                     </section>
                 </div>
 
-                {gallery && (
+                {galleryAssets.length >= 3 && (
                     <div className="flex flex-col md:max-h-[368] xl:max-h-[592] gap-5 md:grid md:grid-cols-2 md:grid-rows-2">
                         <span className="block overflow-hidden rounded-xl">
                             <ResponsiveImage
-                                mobileSrc={gallery.gallery1.mobile}
-                                tabletSrc={gallery.gallery1.tablet}
-                                desktopSrc={gallery.gallery1.desktop}
+                                mobileSrc={getAssetUrl(galleryAssets[0], "mobile")}
+                                tabletSrc={getAssetUrl(galleryAssets[0], "tablet")}
+                                desktopSrc={getAssetUrl(galleryAssets[0], "desktop")}
                                 width={360}
                                 height={720}
                                 alt="gallery image"
@@ -127,9 +158,9 @@ export default async function ProductPage({
                         </span>
                         <span className="block overflow-hidden rounded-xl row-span-2">
                             <ResponsiveImage
-                                mobileSrc={gallery.gallery2.mobile}
-                                tabletSrc={gallery.gallery2.tablet}
-                                desktopSrc={gallery.gallery2.desktop}
+                                mobileSrc={getAssetUrl(galleryAssets[1], "mobile")}
+                                tabletSrc={getAssetUrl(galleryAssets[1], "tablet")}
+                                desktopSrc={getAssetUrl(galleryAssets[1], "desktop")}
                                 width={360}
                                 height={720}
                                 alt="gallery image"
@@ -140,9 +171,9 @@ export default async function ProductPage({
                         </span>
                         <span className="block overflow-hidden rounded-xl">
                             <ResponsiveImage
-                                mobileSrc={gallery.gallery3.mobile}
-                                tabletSrc={gallery.gallery3.tablet}
-                                desktopSrc={gallery.gallery3.desktop}
+                                mobileSrc={getAssetUrl(galleryAssets[2], "mobile")}
+                                tabletSrc={getAssetUrl(galleryAssets[2], "tablet")}
+                                desktopSrc={getAssetUrl(galleryAssets[2], "desktop")}
                                 width={360}
                                 height={720}
                                 alt="gallery image"

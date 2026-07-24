@@ -4,7 +4,6 @@ import {
     ProductContent,
     ProductTitle,
     ProductDescription,
-    ProductAction,
     ProductCard,
 } from "@/components/ui/product-card";
 import { Button } from "@/components/ui/button";

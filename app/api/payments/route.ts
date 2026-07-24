@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { withPermission } from "@/lib/auth/permissions";
 
-export const GET = withPermission(async (request: NextRequest, { userId, permissions }) => {
+export const GET = withPermission(async (request: NextRequest, { userId: _userId, permissions: _permissions }) => {
     const { searchParams } = new URL(request.url);
     const orderId = searchParams.get("orderId");
 

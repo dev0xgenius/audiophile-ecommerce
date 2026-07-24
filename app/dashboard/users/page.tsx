@@ -17,11 +17,6 @@ export interface UserRow {
     createdAt: string;
 }
 
-interface UsersResponse {
-    data: UserRow[];
-    meta: { page: number; pageSize: number; total: number; totalPages: number };
-}
-
 export default function UsersPage() {
     const [users, setUsers] = useState<UserRow[]>([]);
     const [loading, setLoading] = useState(true);
