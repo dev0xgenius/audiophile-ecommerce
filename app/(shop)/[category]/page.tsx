@@ -38,7 +38,9 @@ export default async function CategoryPage({
         return {
             name: product.name,
             src: images ?? { mobile: "", tablet: "", desktop: "" },
-            isNew: product.createdAt > new Date(Date.now() - 30 * 24 * 60 * 60 * 1000),
+            isNew:
+                product.createdAt >
+                new Date(Date.now() - 30 * 24 * 60 * 60 * 1000),
             description: product.description ?? "",
             slug: product.slug,
             categorySlug: category,

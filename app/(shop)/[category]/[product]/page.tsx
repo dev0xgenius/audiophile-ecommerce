@@ -4,7 +4,12 @@ import { getProductDetailImage, getProductGallery } from "@/lib/product-assets";
 import { AddToCart } from "@/components/ui/add-to-cart";
 import { Button } from "@/components/ui/button";
 import { CardFooter, CardHeader } from "@/components/ui/card";
-import { ProductCard, ProductContent, ProductDescription, ProductTitle } from "@/components/ui/product-card";
+import {
+    ProductCard,
+    ProductContent,
+    ProductDescription,
+    ProductTitle,
+} from "@/components/ui/product-card";
 import ResponsiveImage from "@/components/ui/responsive-image";
 import { cn } from "@/lib/utils";
 
@@ -31,8 +36,11 @@ export default async function ProductPage({
     const box = product.box as Array<{ name: string; quantity: number }> | null;
 
     return (
-        <div className="leading-7 gap-6 p-6 py-2 flex flex-col items-start container mx-auto max-w-[1110]">
-            <Button variant="ghost" className="text-accent-foreground font-normal p-0">
+        <div className="leading-7 gap-6 p-6 md:px-10 xl:px-0 py-2 lg:py-20 flex flex-col items-start container mx-auto max-w-[1110] lg:px-0">
+            <Button
+                variant="ghost"
+                className="text-accent-foreground font-normal p-0"
+            >
                 Go Back
             </Button>
             <div className="grid gap-[88px] md:gap-32">
@@ -68,7 +76,10 @@ export default async function ProductPage({
                                 <AddToCart
                                     variantId={defaultVariant.id}
                                     name={product.name}
-                                    price={product.basePrice + defaultVariant.priceDelta}
+                                    price={
+                                        product.basePrice +
+                                        defaultVariant.priceDelta
+                                    }
                                 />
                             )}
                         </CardFooter>
@@ -83,11 +94,15 @@ export default async function ProductPage({
                         ))}
                     </section>
                     <section className="flex flex-col md:flex-row xl:flex-col items-start gap-6 text-pretty text-accent-foreground">
-                        <h2 className="text-h3 text-secondary w-full">IN THE BOX</h2>
+                        <h2 className="text-h3 text-secondary w-full">
+                            IN THE BOX
+                        </h2>
                         <ul className="flex flex-col gap-2 w-full">
                             {box?.map((item, i) => (
                                 <li key={i} className="flex gap-6">
-                                    <span className="text-sm text-primary">{item.quantity}x</span>
+                                    <span className="text-sm text-primary">
+                                        {item.quantity}x
+                                    </span>
                                     <span>{item.name}</span>
                                 </li>
                             ))}
@@ -105,10 +120,12 @@ export default async function ProductPage({
                                 width={360}
                                 height={720}
                                 alt="gallery image"
-                                className={cn("block w-full h-[174px] object-cover md:h-full")}
+                                className={cn(
+                                    "block w-full h-[174px] object-cover md:h-full",
+                                )}
                             />
                         </span>
-                        <span className="block overflow-hidden rounded-xl">
+                        <span className="block overflow-hidden rounded-xl row-span-2">
                             <ResponsiveImage
                                 mobileSrc={gallery.gallery2.mobile}
                                 tabletSrc={gallery.gallery2.tablet}
@@ -116,10 +133,12 @@ export default async function ProductPage({
                                 width={360}
                                 height={720}
                                 alt="gallery image"
-                                className={cn("block w-full h-[174px] object-cover md:h-full")}
+                                className={cn(
+                                    "block w-full h-[174px] object-cover md:h-full",
+                                )}
                             />
                         </span>
-                        <span className="block overflow-hidden rounded-xl row-span-2">
+                        <span className="block overflow-hidden rounded-xl">
                             <ResponsiveImage
                                 mobileSrc={gallery.gallery3.mobile}
                                 tabletSrc={gallery.gallery3.tablet}
@@ -127,7 +146,9 @@ export default async function ProductPage({
                                 width={360}
                                 height={720}
                                 alt="gallery image"
-                                className={cn("block w-full h-[368px] md:min-h-[174] md:h-full object-cover")}
+                                className={cn(
+                                    "block w-full h-[368px] md:min-h-[174] md:h-full object-cover",
+                                )}
                             />
                         </span>
                     </div>

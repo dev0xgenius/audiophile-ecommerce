@@ -37,7 +37,10 @@ function HeaderContent({ onMenuToggle }: { onMenuToggle: () => void }) {
                 </Button>
                 <Logo />
             </div>
-            <nav className="hidden lg:flex items-center gap-8 text-white text-sm font-semibold tracking-widest" aria-label="Main navigation">
+            <nav
+                className="hidden lg:flex items-center gap-8 text-white text-sm font-semibold tracking-widest"
+                aria-label="Main navigation"
+            >
                 {links.map((link) => (
                     <Link
                         key={link.href}

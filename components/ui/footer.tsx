@@ -16,9 +16,11 @@ export default function Footer({ children }: { children?: React.ReactNode }) {
 
     return (
         <footer className="flex flex-col gap-[120px]">
-            {pathname != "/checkout" && <div className="px-6">{children}</div>}
-            <div className="w-full bg-darker">
-                <div className="container xl:max-w-[1110]  m-auto flex flex-col gap-12 items-center md:items-start py-10 relative">
+            {pathname != "/checkout" && (
+                <div className="px-6 md:px-10 xl:px-0">{children}</div>
+            )}
+            <div className="w-full bg-darker px-6 md:px-10 xl:px-0">
+                <div className="container xl:max-w-[1110] m-auto flex flex-col gap-12 items-center md:items-start py-10 relative">
                     <div className="absolute w-28 h-1 bg-primary top-0" />
                     <Link
                         href="/"
