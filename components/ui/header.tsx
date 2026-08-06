@@ -35,7 +35,9 @@ function HeaderContent({ onMenuToggle }: { onMenuToggle: () => void }) {
                         className="w-full h-auto"
                     />
                 </Button>
-                <Logo />
+                <Link href="/">
+                    <Logo />
+                </Link>
             </div>
             <nav
                 className="hidden lg:flex items-center gap-8 text-white text-sm font-semibold tracking-widest"

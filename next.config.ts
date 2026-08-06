@@ -2,8 +2,6 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    loader: "custom",
-    loaderFile: "./lib/image-loader.ts",
     remotePatterns: [
       {
         protocol: "https",
@@ -12,6 +10,12 @@ const nextConfig: NextConfig = {
       {
         protocol: "https",
         hostname: "**.r2.dev",
+      },
+      {
+        protocol: "http",
+        hostname: "localhost",
+        port: "9000",
+        pathname: "/audiophile-assets/**",
       },
       {
         protocol: "http",

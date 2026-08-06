@@ -78,7 +78,10 @@ export default function ProductsPage() {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(data),
         });
-        if (!res.ok) throw new Error("Failed to create");
+        if (!res.ok) {
+            console.log(res.statusText);
+            throw new Error("Failed to create");
+        }
         await fetchProducts();
     };
 

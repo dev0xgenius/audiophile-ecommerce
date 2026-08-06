@@ -22,7 +22,6 @@ export default function AboutInfo() {
                         desktopSrc={bestGearDesktop}
                         width={360}
                         height={720}
-                        className=""
                         alt="Man with quality headphones"
                     />
                 </CardDescription>
