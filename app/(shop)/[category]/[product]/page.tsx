@@ -10,18 +10,20 @@ import {
     ProductTitle,
 } from "@/components/ui/product-card";
 import ResponsiveImage from "@/components/ui/responsive-image";
-import { cn } from "@/lib/utils";
 
-interface AssetWithUrl {
+interface MediaAssetLike {
     url: string;
-    variants: Record<string, { webp?: string; original?: string }> | null;
+    variants: unknown;
 }
 
-function getAssetUrl(asset: AssetWithUrl | null | undefined, size: string): string {
+function getAssetSrc(asset: MediaAssetLike | null | undefined): string {
     if (!asset) return "";
-    if (asset.variants?.[size]?.original) return asset.variants[size].original;
-    if (asset.variants?.[size]?.webp) return asset.variants[size].webp;
-    if (asset.variants?.desktop?.original) return asset.variants.desktop.original;
+    const variants = asset.variants as Record<
+        string,
+        { webp?: string; original?: string }
+    > | null;
+    if (variants?.desktop?.webp) return variants.desktop.webp;
+    if (variants?.desktop?.original) return variants.desktop.original;
     return asset.url;
 }
 
@@ -46,25 +48,49 @@ export default async function ProductPage({
 
     if (!product) notFound();
 
-    const detailMedia = product.media
-        .filter((m) => m.purpose === "default" && m.isPrimary)
-        .map((m) => m.mediaAsset)[0];
+    const detailRows = product.media.filter(
+        (m) => m.purpose === "default" && m.isPrimary,
+    );
+    const assetForSize = (size: "mobile" | "tablet" | "desktop") =>
+        detailRows.find((m) =>
+            m.mediaAsset?.folder?.endsWith(`/${size}`),
+        )?.mediaAsset ??
+        detailRows.map((m) => m.mediaAsset)[0] ??
+        null;
 
-    const gallery = product.media
-        .filter((m) => m.purpose === "gallery")
-        .map((m) => m.mediaAsset);
+    const heroSrc = {
+        mobile: getAssetSrc(assetForSize("mobile")),
+        tablet: getAssetSrc(assetForSize("tablet")),
+        desktop: getAssetSrc(assetForSize("desktop")),
+    };
+
+    const galleryRows = product.media.filter(
+        (m) => m.purpose === "gallery",
+    );
+    const galleryAsset = (
+        order: number,
+        size: "mobile" | "tablet" | "desktop",
+    ) =>
+        galleryRows.find(
+            (r) =>
+                r.displayOrder === order &&
+                r.mediaAsset?.folder?.endsWith(`/${size}`),
+        )?.mediaAsset ??
+        galleryRows.find((r) => r.displayOrder === order)?.mediaAsset ??
+        null;
 
     const defaultVariant = product.variants[0];
     const box = product.box as Array<{ name: string; quantity: number }> | null;
 
-    const detailAsset = detailMedia
-        ? { url: detailMedia.url, variants: detailMedia.variants as Record<string, { webp?: string; original?: string }> | null }
-        : null;
-
-    const galleryAssets = gallery.map((g) => ({
-        url: g.url,
-        variants: g.variants as Record<string, { webp?: string; original?: string }> | null,
-    }));
+    const cartAsset = product.media.find((m) => m.purpose === "cart")
+        ?.mediaAsset;
+    const cartVariants = cartAsset?.variants as Record<
+        string,
+        { webp?: string; original?: string }
+    > | null;
+    const cartImage = cartVariants?.thumbnail?.webp ??
+        cartVariants?.thumbnail?.original ??
+        cartAsset?.url;
 
     return (
         <div className="leading-7 gap-6 p-6 md:px-10 xl:px-0 py-2 lg:py-20 flex flex-col items-start container mx-auto max-w-[1110] lg:px-0">
@@ -77,13 +103,17 @@ export default async function ProductPage({
             <div className="grid gap-[88px] md:gap-32">
                 <ProductCard className="p-0 rounded-none items-start md:items-center gap-6 md:gap-16 xl:gap-[124.5] md:flex-row">
                     <CardHeader className="w-full p-0 gap-0">
-                        {detailAsset && (
+                        {heroSrc.mobile && (
                             <ResponsiveImage
-                                mobileSrc={getAssetUrl(detailAsset, "mobile")}
-                                tabletSrc={getAssetUrl(detailAsset, "tablet")}
-                                desktopSrc={getAssetUrl(detailAsset, "desktop")}
-                                className=""
+                                mobileSrc={heroSrc.mobile}
+                                tabletSrc={heroSrc.tablet}
+                                desktopSrc={heroSrc.desktop}
+                                fill
+                                className="block relative w-full rounded-xl overflow-hidden bg-gray aspect-square md:aspect-[281/480] lg:aspect-[540/560]"
+                                imageClassName="object-cover"
                                 alt={product.name}
+                                loading="eager"
+                                priority
                             />
                         )}
                     </CardHeader>
@@ -111,6 +141,7 @@ export default async function ProductPage({
                                         product.basePrice +
                                         defaultVariant.priceDelta
                                     }
+                                    image={cartImage}
                                 />
                             )}
                         </CardFooter>
@@ -141,45 +172,57 @@ export default async function ProductPage({
                     </section>
                 </div>
 
-                {galleryAssets.length >= 3 && (
+                {galleryRows.length >= 3 && (
                     <div className="flex flex-col md:max-h-[368] xl:max-h-[592] gap-5 md:grid md:grid-cols-2 md:grid-rows-2">
-                        <span className="block overflow-hidden rounded-xl">
+                        <span className="block overflow-hidden rounded-xl bg-gray">
                             <ResponsiveImage
-                                mobileSrc={getAssetUrl(galleryAssets[0], "mobile")}
-                                tabletSrc={getAssetUrl(galleryAssets[0], "tablet")}
-                                desktopSrc={getAssetUrl(galleryAssets[0], "desktop")}
-                                width={360}
-                                height={720}
-                                alt="gallery image"
-                                className={cn(
-                                    "block w-full h-[174px] object-cover md:h-full",
+                                mobileSrc={getAssetSrc(
+                                    galleryAsset(1, "mobile"),
                                 )}
+                                tabletSrc={getAssetSrc(
+                                    galleryAsset(1, "tablet"),
+                                )}
+                                desktopSrc={getAssetSrc(
+                                    galleryAsset(1, "desktop"),
+                                )}
+                                fill
+                                alt="gallery image"
+                                className="block relative w-full aspect-[327/184] md:h-full"
+                                imageClassName="object-cover"
                             />
                         </span>
-                        <span className="block overflow-hidden rounded-xl row-span-2">
+                        <span className="block overflow-hidden rounded-xl bg-gray row-span-2">
                             <ResponsiveImage
-                                mobileSrc={getAssetUrl(galleryAssets[1], "mobile")}
-                                tabletSrc={getAssetUrl(galleryAssets[1], "tablet")}
-                                desktopSrc={getAssetUrl(galleryAssets[1], "desktop")}
-                                width={360}
-                                height={720}
-                                alt="gallery image"
-                                className={cn(
-                                    "block w-full h-[174px] object-cover md:h-full",
+                                mobileSrc={getAssetSrc(
+                                    galleryAsset(2, "mobile"),
                                 )}
+                                tabletSrc={getAssetSrc(
+                                    galleryAsset(2, "tablet"),
+                                )}
+                                desktopSrc={getAssetSrc(
+                                    galleryAsset(2, "desktop"),
+                                )}
+                                fill
+                                alt="gallery image"
+                                className="block relative w-full aspect-[327/368] md:h-full"
+                                imageClassName="object-cover"
                             />
                         </span>
-                        <span className="block overflow-hidden rounded-xl">
+                        <span className="block overflow-hidden rounded-xl bg-gray">
                             <ResponsiveImage
-                                mobileSrc={getAssetUrl(galleryAssets[2], "mobile")}
-                                tabletSrc={getAssetUrl(galleryAssets[2], "tablet")}
-                                desktopSrc={getAssetUrl(galleryAssets[2], "desktop")}
-                                width={360}
-                                height={720}
-                                alt="gallery image"
-                                className={cn(
-                                    "block w-full h-[368px] md:min-h-[174] md:h-full object-cover",
+                                mobileSrc={getAssetSrc(
+                                    galleryAsset(3, "mobile"),
                                 )}
+                                tabletSrc={getAssetSrc(
+                                    galleryAsset(3, "tablet"),
+                                )}
+                                desktopSrc={getAssetSrc(
+                                    galleryAsset(3, "desktop"),
+                                )}
+                                fill
+                                alt="gallery image"
+                                className="block relative w-full aspect-[327/184] md:h-full"
+                                imageClassName="object-cover"
                             />
                         </span>
                     </div>

@@ -9,10 +9,12 @@ export function AddToCart({
     variantId,
     name,
     price,
+    image,
 }: {
     variantId: string;
     name: string;
     price: number;
+    image?: string;
 }) {
     const [quantity, setQuantity] = useState(1);
 
@@ -43,7 +45,7 @@ export function AddToCart({
                 size="lg"
                 className="w-max"
                 onClick={() => {
-                    addToCart({ variantId, name, price, quantity });
+                    addToCart({ variantId, name, price, quantity, image });
                     toast.success(`${name} added to cart`);
                 }}
             >

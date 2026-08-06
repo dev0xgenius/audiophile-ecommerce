@@ -437,15 +437,26 @@ function buildVariantsJson(entry: ManifestEntry): Record<string, { webp: string;
 }
 
 const GALLERY_PURPOSE_MAP: Record<string, string> = {
-    "category-preview": "default",
+    "category-preview": "category",
     "product-detail": "default",
     "product-gallery": "gallery",
     "home-page": "default",
-    "cart": "default",
+    "cart": "cart",
     "checkout": "default",
     "shared": "default",
     "icon": "default",
     "ui": "default",
+};
+
+const SIZE_ORDER: Record<string, number> = { mobile: 0, tablet: 1, desktop: 2 };
+
+const CART_SLUG_BY_FILENAME: Record<string, string> = {
+    "image-xx59-headphones.jpg": "xx59",
+    "image-xx99-mark-one-headphones.jpg": "xx99-mark-i",
+    "image-xx99-mark-two-headphones.jpg": "xx99-mark-ii",
+    "image-yx1-earphones.jpg": "yx1",
+    "image-zx7-speaker.jpg": "zx7",
+    "image-zx9-speaker.jpg": "zx9",
 };
 
 async function seedMediaAssets() {
@@ -475,8 +486,17 @@ async function seedMediaAssets() {
 
             const filename = path.basename(localPath);
 
+            let folder = entry.folder;
+            if (
+                entry.type === "category-preview" ||
+                entry.type === "product-detail" ||
+                entry.type === "product-gallery"
+            ) {
+                folder = path.dirname(entry.baseKey).replace(/^assets\//, "");
+            }
+
             const mediaAsset = await prisma.mediaAsset.upsert({
-                where: { folder_filename: { folder: entry.folder, filename } },
+                where: { folder_filename: { folder, filename } },
                 update: {
                     url: usedUrl,
                     variants: variantsJson,
@@ -491,7 +511,7 @@ async function seedMediaAssets() {
                     variants: variantsJson,
                     width: entry.width || null,
                     height: entry.height || null,
-                    folder: entry.folder,
+                    folder,
                     tags: [entry.type, entry.productSlug ?? ""].filter(Boolean),
                     altText: filename.replace(/\.[^.]+$/, "").replace(/[-_]/g, " "),
                     uploadedById: adminId,
@@ -499,11 +519,15 @@ async function seedMediaAssets() {
             });
 
             // Link to product
-            if (entry.productSlug) {
-                const product = await prisma.product.findUnique({ where: { slug: entry.productSlug } });
+            const linkedSlug =
+                entry.productSlug ??
+                (entry.type === "cart" ? CART_SLUG_BY_FILENAME[entry.filename] ?? null : null);
+            if (linkedSlug) {
+                const product = await prisma.product.findUnique({ where: { slug: linkedSlug } });
                 if (product) {
                     const purpose = GALLERY_PURPOSE_MAP[entry.type] ?? "default";
-                    const isPrimary = entry.type === "product-detail";
+                    const isPrimary =
+                        entry.type === "product-detail" || entry.type === "category-preview";
 
                     // Find variant if gallery image has variant mapping
                     let variantId: string | null = null;
@@ -524,10 +548,15 @@ async function seedMediaAssets() {
                         },
                     });
 
+                    const displayOrder =
+                        entry.type === "category-preview"
+                            ? (SIZE_ORDER[entry.size] ?? 1)
+                            : entry.galleryIndex ?? (isPrimary ? 0 : 1);
+
                     if (existing) {
                         await prisma.productMedia.update({
                             where: { id: existing.id },
-                            data: { displayOrder: entry.galleryIndex ?? 0, isPrimary },
+                            data: { displayOrder, isPrimary },
                         });
                     } else {
                         await prisma.productMedia.create({
@@ -535,7 +564,7 @@ async function seedMediaAssets() {
                                 productId: product.id,
                                 variantId,
                                 mediaAssetId: mediaAsset.id,
-                                displayOrder: entry.galleryIndex ?? (isPrimary ? 0 : 1),
+                                displayOrder,
                                 isPrimary,
                                 purpose,
                             },
@@ -579,6 +608,59 @@ async function seedMediaAssets() {
     console.log(`Media assets seeded: ${created} created, ${skipped} skipped, ${errors} errors`);
 }
 
+async function cleanupLegacyCategoryPreview() {
+    const legacy = await prisma.mediaAsset.findMany({
+        where: {
+            filename: "image-category-page-preview.jpg",
+            folder: { not: { contains: "/category-preview/" } },
+        },
+        select: { id: true },
+    });
+
+    if (legacy.length === 0) return;
+    const assetIds = legacy.map((a) => a.id);
+
+    await prisma.productMedia.deleteMany({
+        where: { mediaAssetId: { in: assetIds } },
+    });
+    await prisma.categoryMedia.deleteMany({
+        where: { mediaAssetId: { in: assetIds } },
+    });
+    await prisma.mediaAsset.deleteMany({
+        where: { id: { in: assetIds } },
+    });
+}
+
+async function cleanupLegacyDetailGallery() {
+    const legacy = await prisma.mediaAsset.findMany({
+        where: {
+            AND: [
+                { folder: { not: { contains: "/detail/" } } },
+                { folder: { not: { contains: "/gallery/" } } },
+                {
+                    filename: {
+                        in: ["image-product.jpg", "image-gallery-1.jpg", "image-gallery-2.jpg", "image-gallery-3.jpg"],
+                    },
+                },
+            ],
+        },
+        select: { id: true },
+    });
+
+    if (legacy.length === 0) return;
+    const assetIds = legacy.map((a) => a.id);
+
+    await prisma.productMedia.deleteMany({
+        where: { mediaAssetId: { in: assetIds } },
+    });
+    await prisma.categoryMedia.deleteMany({
+        where: { mediaAssetId: { in: assetIds } },
+    });
+    await prisma.mediaAsset.deleteMany({
+        where: { id: { in: assetIds } },
+    });
+}
+
 // Import path for filename extraction
 import path from "path";
 
@@ -589,6 +671,8 @@ async function main() {
     await seedAdminUser();
     await seedCatalog();
     await seedMediaAssets();
+    await cleanupLegacyCategoryPreview();
+    await cleanupLegacyDetailGallery();
     console.log("Seeding complete");
     await prisma.$disconnect();
 }

@@ -4,20 +4,19 @@ import CategoryProductCard from "./_components/category-product-card";
 
 const validCategories = ["headphones", "speakers", "earphones"];
 
-function getVariantUrl(
-    media: Array<{ mediaAsset: { variants: unknown; url: string } | null }> | undefined,
-    size: "mobile" | "tablet" | "desktop",
-): string {
-    const asset = media?.[0]?.mediaAsset;
+interface MediaAssetLike {
+    url: string;
+    variants: unknown;
+}
+
+function getAssetSrc(asset: MediaAssetLike | null | undefined): string {
     if (!asset) return "";
-
-    const variants = asset.variants as Record<string, { webp?: string; original?: string }> | null;
-    if (variants) {
-        const sizeVariants = variants[size] || variants.desktop || variants.original;
-        if (sizeVariants?.original) return sizeVariants.original;
-        if (sizeVariants?.webp) return sizeVariants.webp;
-    }
-
+    const variants = asset.variants as Record<
+        string,
+        { webp?: string; original?: string }
+    > | null;
+    if (variants?.desktop?.webp) return variants.desktop.webp;
+    if (variants?.desktop?.original) return variants.desktop.original;
     return asset.url;
 }
 
@@ -47,9 +46,8 @@ export default async function CategoryPage({
                 take: 1,
             },
             media: {
-                where: { purpose: "default", isPrimary: true },
                 include: { mediaAsset: true },
-                take: 1,
+                orderBy: [{ purpose: "asc" }, { displayOrder: "asc" }],
             },
         },
     });
@@ -57,18 +55,33 @@ export default async function CategoryPage({
     const cutoffDate = new Date();
     cutoffDate.setDate(cutoffDate.getDate() - 30);
 
-    const productCards = products.map((product) => ({
-        name: product.name,
-        src: {
-            mobile: getVariantUrl(product.media, "mobile"),
-            tablet: getVariantUrl(product.media, "tablet"),
-            desktop: getVariantUrl(product.media, "desktop"),
-        },
-        isNew: product.createdAt > cutoffDate,
-        description: product.description ?? "",
-        slug: product.slug,
-        categorySlug: category,
-    }));
+    const productCards = products.map((product) => {
+        const categoryMedia = product.media.filter(
+            (m) => m.purpose === "category",
+        );
+        const fallbackAsset =
+            product.media.find(
+                (m) => m.purpose === "default" && m.isPrimary,
+            )?.mediaAsset ?? null;
+
+        const assetForSize = (size: "mobile" | "tablet" | "desktop") =>
+            categoryMedia.find((m) =>
+                m.mediaAsset?.folder?.endsWith(`/${size}`),
+            )?.mediaAsset ?? fallbackAsset;
+
+        return {
+            name: product.name,
+            src: {
+                mobile: getAssetSrc(assetForSize("mobile")),
+                tablet: getAssetSrc(assetForSize("tablet")),
+                desktop: getAssetSrc(assetForSize("desktop")),
+            },
+            isNew: product.createdAt > cutoffDate,
+            description: product.description ?? "",
+            slug: product.slug,
+            categorySlug: category,
+        };
+    });
 
     return (
         <div>
@@ -82,11 +95,12 @@ export default async function CategoryPage({
                     <CategoryProductCard
                         name={product.name}
                         src={product.src}
-                        metadataTitle={category}
                         isNew={product.isNew}
                         description={product.description}
                         index={index}
                         key={product.slug}
+                        slug={product.slug}
+                        categorySlug={product.categorySlug}
                     />
                 ))}
             </div>
