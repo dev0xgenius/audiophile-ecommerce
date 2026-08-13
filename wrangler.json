@@ -1,0 +1,12 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "audiophile-ecommerce",
+  "main": "scripts/r2-emulator-worker.ts",
+  "compatibility_date": "2026-07-24",
+  "r2_buckets": [
+    {
+      "binding": "ASSETS_BUCKET",
+      "bucket_name": "audiophile-assets"
+    }
+  ]
+}

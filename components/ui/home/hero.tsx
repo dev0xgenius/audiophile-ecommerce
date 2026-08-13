@@ -31,7 +31,7 @@ export default async function Hero() {
                     </CardContent>
                     <CardFooter className="p-0 flex justify-center lg:justify-start">
                         <CardAction>
-                            <Link href="/headphones/xx99">
+                            <Link href="/headphones/xx99-mark-ii">
                                 <Button
                                     size="lg"
                                     className="font-bold tracking-widest"

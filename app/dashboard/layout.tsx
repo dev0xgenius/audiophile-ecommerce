@@ -20,7 +20,7 @@ export default function DashboardLayout({
             }
         >
             <AppSidebar variant="inset" />
-            <SidebarInset>
+            <SidebarInset className="bg-gray">
                 <SiteHeader />
                 {children}
             </SidebarInset>

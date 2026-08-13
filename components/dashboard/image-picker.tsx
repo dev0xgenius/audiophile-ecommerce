@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { useCallback, useEffect, useState } from "react"
 import {
     Dialog,
@@ -99,11 +100,12 @@ export function ImagePicker({ open, onOpenChange, onSelect, multiSelect }: Image
                                 }`}
                                 onClick={() => toggleSelect(asset.id)}
                             >
-                                <img
+                            <Image
                                     src={getUrl(asset)}
                                     alt={asset.altText ?? asset.filename}
-                                    className="size-full object-cover"
-                                    loading="lazy"
+                                    fill
+                                    sizes="(max-width: 768px) 50vw, 25vw"
+                                    className="object-cover"
                                 />
                                 {selectedIds.has(asset.id) && (
                                     <div className="absolute right-1.5 top-1.5 flex size-5 items-center justify-center rounded-full bg-primary text-[10px] text-white">

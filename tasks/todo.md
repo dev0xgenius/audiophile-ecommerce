@@ -1,64 +1,36 @@
-# Phase 4 — Build Checklist
+# Storefront Image & Cart Polish — Build Checklist
 
-**Legend:** `⬜` pending `🔄` in progress `✅` done `⏭️` skipped
+**Legend:** `⬜` pending `🔄` in progress `✅` done
 
-## Slice 0: Schema & Foundation
-- [ ] Task 0.1: DB Indexes
-- [ ] Task 0.2: Fix Stock Service Bugs
-- [ ] Task 0.3: Restore Product Fields (features, box)
-- [ ] Task 0.4: Seed Product Data
+## Task 1: Image fallback foundation
+- [x] `ImageFallback` component created (gray box + icon)
+- [x] `ResponsiveImage` converted to client component with empty-src guard + `onError` fallback
+- [x] Cart dialog thumbnails use fallback instead of "No img" text
 
-### Checkpoint: Slice 0
-- [ ] `npm run build` succeeds
-- [ ] `prisma db push` succeeds
-- [ ] Seed products exist in DB
+## Task 2: Seed pipeline fix
+- [x] `category-preview` → `purpose: "category"`; per-breakpoint folders derived from baseKey
+- [x] Cart assets linked to products (`purpose: "cart"`) via `CART_SLUG_BY_FILENAME`
+- [x] Legacy collided category-preview rows + orphan assets cleaned (idempotent)
+- [x] `npm run seed` re-run: 120 assets, 0 errors
 
-## Slice 1: Payments & Storefront End-to-End
-- [ ] Task 1.1: Email Service (Resend + templates)
-- [ ] Task 1.2: PSP Routing Service + Transaction Log
-- [ ] Task 1.3: Webhook Event Processing (charge.success/charge.failed)
-- [ ] Task 1.4: Checkout API
-- [ ] Task 1.5: Cart + Storefront Checkout Integration
+## Task 3: Category page images
+- [x] Query `purpose: "category"` media, resolve src by folder suffix (`/mobile|/tablet|/desktop`)
+- [x] Aspect-ratio rendering: `aspect-square md:aspect-[689/352] lg:aspect-[540/560]`, `fill` + `object-cover`
+- [x] Fallback to primary detail asset when no category media
 
-### Checkpoint: Slice 1
-- [ ] `npm run build` + `npm run lint` — 0 errors
-- [ ] Guest can browse → add to cart → checkout → pay → see confirmation
-- [ ] Order created in DB, stock reserved, email sent
-- [ ] Paystack webhook processes success/failure correctly
+## Task 4: Category product links
+- [x] `slug` + `categorySlug` passed to card; SEE PRODUCT → `/{category}/{slug}`
 
-## Slice 2: Storefront Prisma Migration
-- [ ] Task 2.1: Category Page → fetch from Prisma
-- [ ] Task 2.2: Product Detail Page → fetch from Prisma
-- [ ] Task 2.3: Home Page → fetch from Prisma
+## Task 5: Cart thumbnails
+- [x] Product page resolves `variants.thumbnail.webp` of cart asset; `AddToCart` `image` prop; dialog renders 64×64 thumb
 
-### Checkpoint: Slice 2
-- [ ] Storefront pages load real data from DB
-- [ ] "Add to Cart" uses real variant IDs
+## Task 6: Responsive cart dialog
+- [x] `useIsMobile` + `useSyncExternalStore` mount guard; `modal={isMobile}`
+- [x] md+: top-right (`md:top-[6.25rem] md:right-6 xl:right-[calc((100vw-1110px)/2)]`, 377px, max-h scroll), no overlay
+- [x] Mobile: centered modal with overlay unchanged
 
-## Slice 3: Operational Completeness
-- [ ] Task 3.1: Staff & Role Management UI
-- [ ] Task 3.2: Audit Log UI
-- [ ] Task 3.3: Manual Order Creation
-
-### Checkpoint: Slice 3
-- [ ] Staff can be invited, activated, deactivated
-- [ ] Roles and permissions manageable via UI
-- [ ] Audit log page loads with real data
-
-## Slice 4: Commerce Features
-- [ ] Task 4.1: Bulk Operations (Products)
-- [ ] Task 4.2: Refunds & Returns UI
-
-### Checkpoint: Slice 4
-- [ ] CSV import/export works
-- [ ] Refund routed through Paystack
-- [ ] Return management (approve/reject/restock)
-
-## Slice 5: Polish
-- [ ] Task 5.1: Accessibility Audit & Fixes
-- [ ] Task 5.2: Performance & Edge Cases
-
-### Checkpoint: Complete
-- [ ] All acceptance criteria met
-- [ ] End-to-end flow: storefront checkout → payment → order → email
-- [ ] Dashboard fully functional for all modules
+## Verification
+- [x] `npm run lint` — 0 errors
+- [x] `npm run build` — success (48/48)
+- [x] DB query: 3 category assets + 1 cart asset per product; 0 legacy orphans
+- [x] Runtime: `/headphones` serves `category-preview/{size}` webp per breakpoint; links resolve; cart thumb URL on product page

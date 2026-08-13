@@ -9,10 +9,12 @@ export function AddToCart({
     variantId,
     name,
     price,
+    image,
 }: {
     variantId: string;
     name: string;
     price: number;
+    image?: string;
 }) {
     const [quantity, setQuantity] = useState(1);
 
@@ -27,7 +29,9 @@ export function AddToCart({
                 >
                     -
                 </button>
-                <span className="text-sm font-bold tracking-widest">{quantity}</span>
+                <span className="text-sm font-bold tracking-widest">
+                    {quantity}
+                </span>
                 <button
                     type="button"
                     onClick={() => setQuantity((q) => q + 1)}
@@ -38,9 +42,10 @@ export function AddToCart({
                 </button>
             </span>
             <Button
-                className="flex-1"
+                size="lg"
+                className="w-max"
                 onClick={() => {
-                    addToCart({ variantId, name, price, quantity });
+                    addToCart({ variantId, name, price, quantity, image });
                     toast.success(`${name} added to cart`);
                 }}
             >

@@ -18,11 +18,6 @@ export interface RoleRow {
     createdAt: string
 }
 
-interface RolesResponse {
-    data: RoleRow[]
-    meta: { page: number; pageSize: number; total: number; totalPages: number }
-}
-
 export default function RolesPage() {
     const [roles, setRoles] = useState<RoleRow[]>([])
     const [loading, setLoading] = useState(true)

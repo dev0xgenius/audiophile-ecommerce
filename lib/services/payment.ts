@@ -1,6 +1,7 @@
 import { prisma } from "@/lib/prisma";
 import { createAdapter } from "@/lib/psp/factory";
 import type { PaymentIntentRequest, RefundRequest } from "@/lib/psp/types";
+import type { Prisma } from "@/generated/prisma/client";
 
 export async function selectPSP(currency = "USD", region?: string) {
     const connections = await prisma.pSPConnection.findMany({
@@ -56,7 +57,7 @@ export async function createPayment(orderId: string, pspConnectionId: string, ca
             amount: order.total,
             currency: order.currency,
             status: "pending",
-            metadata: { accessCode: intent.clientSecret } as any,
+            metadata: { accessCode: intent.clientSecret } as Prisma.InputJsonValue,
         },
     });
 

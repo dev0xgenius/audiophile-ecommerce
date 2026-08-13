@@ -14,15 +14,14 @@ import bestGearDesktop from "@/assets/shared/desktop/image-best-gear.jpg";
 export default function AboutInfo() {
     return (
         <Card className="container max-w-[1110] m-auto p-0 shadow-none border-0 text-center mt-20 md:mt-[120] gap-8 md:gap-16 lg:flex-row-reverse lg:text-left lg:items-center lg:gap-24">
-            <CardHeader className="w-full border border-red-700 p-0 lg:w-1/2">
-                <CardDescription className="overflow-hidden rounded-2xl w-full border border-red-700">
+            <CardHeader className="w-full p-0 lg:w-1/2">
+                <CardDescription className="overflow-hidden rounded-2xl w-full">
                     <ResponsiveImage
                         mobileSrc={bestGearMobile}
                         tabletSrc={bestGearTablet}
                         desktopSrc={bestGearDesktop}
                         width={360}
                         height={720}
-                        className="w-full"
                         alt="Man with quality headphones"
                     />
                 </CardDescription>

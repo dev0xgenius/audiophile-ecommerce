@@ -1,105 +1,54 @@
-# Implementation Plan: Phase 4 — Scale & Polish
+# Implementation Plan: Storefront Image & Cart Polish
 
-**Updated:** 2026-07-21
+**Updated:** 2026-08-06
 
 ## Overview
 
-Deliver production-ready end-to-end checkout flow (storefront → Paystack → order → email confirmation), migrate the storefront to use Prisma data, then fill remaining operational gaps: staff/role management, audit log, bulk operations, refunds/returns, and accessibility/performance polish.
+Five storefront fixes: graceful image fallbacks, correct per-breakpoint category-preview images at Figma display sizes, working category product links, cart dialog thumbnails, and a responsive cart dialog (top-right dropdown without overlay on md+).
 
 ## Architecture Decisions
 
-- **Email**: Resend + react-email for typed templates
-- **PSP**: Paystack only (Stripe deferred). Routing service for future multi-PSP
-- **Cart**: localStorage-based client cart (no server-side cart API)
-- **Storefront Data**: Migrate from hardcoded to Prisma-fetched data. Images stay as local asset imports (bundled at build time)
-- **Backorder**: Deferred to future phase
-- **Checkout**: Real flow: product page → localStorage cart → checkout form → POST /api/checkout → Paystack redirect → webhook → confirm order + reserve stock + email confirmation
-- **Audit Log**: Server Component page reusing existing AuditLogEntry model
+- **Category images (R2/seed pipeline fix):** `seedMediaAssets` now derives a unique `folder` from the manifest `baseKey` for `category-preview` entries (`products/{slug}/category-preview/{size}`), removing the `@@unique([folder, filename])` collision that collapsed mobile/tablet/desktop into one asset. Linked via new `purpose: "category"`. Each asset keeps standard `{thumbnail, medium, desktop, original}` derivative keys so the dashboard gallery keeps working.
+- **Cart thumbnails (R2):** Seed links the existing `assets/cart/*.jpg` uploads (folder `cart`) to products via `CART_SLUG_BY_FILENAME` with `purpose: "cart"`. Product page resolves `variants.thumbnail.webp` and passes it through `AddToCart` into the localStorage cart item.
+- **Image fallback:** Shared `ImageFallback` component (gray box + lucide icon). `ResponsiveImage` converted to a client component with empty-src guard and `onError` swap. Cart dialog thumbnails use the same fallback.
+- **Cart dialog on md+:** True non-modal via `useIsMobile()` + `useSyncExternalStore` mount guard (avoids hydration mismatch and lint rule). `modal={false}` renders no overlay at all; content repositioned top-right with tailwind-merge overrides.
+- **Category display sizes (Figma):** mobile 327×327 (`aspect-square`), tablet 689×352 (`md:aspect-[689/352]`), desktop 540×560 (`lg:aspect-[540/560]`), rendered with `fill` + `object-cover` on a gray rounded box.
 
 ## Task List
 
-### Slice 0: Schema & Foundation
-
-- [ ] **0.1 — DB Indexes**: Add composite indexes on Order(status+createdAt), StockLedgerEntry(variantId+timestamp), AuditLogEntry(timestamp), Product(status)
-- [ ] **0.2 — Fix Stock Service**: Fix beforeQuantity/afterQuantity hardcoded to 0 in reserveStock()/releaseStock()
-- [ ] **0.3 — Restore Product Fields**: Add `features String[]` and `box Json?` to Product model. Run prisma db push
-- [ ] **0.4 — Seed Product Data**: Seed categories, products, variants matching storefront content
-
-### Checkpoint: Slice 0
-- [ ] npm run build succeeds
-- [ ] prisma db push succeeds
-- [ ] Seed products exist in DB
-
-### Slice 1: Payments & Storefront End-to-End
-
-- [ ] **1.1 — Email Service**: Resend SDK wrapper + order-confirmation and order-shipped react-email templates
-- [ ] **1.2 — PSP Routing Service**: lib/services/payment.ts with selectPSP(), createPayment(), processRefund(). /api/payments transaction log
-- [ ] **1.3 — Webhook Event Processing**: Handle charge.success (order→paid, reserveStock, email) and charge.failed (order→cancelled, releaseStock). Idempotent via pspEventId
-- [ ] **1.4 — Checkout API**: POST /api/checkout — validate stock, create Order+LineItems, reserve stock, init Paystack, return authorization_url
-- [ ] **1.5 — Cart + Storefront Checkout**: localStorage cart on product page. Wire checkout page to API. Order confirmation page
-
-### Checkpoint: Slice 1
-- [ ] Guest can browse → add to cart → checkout → pay → see confirmation
-- [ ] Order created in DB, stock reserved, email sent
-- [ ] Paystack webhook processes success/failure correctly
-
-### Slice 2: Storefront Prisma Migration
-
-- [ ] **2.1 — Category Page**: Fetch products from Prisma by category slug
-- [ ] **2.2 — Product Detail Page**: Fetch by slug from Prisma, features/box from new fields
-- [ ] **2.3 — Home Page**: Fetch featured products from Prisma
-
-### Checkpoint: Slice 2
-- [ ] All storefront pages load real data from DB
-- [ ] "Add to Cart" uses real variant IDs from Prisma
-
-### Slice 3: Operational Completeness
-
-- [ ] **3.1 — Staff & Role Management UI**: Users page, roles page with permission matrix, invite/deactivate
-- [ ] **3.2 — Audit Log UI**: /dashboard/audit with paginated table + filters
-- [ ] **3.3 — Manual Order Creation**: POST /api/orders (staff source) + order creation dialog
-
-### Checkpoint: Slice 3
-- [ ] Staff management works end-to-end
-- [ ] Audit log page renders real data
-- [ ] Manual order creation works
-
-### Slice 4: Commerce Features
-
-- [ ] **4.1 — Bulk Operations**: CSV import/export, bulk update API, toolbar on products table
-- [ ] **4.2 — Refunds & Returns UI**: Refund API + /dashboard/returns with approve/reject/restock
-
-### Checkpoint: Slice 4
-- [ ] CSV import/export works correctly
-- [ ] Refund routed through Paystack
-- [ ] Return management functional
-
-### Slice 5: Polish
-
-- [ ] **5.1 — Accessibility Audit**: Keyboard nav, color contrast, aria labels, alt text
-- [ ] **5.2 — Performance & Edge Cases**: Session timeout config, GDPR utility, chargeback tracking, pagination defaults
+### Completed
+- [x] Task 1: Image fallback foundation (`ImageFallback`, client `ResponsiveImage`, cart thumb fallback)
+- [x] Task 2: Seed pipeline fix — per-breakpoint category-preview MediaAssets + cart thumb linking + legacy cleanup
+- [x] Task 3: Category page — `purpose: "category"` media resolved by folder suffix, aspect-ratio rendering
+- [x] Task 4: Category product links — `slug`/`categorySlug` passed to `CategoryProductCard`
+- [x] Task 5: Cart thumbnails end-to-end — seed link → product page resolve → `AddToCart image` prop → dialog `CartThumb`
+- [x] Task 6: Responsive cart dialog — `useIsMobile` + `useMounted` + top-right `md:` positioning classes
 
 ### Checkpoint: Complete
-- [ ] All acceptance criteria met
-- [ ] End-to-end flow: storefront checkout → payment → order → email
-- [ ] Dashboard fully functional for all modules
+- [x] `npm run lint` — 0 errors
+- [x] `npm run build` — success (48/48 routes)
+- [x] Seed re-run — 120 assets, idempotent, legacy rows cleaned (0 orphans)
+- [x] DB verified: each product has 3 category-preview assets (`/mobile|/tablet|/desktop`) + 1 cart asset
+- [x] Runtime verified: category page serves `category-preview/{size}` webp per breakpoint; links resolve; cart thumbnail URL resolves on product page
 
-## Risks and Mitigations
+## Files Touched
+
+| File | Change |
+|---|---|
+| `components/ui/image-fallback.tsx` | New shared fallback component |
+| `components/ui/responsive-image.tsx` | Client component; empty-src + `onError` fallback; skips invalid sources |
+| `components/ui/cart-dialog.tsx` | `CartThumb` fallback; `useMounted` + `useIsMobile`; `modal={isMobile}`; `md:` top-right positioning |
+| `lib/seed.ts` | `category-preview`→`category` purpose, per-breakpoint folders, cart linking map, legacy cleanup |
+| `app/(shop)/[category]/page.tsx` | `purpose:"category"` query, folder-suffix src resolution, `slug`/`categorySlug` props |
+| `app/(shop)/[category]/_components/category-product-card.tsx` | Aspect-ratio box + `fill`/`object-cover`; removed `imgWidth/imgHeight`/`metadataTitle` |
+| `components/ui/add-to-cart.tsx` | Optional `image` prop |
+| `app/(shop)/[category]/[product]/page.tsx` | Resolves cart thumbnail, passes `image` to `AddToCart` |
+
+## Risks & Mitigations
 
 | Risk | Impact | Mitigation |
 |---|---|---|
-| Checkout complexity (PSP redirect + webhook + stock + email) | High | Build API first, test with curl before UI integration |
-| Paystack webhook duplicates | High | Idempotency via pspEventId — check before processing |
-| Stock race conditions | Medium | reserveStock uses Prisma $transaction |
-| Resend sandbox (verified recipients only) | Medium | Note in dev setup; use verified email for testing |
-| Storefront image-to-Prisma mapping | Medium | Keep local asset imports; only migrate text data for Phase 4 |
-
-## Open Questions (Resolved)
-
-| Question | Decision |
-|---|---|
-| Storefront data source | Migrate to Prisma |
-| Slice order | Checkout first (Slice 1), then storefront migration (Slice 2) |
-| PSP scope | Paystack-only (Stripe deferred) |
-| Cart approach | localStorage (no server-side cart API) |
-| Backorder | Deferred to future phase |
+| Seed cleanup deleting referenced assets | High | Cleanup targets only `image-category-page-preview.jpg` outside `/category-preview/` folders; verified 0 orphans after reseed |
+| ResponsiveImage client conversion serialization | Med | All consumer props are plain data; all 8 usages verified compatible |
+| `modal` toggle hydration mismatch | Med | `useSyncExternalStore` mount guard; SSR renders trigger-only |
+| tailwind-merge dialog positioning overrides | Low | Verified `md:` overrides of `top/left/translate/max-w` in rendered HTML |

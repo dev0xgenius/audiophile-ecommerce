@@ -26,7 +26,7 @@ export default function ProductList() {
     return (
         <ul className="flex flex-col gap-6 md:gap-8">
             <li>
-                <ProductCard className="bg-primary text-white relative lg:flex-row lg:items-center lg:gap-16">
+                <ProductCard className="bg-primary text-white relative lg:max-h-[560] lg:flex-row lg:items-center lg:gap-16">
                     <div className="relative w-full flex justify-center items-center m-auto lg:w-1/2">
                         <PatternCircles className="absolute w-[558] md:w-max h-auto" />
                         <ResponsiveImage

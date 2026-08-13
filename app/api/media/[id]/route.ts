@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { updateMediaSchema } from "@/lib/validations/media";
 import { withPermission } from "@/lib/auth/permissions";
+import { deleteFile, getKeyFromUrl } from "@/lib/storage/s3";
 
 function getId(request: NextRequest): string {
     return request.nextUrl.pathname.split("/media/")[1]?.split("/")[0] ?? "";
@@ -52,6 +53,26 @@ export const DELETE = withPermission(async (request: NextRequest) => {
             { status: 404 },
         );
     }
+
+    const keysToDelete: string[] = [];
+    const mainKey = getKeyFromUrl(media.url);
+    if (mainKey) keysToDelete.push(mainKey);
+
+    if (media.variants && typeof media.variants === "object") {
+        const variants = media.variants as Record<string, { webp?: string; original?: string }>;
+        for (const variant of Object.values(variants)) {
+            if (variant.webp) {
+                const k = getKeyFromUrl(variant.webp);
+                if (k) keysToDelete.push(k);
+            }
+            if (variant.original) {
+                const k = getKeyFromUrl(variant.original);
+                if (k) keysToDelete.push(k);
+            }
+        }
+    }
+
+    await Promise.allSettled(keysToDelete.map((key) => deleteFile(key)));
 
     await prisma.mediaAsset.delete({ where: { id } });
 

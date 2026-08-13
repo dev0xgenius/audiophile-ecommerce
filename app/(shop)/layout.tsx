@@ -6,7 +6,7 @@ export default function CatgoryPageLayout({
     return (
         <div>
             <div>{children}</div>
-            <span className="mt-24 px-6 block container mx-auto max-w-[1110]">
+            <span className="mt-24 px-6 md:px-10 xl:px-0 block container mx-auto max-w-[1110]">
                 <CategoryList />
             </span>
         </div>

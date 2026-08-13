@@ -7,6 +7,7 @@ function getConfig() {
     const accessKeyId = process.env.S3_ACCESS_KEY;
     const secretAccessKey = process.env.S3_SECRET_KEY;
     const bucket = process.env.S3_BUCKET;
+    const publicUrl = process.env.S3_PUBLIC_URL || process.env.R2_PUBLIC_URL;
 
     if (!endpoint || !accessKeyId || !secretAccessKey || !bucket) {
         throw new Error(
@@ -14,7 +15,7 @@ function getConfig() {
         );
     }
 
-    return { endpoint, region, accessKeyId, secretAccessKey, bucket };
+    return { endpoint, region, accessKeyId, secretAccessKey, bucket, publicUrl };
 }
 
 function createClient(): S3Client {
@@ -32,7 +33,7 @@ export async function uploadFile(
     key: string,
     mimeType: string,
 ): Promise<{ url: string; key: string }> {
-    const { bucket, endpoint } = getConfig();
+    const { bucket, publicUrl, endpoint } = getConfig();
     const client = createClient();
 
     await client.send(
@@ -44,7 +45,10 @@ export async function uploadFile(
         })
     );
 
-    const url = `${endpoint}/${bucket}/${key}`;
+    const url = publicUrl
+        ? `${publicUrl.replace(/\/$/, "")}/${key}`
+        : `${endpoint}/${bucket}/${key}`;
+
     return { url, key };
 }
 
@@ -58,6 +62,20 @@ export async function deleteFile(key: string): Promise<void> {
             Key: key,
         })
     );
+}
+
+export function getKeyFromUrl(url: string): string | null {
+    const { publicUrl, endpoint, bucket } = getConfig();
+    const pubPrefix = publicUrl ? `${publicUrl.replace(/\/$/, "")}/` : null;
+    const endPrefix = `${endpoint}/${bucket}/`;
+
+    if (pubPrefix && url.startsWith(pubPrefix)) {
+        return url.slice(pubPrefix.length);
+    }
+    if (url.startsWith(endPrefix)) {
+        return url.slice(endPrefix.length);
+    }
+    return null;
 }
 
 export async function getSignedDownloadUrl(key: string, expiresIn = 3600): Promise<string> {

@@ -1,5 +1,12 @@
 import crypto from "node:crypto";
-import type { PSPAdapter, PaymentIntentRequest, PaymentIntentResult, RefundRequest, RefundResult, WebhookEvent } from "./types";
+import type {
+    PSPAdapter,
+    PaymentIntentRequest,
+    PaymentIntentResult,
+    RefundRequest,
+    RefundResult,
+    WebhookEvent,
+} from "./types";
 
 const PAYSTACK_API = "https://api.paystack.co";
 
@@ -25,12 +32,16 @@ export class PaystackAdapter implements PSPAdapter {
         });
         const json = await res.json();
         if (!res.ok || json.status === false) {
-            throw new Error(`Paystack API error: ${json.message ?? res.statusText}`);
+            throw new Error(
+                `Paystack API error: ${json.message ?? res.statusText}`,
+            );
         }
         return json;
     }
 
-    async createPaymentIntent(req: PaymentIntentRequest): Promise<PaymentIntentResult> {
+    async createPaymentIntent(
+        req: PaymentIntentRequest,
+    ): Promise<PaymentIntentResult> {
         const response = await this.request("POST", "/transaction/initialize", {
             amount: String(Math.round(req.amount * 100)),
             currency: req.currency.toUpperCase(),
@@ -61,7 +72,10 @@ export class PaystackAdapter implements PSPAdapter {
         };
     }
 
-    async parseWebhook(payload: string, signature: string): Promise<WebhookEvent> {
+    async parseWebhook(
+        payload: string,
+        signature: string,
+    ): Promise<WebhookEvent> {
         const hash = crypto
             .createHmac("sha512", this.secretKey)
             .update(payload)

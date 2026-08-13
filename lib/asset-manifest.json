@@ -1,0 +1,3586 @@
+{
+  "assets/cart/image-xx59-headphones.jpg": {
+    "baseKey": "assets/cart/image-xx59-headphones",
+    "originalExt": "jpg",
+    "width": 150,
+    "height": 150,
+    "type": "cart",
+    "productSlug": null,
+    "variantSlug": null,
+    "size": "single",
+    "galleryIndex": null,
+    "folder": "cart",
+    "filename": "image-xx59-headphones.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/cart/image-xx59-headphones__thumbnail.webp",
+        "originalKey": "assets/cart/image-xx59-headphones__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/cart/image-xx59-headphones__medium.webp",
+        "originalKey": "assets/cart/image-xx59-headphones__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/cart/image-xx59-headphones__desktop.webp",
+        "originalKey": "assets/cart/image-xx59-headphones__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/cart/image-xx59-headphones__original.webp",
+        "originalKey": "assets/cart/image-xx59-headphones__original.jpg"
+      }
+    }
+  },
+  "assets/cart/image-xx99-mark-one-headphones.jpg": {
+    "baseKey": "assets/cart/image-xx99-mark-one-headphones",
+    "originalExt": "jpg",
+    "width": 150,
+    "height": 150,
+    "type": "cart",
+    "productSlug": null,
+    "variantSlug": null,
+    "size": "single",
+    "galleryIndex": null,
+    "folder": "cart",
+    "filename": "image-xx99-mark-one-headphones.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/cart/image-xx99-mark-one-headphones__thumbnail.webp",
+        "originalKey": "assets/cart/image-xx99-mark-one-headphones__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/cart/image-xx99-mark-one-headphones__medium.webp",
+        "originalKey": "assets/cart/image-xx99-mark-one-headphones__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/cart/image-xx99-mark-one-headphones__desktop.webp",
+        "originalKey": "assets/cart/image-xx99-mark-one-headphones__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/cart/image-xx99-mark-one-headphones__original.webp",
+        "originalKey": "assets/cart/image-xx99-mark-one-headphones__original.jpg"
+      }
+    }
+  },
+  "assets/cart/image-xx99-mark-two-headphones.jpg": {
+    "baseKey": "assets/cart/image-xx99-mark-two-headphones",
+    "originalExt": "jpg",
+    "width": 150,
+    "height": 150,
+    "type": "cart",
+    "productSlug": null,
+    "variantSlug": null,
+    "size": "single",
+    "galleryIndex": null,
+    "folder": "cart",
+    "filename": "image-xx99-mark-two-headphones.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/cart/image-xx99-mark-two-headphones__thumbnail.webp",
+        "originalKey": "assets/cart/image-xx99-mark-two-headphones__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/cart/image-xx99-mark-two-headphones__medium.webp",
+        "originalKey": "assets/cart/image-xx99-mark-two-headphones__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/cart/image-xx99-mark-two-headphones__desktop.webp",
+        "originalKey": "assets/cart/image-xx99-mark-two-headphones__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/cart/image-xx99-mark-two-headphones__original.webp",
+        "originalKey": "assets/cart/image-xx99-mark-two-headphones__original.jpg"
+      }
+    }
+  },
+  "assets/cart/image-yx1-earphones.jpg": {
+    "baseKey": "assets/cart/image-yx1-earphones",
+    "originalExt": "jpg",
+    "width": 150,
+    "height": 150,
+    "type": "cart",
+    "productSlug": null,
+    "variantSlug": null,
+    "size": "single",
+    "galleryIndex": null,
+    "folder": "cart",
+    "filename": "image-yx1-earphones.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/cart/image-yx1-earphones__thumbnail.webp",
+        "originalKey": "assets/cart/image-yx1-earphones__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/cart/image-yx1-earphones__medium.webp",
+        "originalKey": "assets/cart/image-yx1-earphones__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/cart/image-yx1-earphones__desktop.webp",
+        "originalKey": "assets/cart/image-yx1-earphones__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/cart/image-yx1-earphones__original.webp",
+        "originalKey": "assets/cart/image-yx1-earphones__original.jpg"
+      }
+    }
+  },
+  "assets/cart/image-zx7-speaker.jpg": {
+    "baseKey": "assets/cart/image-zx7-speaker",
+    "originalExt": "jpg",
+    "width": 150,
+    "height": 150,
+    "type": "cart",
+    "productSlug": null,
+    "variantSlug": null,
+    "size": "single",
+    "galleryIndex": null,
+    "folder": "cart",
+    "filename": "image-zx7-speaker.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/cart/image-zx7-speaker__thumbnail.webp",
+        "originalKey": "assets/cart/image-zx7-speaker__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/cart/image-zx7-speaker__medium.webp",
+        "originalKey": "assets/cart/image-zx7-speaker__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/cart/image-zx7-speaker__desktop.webp",
+        "originalKey": "assets/cart/image-zx7-speaker__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/cart/image-zx7-speaker__original.webp",
+        "originalKey": "assets/cart/image-zx7-speaker__original.jpg"
+      }
+    }
+  },
+  "assets/cart/image-zx9-speaker.jpg": {
+    "baseKey": "assets/cart/image-zx9-speaker",
+    "originalExt": "jpg",
+    "width": 150,
+    "height": 150,
+    "type": "cart",
+    "productSlug": null,
+    "variantSlug": null,
+    "size": "single",
+    "galleryIndex": null,
+    "folder": "cart",
+    "filename": "image-zx9-speaker.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/cart/image-zx9-speaker__thumbnail.webp",
+        "originalKey": "assets/cart/image-zx9-speaker__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/cart/image-zx9-speaker__medium.webp",
+        "originalKey": "assets/cart/image-zx9-speaker__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/cart/image-zx9-speaker__desktop.webp",
+        "originalKey": "assets/cart/image-zx9-speaker__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/cart/image-zx9-speaker__original.webp",
+        "originalKey": "assets/cart/image-zx9-speaker__original.jpg"
+      }
+    }
+  },
+  "assets/checkout/icon-cash-on-delivery.svg": {
+    "baseKey": "assets/checkout/icon-cash-on-delivery",
+    "originalExt": "svg",
+    "width": 0,
+    "height": 0,
+    "type": "checkout",
+    "productSlug": null,
+    "variantSlug": null,
+    "size": "single",
+    "galleryIndex": null,
+    "folder": "checkout",
+    "filename": "icon-cash-on-delivery.svg",
+    "variants": {}
+  },
+  "assets/checkout/icon-order-confirmation.svg": {
+    "baseKey": "assets/checkout/icon-order-confirmation",
+    "originalExt": "svg",
+    "width": 0,
+    "height": 0,
+    "type": "checkout",
+    "productSlug": null,
+    "variantSlug": null,
+    "size": "single",
+    "galleryIndex": null,
+    "folder": "checkout",
+    "filename": "icon-order-confirmation.svg",
+    "variants": {}
+  },
+  "assets/favicon-32x32.png": {
+    "baseKey": "assets/icons/favicon-32x32",
+    "originalExt": "png",
+    "width": 32,
+    "height": 32,
+    "type": "icon",
+    "productSlug": null,
+    "variantSlug": null,
+    "size": "single",
+    "galleryIndex": null,
+    "folder": "favicon-32x32.png",
+    "filename": "favicon-32x32.png",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/icons/favicon-32x32__thumbnail.webp",
+        "originalKey": "assets/icons/favicon-32x32__thumbnail.png"
+      },
+      "medium": {
+        "webpKey": "assets/icons/favicon-32x32__medium.webp",
+        "originalKey": "assets/icons/favicon-32x32__medium.png"
+      },
+      "desktop": {
+        "webpKey": "assets/icons/favicon-32x32__desktop.webp",
+        "originalKey": "assets/icons/favicon-32x32__desktop.png"
+      },
+      "original": {
+        "webpKey": "assets/icons/favicon-32x32__original.webp",
+        "originalKey": "assets/icons/favicon-32x32__original.png"
+      }
+    }
+  },
+  "assets/home/desktop/image-earphones-yx1.jpg": {
+    "baseKey": "assets/home/desktop/image-earphones-yx1",
+    "originalExt": "jpg",
+    "width": 540,
+    "height": 320,
+    "type": "home-page",
+    "productSlug": null,
+    "variantSlug": null,
+    "size": "desktop",
+    "galleryIndex": null,
+    "folder": "home",
+    "filename": "image-earphones-yx1.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/home/desktop/image-earphones-yx1__thumbnail.webp",
+        "originalKey": "assets/home/desktop/image-earphones-yx1__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/home/desktop/image-earphones-yx1__medium.webp",
+        "originalKey": "assets/home/desktop/image-earphones-yx1__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/home/desktop/image-earphones-yx1__desktop.webp",
+        "originalKey": "assets/home/desktop/image-earphones-yx1__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/home/desktop/image-earphones-yx1__original.webp",
+        "originalKey": "assets/home/desktop/image-earphones-yx1__original.jpg"
+      }
+    }
+  },
+  "assets/home/desktop/image-hero.jpg": {
+    "baseKey": "assets/home/desktop/image-hero",
+    "originalExt": "jpg",
+    "width": 1440,
+    "height": 729,
+    "type": "home-page",
+    "productSlug": null,
+    "variantSlug": null,
+    "size": "desktop",
+    "galleryIndex": null,
+    "folder": "home",
+    "filename": "image-hero.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/home/desktop/image-hero__thumbnail.webp",
+        "originalKey": "assets/home/desktop/image-hero__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/home/desktop/image-hero__medium.webp",
+        "originalKey": "assets/home/desktop/image-hero__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/home/desktop/image-hero__desktop.webp",
+        "originalKey": "assets/home/desktop/image-hero__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/home/desktop/image-hero__original.webp",
+        "originalKey": "assets/home/desktop/image-hero__original.jpg"
+      }
+    }
+  },
+  "assets/home/desktop/image-speaker-zx7.jpg": {
+    "baseKey": "assets/home/desktop/image-speaker-zx7",
+    "originalExt": "jpg",
+    "width": 1110,
+    "height": 320,
+    "type": "home-page",
+    "productSlug": null,
+    "variantSlug": null,
+    "size": "desktop",
+    "galleryIndex": null,
+    "folder": "home",
+    "filename": "image-speaker-zx7.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/home/desktop/image-speaker-zx7__thumbnail.webp",
+        "originalKey": "assets/home/desktop/image-speaker-zx7__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/home/desktop/image-speaker-zx7__medium.webp",
+        "originalKey": "assets/home/desktop/image-speaker-zx7__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/home/desktop/image-speaker-zx7__desktop.webp",
+        "originalKey": "assets/home/desktop/image-speaker-zx7__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/home/desktop/image-speaker-zx7__original.webp",
+        "originalKey": "assets/home/desktop/image-speaker-zx7__original.jpg"
+      }
+    }
+  },
+  "assets/home/desktop/image-speaker-zx9.png": {
+    "baseKey": "assets/home/desktop/image-speaker-zx9",
+    "originalExt": "png",
+    "width": 756,
+    "height": 918,
+    "type": "home-page",
+    "productSlug": null,
+    "variantSlug": null,
+    "size": "desktop",
+    "galleryIndex": null,
+    "folder": "home",
+    "filename": "image-speaker-zx9.png",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/home/desktop/image-speaker-zx9__thumbnail.webp",
+        "originalKey": "assets/home/desktop/image-speaker-zx9__thumbnail.png"
+      },
+      "medium": {
+        "webpKey": "assets/home/desktop/image-speaker-zx9__medium.webp",
+        "originalKey": "assets/home/desktop/image-speaker-zx9__medium.png"
+      },
+      "desktop": {
+        "webpKey": "assets/home/desktop/image-speaker-zx9__desktop.webp",
+        "originalKey": "assets/home/desktop/image-speaker-zx9__desktop.png"
+      },
+      "original": {
+        "webpKey": "assets/home/desktop/image-speaker-zx9__original.webp",
+        "originalKey": "assets/home/desktop/image-speaker-zx9__original.png"
+      }
+    }
+  },
+  "assets/home/desktop/pattern-circles.svg": {
+    "baseKey": "assets/home/desktop/pattern-circles",
+    "originalExt": "svg",
+    "width": 0,
+    "height": 0,
+    "type": "home-page",
+    "productSlug": null,
+    "variantSlug": null,
+    "size": "desktop",
+    "galleryIndex": null,
+    "folder": "home",
+    "filename": "pattern-circles.svg",
+    "variants": {}
+  },
+  "assets/home/mobile/image-earphones-yx1.jpg": {
+    "baseKey": "assets/home/mobile/image-earphones-yx1",
+    "originalExt": "jpg",
+    "width": 654,
+    "height": 400,
+    "type": "home-page",
+    "productSlug": null,
+    "variantSlug": null,
+    "size": "mobile",
+    "galleryIndex": null,
+    "folder": "home",
+    "filename": "image-earphones-yx1.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/home/mobile/image-earphones-yx1__thumbnail.webp",
+        "originalKey": "assets/home/mobile/image-earphones-yx1__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/home/mobile/image-earphones-yx1__medium.webp",
+        "originalKey": "assets/home/mobile/image-earphones-yx1__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/home/mobile/image-earphones-yx1__desktop.webp",
+        "originalKey": "assets/home/mobile/image-earphones-yx1__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/home/mobile/image-earphones-yx1__original.webp",
+        "originalKey": "assets/home/mobile/image-earphones-yx1__original.jpg"
+      }
+    }
+  },
+  "assets/home/mobile/image-header.jpg": {
+    "baseKey": "assets/home/mobile/image-header",
+    "originalExt": "jpg",
+    "width": 750,
+    "height": 1200,
+    "type": "home-page",
+    "productSlug": null,
+    "variantSlug": null,
+    "size": "mobile",
+    "galleryIndex": null,
+    "folder": "home",
+    "filename": "image-header.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/home/mobile/image-header__thumbnail.webp",
+        "originalKey": "assets/home/mobile/image-header__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/home/mobile/image-header__medium.webp",
+        "originalKey": "assets/home/mobile/image-header__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/home/mobile/image-header__desktop.webp",
+        "originalKey": "assets/home/mobile/image-header__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/home/mobile/image-header__original.webp",
+        "originalKey": "assets/home/mobile/image-header__original.jpg"
+      }
+    }
+  },
+  "assets/home/mobile/image-speaker-zx7.jpg": {
+    "baseKey": "assets/home/mobile/image-speaker-zx7",
+    "originalExt": "jpg",
+    "width": 654,
+    "height": 640,
+    "type": "home-page",
+    "productSlug": null,
+    "variantSlug": null,
+    "size": "mobile",
+    "galleryIndex": null,
+    "folder": "home",
+    "filename": "image-speaker-zx7.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/home/mobile/image-speaker-zx7__thumbnail.webp",
+        "originalKey": "assets/home/mobile/image-speaker-zx7__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/home/mobile/image-speaker-zx7__medium.webp",
+        "originalKey": "assets/home/mobile/image-speaker-zx7__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/home/mobile/image-speaker-zx7__desktop.webp",
+        "originalKey": "assets/home/mobile/image-speaker-zx7__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/home/mobile/image-speaker-zx7__original.webp",
+        "originalKey": "assets/home/mobile/image-speaker-zx7__original.jpg"
+      }
+    }
+  },
+  "assets/home/mobile/image-speaker-zx9.png": {
+    "baseKey": "assets/home/mobile/image-speaker-zx9",
+    "originalExt": "png",
+    "width": 320,
+    "height": 388,
+    "type": "home-page",
+    "productSlug": null,
+    "variantSlug": null,
+    "size": "mobile",
+    "galleryIndex": null,
+    "folder": "home",
+    "filename": "image-speaker-zx9.png",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/home/mobile/image-speaker-zx9__thumbnail.webp",
+        "originalKey": "assets/home/mobile/image-speaker-zx9__thumbnail.png"
+      },
+      "medium": {
+        "webpKey": "assets/home/mobile/image-speaker-zx9__medium.webp",
+        "originalKey": "assets/home/mobile/image-speaker-zx9__medium.png"
+      },
+      "desktop": {
+        "webpKey": "assets/home/mobile/image-speaker-zx9__desktop.webp",
+        "originalKey": "assets/home/mobile/image-speaker-zx9__desktop.png"
+      },
+      "original": {
+        "webpKey": "assets/home/mobile/image-speaker-zx9__original.webp",
+        "originalKey": "assets/home/mobile/image-speaker-zx9__original.png"
+      }
+    }
+  },
+  "assets/home/tablet/image-earphones-yx1.jpg": {
+    "baseKey": "assets/home/tablet/image-earphones-yx1",
+    "originalExt": "jpg",
+    "width": 678,
+    "height": 640,
+    "type": "home-page",
+    "productSlug": null,
+    "variantSlug": null,
+    "size": "tablet",
+    "galleryIndex": null,
+    "folder": "home",
+    "filename": "image-earphones-yx1.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/home/tablet/image-earphones-yx1__thumbnail.webp",
+        "originalKey": "assets/home/tablet/image-earphones-yx1__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/home/tablet/image-earphones-yx1__medium.webp",
+        "originalKey": "assets/home/tablet/image-earphones-yx1__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/home/tablet/image-earphones-yx1__desktop.webp",
+        "originalKey": "assets/home/tablet/image-earphones-yx1__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/home/tablet/image-earphones-yx1__original.webp",
+        "originalKey": "assets/home/tablet/image-earphones-yx1__original.jpg"
+      }
+    }
+  },
+  "assets/home/tablet/image-header.jpg": {
+    "baseKey": "assets/home/tablet/image-header",
+    "originalExt": "jpg",
+    "width": 1536,
+    "height": 1458,
+    "type": "home-page",
+    "productSlug": null,
+    "variantSlug": null,
+    "size": "tablet",
+    "galleryIndex": null,
+    "folder": "home",
+    "filename": "image-header.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/home/tablet/image-header__thumbnail.webp",
+        "originalKey": "assets/home/tablet/image-header__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/home/tablet/image-header__medium.webp",
+        "originalKey": "assets/home/tablet/image-header__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/home/tablet/image-header__desktop.webp",
+        "originalKey": "assets/home/tablet/image-header__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/home/tablet/image-header__original.webp",
+        "originalKey": "assets/home/tablet/image-header__original.jpg"
+      }
+    }
+  },
+  "assets/home/tablet/image-speaker-zx7.jpg": {
+    "baseKey": "assets/home/tablet/image-speaker-zx7",
+    "originalExt": "jpg",
+    "width": 689,
+    "height": 320,
+    "type": "home-page",
+    "productSlug": null,
+    "variantSlug": null,
+    "size": "tablet",
+    "galleryIndex": null,
+    "folder": "home",
+    "filename": "image-speaker-zx7.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/home/tablet/image-speaker-zx7__thumbnail.webp",
+        "originalKey": "assets/home/tablet/image-speaker-zx7__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/home/tablet/image-speaker-zx7__medium.webp",
+        "originalKey": "assets/home/tablet/image-speaker-zx7__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/home/tablet/image-speaker-zx7__desktop.webp",
+        "originalKey": "assets/home/tablet/image-speaker-zx7__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/home/tablet/image-speaker-zx7__original.webp",
+        "originalKey": "assets/home/tablet/image-speaker-zx7__original.jpg"
+      }
+    }
+  },
+  "assets/home/tablet/image-speaker-zx9.png": {
+    "baseKey": "assets/home/tablet/image-speaker-zx9",
+    "originalExt": "png",
+    "width": 366,
+    "height": 444,
+    "type": "home-page",
+    "productSlug": null,
+    "variantSlug": null,
+    "size": "tablet",
+    "galleryIndex": null,
+    "folder": "home",
+    "filename": "image-speaker-zx9.png",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/home/tablet/image-speaker-zx9__thumbnail.webp",
+        "originalKey": "assets/home/tablet/image-speaker-zx9__thumbnail.png"
+      },
+      "medium": {
+        "webpKey": "assets/home/tablet/image-speaker-zx9__medium.webp",
+        "originalKey": "assets/home/tablet/image-speaker-zx9__medium.png"
+      },
+      "desktop": {
+        "webpKey": "assets/home/tablet/image-speaker-zx9__desktop.webp",
+        "originalKey": "assets/home/tablet/image-speaker-zx9__desktop.png"
+      },
+      "original": {
+        "webpKey": "assets/home/tablet/image-speaker-zx9__original.webp",
+        "originalKey": "assets/home/tablet/image-speaker-zx9__original.png"
+      }
+    }
+  },
+  "assets/product-xx59-headphones/desktop/image-category-page-preview.jpg": {
+    "baseKey": "assets/products/xx59/category-preview/desktop/image-category-page-preview",
+    "originalExt": "jpg",
+    "width": 1080,
+    "height": 1120,
+    "type": "category-preview",
+    "productSlug": "xx59",
+    "variantSlug": null,
+    "size": "desktop",
+    "galleryIndex": null,
+    "folder": "products/xx59",
+    "filename": "image-category-page-preview.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/xx59/category-preview/desktop/image-category-page-preview__thumbnail.webp",
+        "originalKey": "assets/products/xx59/category-preview/desktop/image-category-page-preview__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/xx59/category-preview/desktop/image-category-page-preview__medium.webp",
+        "originalKey": "assets/products/xx59/category-preview/desktop/image-category-page-preview__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/xx59/category-preview/desktop/image-category-page-preview__desktop.webp",
+        "originalKey": "assets/products/xx59/category-preview/desktop/image-category-page-preview__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/xx59/category-preview/desktop/image-category-page-preview__original.webp",
+        "originalKey": "assets/products/xx59/category-preview/desktop/image-category-page-preview__original.jpg"
+      }
+    }
+  },
+  "assets/product-xx59-headphones/desktop/image-gallery-1.jpg": {
+    "baseKey": "assets/products/xx59/gallery/desktop/image-gallery-1",
+    "originalExt": "jpg",
+    "width": 445,
+    "height": 280,
+    "type": "product-gallery",
+    "productSlug": "xx59",
+    "variantSlug": null,
+    "size": "desktop",
+    "galleryIndex": 1,
+    "folder": "products/xx59",
+    "filename": "image-gallery-1.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/xx59/gallery/desktop/image-gallery-1__thumbnail.webp",
+        "originalKey": "assets/products/xx59/gallery/desktop/image-gallery-1__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/xx59/gallery/desktop/image-gallery-1__medium.webp",
+        "originalKey": "assets/products/xx59/gallery/desktop/image-gallery-1__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/xx59/gallery/desktop/image-gallery-1__desktop.webp",
+        "originalKey": "assets/products/xx59/gallery/desktop/image-gallery-1__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/xx59/gallery/desktop/image-gallery-1__original.webp",
+        "originalKey": "assets/products/xx59/gallery/desktop/image-gallery-1__original.jpg"
+      }
+    }
+  },
+  "assets/product-xx59-headphones/desktop/image-gallery-2.jpg": {
+    "baseKey": "assets/products/xx59/gallery/desktop/image-gallery-2",
+    "originalExt": "jpg",
+    "width": 445,
+    "height": 280,
+    "type": "product-gallery",
+    "productSlug": "xx59",
+    "variantSlug": null,
+    "size": "desktop",
+    "galleryIndex": 2,
+    "folder": "products/xx59",
+    "filename": "image-gallery-2.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/xx59/gallery/desktop/image-gallery-2__thumbnail.webp",
+        "originalKey": "assets/products/xx59/gallery/desktop/image-gallery-2__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/xx59/gallery/desktop/image-gallery-2__medium.webp",
+        "originalKey": "assets/products/xx59/gallery/desktop/image-gallery-2__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/xx59/gallery/desktop/image-gallery-2__desktop.webp",
+        "originalKey": "assets/products/xx59/gallery/desktop/image-gallery-2__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/xx59/gallery/desktop/image-gallery-2__original.webp",
+        "originalKey": "assets/products/xx59/gallery/desktop/image-gallery-2__original.jpg"
+      }
+    }
+  },
+  "assets/product-xx59-headphones/desktop/image-gallery-3.jpg": {
+    "baseKey": "assets/products/xx59/gallery/desktop/image-gallery-3",
+    "originalExt": "jpg",
+    "width": 635,
+    "height": 592,
+    "type": "product-gallery",
+    "productSlug": "xx59",
+    "variantSlug": null,
+    "size": "desktop",
+    "galleryIndex": 3,
+    "folder": "products/xx59",
+    "filename": "image-gallery-3.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/xx59/gallery/desktop/image-gallery-3__thumbnail.webp",
+        "originalKey": "assets/products/xx59/gallery/desktop/image-gallery-3__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/xx59/gallery/desktop/image-gallery-3__medium.webp",
+        "originalKey": "assets/products/xx59/gallery/desktop/image-gallery-3__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/xx59/gallery/desktop/image-gallery-3__desktop.webp",
+        "originalKey": "assets/products/xx59/gallery/desktop/image-gallery-3__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/xx59/gallery/desktop/image-gallery-3__original.webp",
+        "originalKey": "assets/products/xx59/gallery/desktop/image-gallery-3__original.jpg"
+      }
+    }
+  },
+  "assets/product-xx59-headphones/desktop/image-product.jpg": {
+    "baseKey": "assets/products/xx59/detail/desktop/image-product",
+    "originalExt": "jpg",
+    "width": 1080,
+    "height": 1120,
+    "type": "product-detail",
+    "productSlug": "xx59",
+    "variantSlug": null,
+    "size": "desktop",
+    "galleryIndex": null,
+    "folder": "products/xx59",
+    "filename": "image-product.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/xx59/detail/desktop/image-product__thumbnail.webp",
+        "originalKey": "assets/products/xx59/detail/desktop/image-product__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/xx59/detail/desktop/image-product__medium.webp",
+        "originalKey": "assets/products/xx59/detail/desktop/image-product__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/xx59/detail/desktop/image-product__desktop.webp",
+        "originalKey": "assets/products/xx59/detail/desktop/image-product__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/xx59/detail/desktop/image-product__original.webp",
+        "originalKey": "assets/products/xx59/detail/desktop/image-product__original.jpg"
+      }
+    }
+  },
+  "assets/product-xx59-headphones/mobile/image-category-page-preview.jpg": {
+    "baseKey": "assets/products/xx59/category-preview/mobile/image-category-page-preview",
+    "originalExt": "jpg",
+    "width": 654,
+    "height": 704,
+    "type": "category-preview",
+    "productSlug": "xx59",
+    "variantSlug": null,
+    "size": "mobile",
+    "galleryIndex": null,
+    "folder": "products/xx59",
+    "filename": "image-category-page-preview.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/xx59/category-preview/mobile/image-category-page-preview__thumbnail.webp",
+        "originalKey": "assets/products/xx59/category-preview/mobile/image-category-page-preview__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/xx59/category-preview/mobile/image-category-page-preview__medium.webp",
+        "originalKey": "assets/products/xx59/category-preview/mobile/image-category-page-preview__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/xx59/category-preview/mobile/image-category-page-preview__desktop.webp",
+        "originalKey": "assets/products/xx59/category-preview/mobile/image-category-page-preview__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/xx59/category-preview/mobile/image-category-page-preview__original.webp",
+        "originalKey": "assets/products/xx59/category-preview/mobile/image-category-page-preview__original.jpg"
+      }
+    }
+  },
+  "assets/product-xx59-headphones/mobile/image-gallery-1.jpg": {
+    "baseKey": "assets/products/xx59/gallery/mobile/image-gallery-1",
+    "originalExt": "jpg",
+    "width": 654,
+    "height": 348,
+    "type": "product-gallery",
+    "productSlug": "xx59",
+    "variantSlug": null,
+    "size": "mobile",
+    "galleryIndex": 1,
+    "folder": "products/xx59",
+    "filename": "image-gallery-1.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/xx59/gallery/mobile/image-gallery-1__thumbnail.webp",
+        "originalKey": "assets/products/xx59/gallery/mobile/image-gallery-1__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/xx59/gallery/mobile/image-gallery-1__medium.webp",
+        "originalKey": "assets/products/xx59/gallery/mobile/image-gallery-1__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/xx59/gallery/mobile/image-gallery-1__desktop.webp",
+        "originalKey": "assets/products/xx59/gallery/mobile/image-gallery-1__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/xx59/gallery/mobile/image-gallery-1__original.webp",
+        "originalKey": "assets/products/xx59/gallery/mobile/image-gallery-1__original.jpg"
+      }
+    }
+  },
+  "assets/product-xx59-headphones/mobile/image-gallery-2.jpg": {
+    "baseKey": "assets/products/xx59/gallery/mobile/image-gallery-2",
+    "originalExt": "jpg",
+    "width": 654,
+    "height": 348,
+    "type": "product-gallery",
+    "productSlug": "xx59",
+    "variantSlug": null,
+    "size": "mobile",
+    "galleryIndex": 2,
+    "folder": "products/xx59",
+    "filename": "image-gallery-2.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/xx59/gallery/mobile/image-gallery-2__thumbnail.webp",
+        "originalKey": "assets/products/xx59/gallery/mobile/image-gallery-2__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/xx59/gallery/mobile/image-gallery-2__medium.webp",
+        "originalKey": "assets/products/xx59/gallery/mobile/image-gallery-2__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/xx59/gallery/mobile/image-gallery-2__desktop.webp",
+        "originalKey": "assets/products/xx59/gallery/mobile/image-gallery-2__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/xx59/gallery/mobile/image-gallery-2__original.webp",
+        "originalKey": "assets/products/xx59/gallery/mobile/image-gallery-2__original.jpg"
+      }
+    }
+  },
+  "assets/product-xx59-headphones/mobile/image-gallery-3.jpg": {
+    "baseKey": "assets/products/xx59/gallery/mobile/image-gallery-3",
+    "originalExt": "jpg",
+    "width": 654,
+    "height": 736,
+    "type": "product-gallery",
+    "productSlug": "xx59",
+    "variantSlug": null,
+    "size": "mobile",
+    "galleryIndex": 3,
+    "folder": "products/xx59",
+    "filename": "image-gallery-3.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/xx59/gallery/mobile/image-gallery-3__thumbnail.webp",
+        "originalKey": "assets/products/xx59/gallery/mobile/image-gallery-3__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/xx59/gallery/mobile/image-gallery-3__medium.webp",
+        "originalKey": "assets/products/xx59/gallery/mobile/image-gallery-3__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/xx59/gallery/mobile/image-gallery-3__desktop.webp",
+        "originalKey": "assets/products/xx59/gallery/mobile/image-gallery-3__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/xx59/gallery/mobile/image-gallery-3__original.webp",
+        "originalKey": "assets/products/xx59/gallery/mobile/image-gallery-3__original.jpg"
+      }
+    }
+  },
+  "assets/product-xx59-headphones/mobile/image-product.jpg": {
+    "baseKey": "assets/products/xx59/detail/mobile/image-product",
+    "originalExt": "jpg",
+    "width": 654,
+    "height": 654,
+    "type": "product-detail",
+    "productSlug": "xx59",
+    "variantSlug": null,
+    "size": "mobile",
+    "galleryIndex": null,
+    "folder": "products/xx59",
+    "filename": "image-product.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/xx59/detail/mobile/image-product__thumbnail.webp",
+        "originalKey": "assets/products/xx59/detail/mobile/image-product__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/xx59/detail/mobile/image-product__medium.webp",
+        "originalKey": "assets/products/xx59/detail/mobile/image-product__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/xx59/detail/mobile/image-product__desktop.webp",
+        "originalKey": "assets/products/xx59/detail/mobile/image-product__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/xx59/detail/mobile/image-product__original.webp",
+        "originalKey": "assets/products/xx59/detail/mobile/image-product__original.jpg"
+      }
+    }
+  },
+  "assets/product-xx59-headphones/tablet/image-category-page-preview.jpg": {
+    "baseKey": "assets/products/xx59/category-preview/tablet/image-category-page-preview",
+    "originalExt": "jpg",
+    "width": 1378,
+    "height": 704,
+    "type": "category-preview",
+    "productSlug": "xx59",
+    "variantSlug": null,
+    "size": "tablet",
+    "galleryIndex": null,
+    "folder": "products/xx59",
+    "filename": "image-category-page-preview.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/xx59/category-preview/tablet/image-category-page-preview__thumbnail.webp",
+        "originalKey": "assets/products/xx59/category-preview/tablet/image-category-page-preview__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/xx59/category-preview/tablet/image-category-page-preview__medium.webp",
+        "originalKey": "assets/products/xx59/category-preview/tablet/image-category-page-preview__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/xx59/category-preview/tablet/image-category-page-preview__desktop.webp",
+        "originalKey": "assets/products/xx59/category-preview/tablet/image-category-page-preview__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/xx59/category-preview/tablet/image-category-page-preview__original.webp",
+        "originalKey": "assets/products/xx59/category-preview/tablet/image-category-page-preview__original.jpg"
+      }
+    }
+  },
+  "assets/product-xx59-headphones/tablet/image-gallery-1.jpg": {
+    "baseKey": "assets/products/xx59/gallery/tablet/image-gallery-1",
+    "originalExt": "jpg",
+    "width": 554,
+    "height": 348,
+    "type": "product-gallery",
+    "productSlug": "xx59",
+    "variantSlug": null,
+    "size": "tablet",
+    "galleryIndex": 1,
+    "folder": "products/xx59",
+    "filename": "image-gallery-1.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/xx59/gallery/tablet/image-gallery-1__thumbnail.webp",
+        "originalKey": "assets/products/xx59/gallery/tablet/image-gallery-1__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/xx59/gallery/tablet/image-gallery-1__medium.webp",
+        "originalKey": "assets/products/xx59/gallery/tablet/image-gallery-1__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/xx59/gallery/tablet/image-gallery-1__desktop.webp",
+        "originalKey": "assets/products/xx59/gallery/tablet/image-gallery-1__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/xx59/gallery/tablet/image-gallery-1__original.webp",
+        "originalKey": "assets/products/xx59/gallery/tablet/image-gallery-1__original.jpg"
+      }
+    }
+  },
+  "assets/product-xx59-headphones/tablet/image-gallery-2.jpg": {
+    "baseKey": "assets/products/xx59/gallery/tablet/image-gallery-2",
+    "originalExt": "jpg",
+    "width": 554,
+    "height": 348,
+    "type": "product-gallery",
+    "productSlug": "xx59",
+    "variantSlug": null,
+    "size": "tablet",
+    "galleryIndex": 2,
+    "folder": "products/xx59",
+    "filename": "image-gallery-2.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/xx59/gallery/tablet/image-gallery-2__thumbnail.webp",
+        "originalKey": "assets/products/xx59/gallery/tablet/image-gallery-2__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/xx59/gallery/tablet/image-gallery-2__medium.webp",
+        "originalKey": "assets/products/xx59/gallery/tablet/image-gallery-2__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/xx59/gallery/tablet/image-gallery-2__desktop.webp",
+        "originalKey": "assets/products/xx59/gallery/tablet/image-gallery-2__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/xx59/gallery/tablet/image-gallery-2__original.webp",
+        "originalKey": "assets/products/xx59/gallery/tablet/image-gallery-2__original.jpg"
+      }
+    }
+  },
+  "assets/product-xx59-headphones/tablet/image-gallery-3.jpg": {
+    "baseKey": "assets/products/xx59/gallery/tablet/image-gallery-3",
+    "originalExt": "jpg",
+    "width": 790,
+    "height": 736,
+    "type": "product-gallery",
+    "productSlug": "xx59",
+    "variantSlug": null,
+    "size": "tablet",
+    "galleryIndex": 3,
+    "folder": "products/xx59",
+    "filename": "image-gallery-3.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/xx59/gallery/tablet/image-gallery-3__thumbnail.webp",
+        "originalKey": "assets/products/xx59/gallery/tablet/image-gallery-3__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/xx59/gallery/tablet/image-gallery-3__medium.webp",
+        "originalKey": "assets/products/xx59/gallery/tablet/image-gallery-3__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/xx59/gallery/tablet/image-gallery-3__desktop.webp",
+        "originalKey": "assets/products/xx59/gallery/tablet/image-gallery-3__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/xx59/gallery/tablet/image-gallery-3__original.webp",
+        "originalKey": "assets/products/xx59/gallery/tablet/image-gallery-3__original.jpg"
+      }
+    }
+  },
+  "assets/product-xx59-headphones/tablet/image-product.jpg": {
+    "baseKey": "assets/products/xx59/detail/tablet/image-product",
+    "originalExt": "jpg",
+    "width": 562,
+    "height": 960,
+    "type": "product-detail",
+    "productSlug": "xx59",
+    "variantSlug": null,
+    "size": "tablet",
+    "galleryIndex": null,
+    "folder": "products/xx59",
+    "filename": "image-product.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/xx59/detail/tablet/image-product__thumbnail.webp",
+        "originalKey": "assets/products/xx59/detail/tablet/image-product__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/xx59/detail/tablet/image-product__medium.webp",
+        "originalKey": "assets/products/xx59/detail/tablet/image-product__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/xx59/detail/tablet/image-product__desktop.webp",
+        "originalKey": "assets/products/xx59/detail/tablet/image-product__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/xx59/detail/tablet/image-product__original.webp",
+        "originalKey": "assets/products/xx59/detail/tablet/image-product__original.jpg"
+      }
+    }
+  },
+  "assets/product-xx99-mark-one-headphones/desktop/image-category-page-preview.jpg": {
+    "baseKey": "assets/products/xx99-mark-i/category-preview/desktop/image-category-page-preview",
+    "originalExt": "jpg",
+    "width": 1080,
+    "height": 1120,
+    "type": "category-preview",
+    "productSlug": "xx99-mark-i",
+    "variantSlug": null,
+    "size": "desktop",
+    "galleryIndex": null,
+    "folder": "products/xx99-mark-i",
+    "filename": "image-category-page-preview.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/xx99-mark-i/category-preview/desktop/image-category-page-preview__thumbnail.webp",
+        "originalKey": "assets/products/xx99-mark-i/category-preview/desktop/image-category-page-preview__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/xx99-mark-i/category-preview/desktop/image-category-page-preview__medium.webp",
+        "originalKey": "assets/products/xx99-mark-i/category-preview/desktop/image-category-page-preview__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/xx99-mark-i/category-preview/desktop/image-category-page-preview__desktop.webp",
+        "originalKey": "assets/products/xx99-mark-i/category-preview/desktop/image-category-page-preview__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/xx99-mark-i/category-preview/desktop/image-category-page-preview__original.webp",
+        "originalKey": "assets/products/xx99-mark-i/category-preview/desktop/image-category-page-preview__original.jpg"
+      }
+    }
+  },
+  "assets/product-xx99-mark-one-headphones/desktop/image-gallery-1.jpg": {
+    "baseKey": "assets/products/xx99-mark-i/gallery/desktop/image-gallery-1",
+    "originalExt": "jpg",
+    "width": 445,
+    "height": 280,
+    "type": "product-gallery",
+    "productSlug": "xx99-mark-i",
+    "variantSlug": null,
+    "size": "desktop",
+    "galleryIndex": 1,
+    "folder": "products/xx99-mark-i",
+    "filename": "image-gallery-1.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/xx99-mark-i/gallery/desktop/image-gallery-1__thumbnail.webp",
+        "originalKey": "assets/products/xx99-mark-i/gallery/desktop/image-gallery-1__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/xx99-mark-i/gallery/desktop/image-gallery-1__medium.webp",
+        "originalKey": "assets/products/xx99-mark-i/gallery/desktop/image-gallery-1__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/xx99-mark-i/gallery/desktop/image-gallery-1__desktop.webp",
+        "originalKey": "assets/products/xx99-mark-i/gallery/desktop/image-gallery-1__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/xx99-mark-i/gallery/desktop/image-gallery-1__original.webp",
+        "originalKey": "assets/products/xx99-mark-i/gallery/desktop/image-gallery-1__original.jpg"
+      }
+    }
+  },
+  "assets/product-xx99-mark-one-headphones/desktop/image-gallery-2.jpg": {
+    "baseKey": "assets/products/xx99-mark-i/gallery/desktop/image-gallery-2",
+    "originalExt": "jpg",
+    "width": 445,
+    "height": 280,
+    "type": "product-gallery",
+    "productSlug": "xx99-mark-i",
+    "variantSlug": null,
+    "size": "desktop",
+    "galleryIndex": 2,
+    "folder": "products/xx99-mark-i",
+    "filename": "image-gallery-2.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/xx99-mark-i/gallery/desktop/image-gallery-2__thumbnail.webp",
+        "originalKey": "assets/products/xx99-mark-i/gallery/desktop/image-gallery-2__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/xx99-mark-i/gallery/desktop/image-gallery-2__medium.webp",
+        "originalKey": "assets/products/xx99-mark-i/gallery/desktop/image-gallery-2__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/xx99-mark-i/gallery/desktop/image-gallery-2__desktop.webp",
+        "originalKey": "assets/products/xx99-mark-i/gallery/desktop/image-gallery-2__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/xx99-mark-i/gallery/desktop/image-gallery-2__original.webp",
+        "originalKey": "assets/products/xx99-mark-i/gallery/desktop/image-gallery-2__original.jpg"
+      }
+    }
+  },
+  "assets/product-xx99-mark-one-headphones/desktop/image-gallery-3.jpg": {
+    "baseKey": "assets/products/xx99-mark-i/gallery/desktop/image-gallery-3",
+    "originalExt": "jpg",
+    "width": 635,
+    "height": 592,
+    "type": "product-gallery",
+    "productSlug": "xx99-mark-i",
+    "variantSlug": null,
+    "size": "desktop",
+    "galleryIndex": 3,
+    "folder": "products/xx99-mark-i",
+    "filename": "image-gallery-3.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/xx99-mark-i/gallery/desktop/image-gallery-3__thumbnail.webp",
+        "originalKey": "assets/products/xx99-mark-i/gallery/desktop/image-gallery-3__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/xx99-mark-i/gallery/desktop/image-gallery-3__medium.webp",
+        "originalKey": "assets/products/xx99-mark-i/gallery/desktop/image-gallery-3__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/xx99-mark-i/gallery/desktop/image-gallery-3__desktop.webp",
+        "originalKey": "assets/products/xx99-mark-i/gallery/desktop/image-gallery-3__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/xx99-mark-i/gallery/desktop/image-gallery-3__original.webp",
+        "originalKey": "assets/products/xx99-mark-i/gallery/desktop/image-gallery-3__original.jpg"
+      }
+    }
+  },
+  "assets/product-xx99-mark-one-headphones/desktop/image-product.jpg": {
+    "baseKey": "assets/products/xx99-mark-i/detail/desktop/image-product",
+    "originalExt": "jpg",
+    "width": 1080,
+    "height": 1120,
+    "type": "product-detail",
+    "productSlug": "xx99-mark-i",
+    "variantSlug": null,
+    "size": "desktop",
+    "galleryIndex": null,
+    "folder": "products/xx99-mark-i",
+    "filename": "image-product.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/xx99-mark-i/detail/desktop/image-product__thumbnail.webp",
+        "originalKey": "assets/products/xx99-mark-i/detail/desktop/image-product__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/xx99-mark-i/detail/desktop/image-product__medium.webp",
+        "originalKey": "assets/products/xx99-mark-i/detail/desktop/image-product__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/xx99-mark-i/detail/desktop/image-product__desktop.webp",
+        "originalKey": "assets/products/xx99-mark-i/detail/desktop/image-product__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/xx99-mark-i/detail/desktop/image-product__original.webp",
+        "originalKey": "assets/products/xx99-mark-i/detail/desktop/image-product__original.jpg"
+      }
+    }
+  },
+  "assets/product-xx99-mark-one-headphones/mobile/image-category-page-preview.jpg": {
+    "baseKey": "assets/products/xx99-mark-i/category-preview/mobile/image-category-page-preview",
+    "originalExt": "jpg",
+    "width": 654,
+    "height": 704,
+    "type": "category-preview",
+    "productSlug": "xx99-mark-i",
+    "variantSlug": null,
+    "size": "mobile",
+    "galleryIndex": null,
+    "folder": "products/xx99-mark-i",
+    "filename": "image-category-page-preview.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/xx99-mark-i/category-preview/mobile/image-category-page-preview__thumbnail.webp",
+        "originalKey": "assets/products/xx99-mark-i/category-preview/mobile/image-category-page-preview__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/xx99-mark-i/category-preview/mobile/image-category-page-preview__medium.webp",
+        "originalKey": "assets/products/xx99-mark-i/category-preview/mobile/image-category-page-preview__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/xx99-mark-i/category-preview/mobile/image-category-page-preview__desktop.webp",
+        "originalKey": "assets/products/xx99-mark-i/category-preview/mobile/image-category-page-preview__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/xx99-mark-i/category-preview/mobile/image-category-page-preview__original.webp",
+        "originalKey": "assets/products/xx99-mark-i/category-preview/mobile/image-category-page-preview__original.jpg"
+      }
+    }
+  },
+  "assets/product-xx99-mark-one-headphones/mobile/image-gallery-1.jpg": {
+    "baseKey": "assets/products/xx99-mark-i/gallery/mobile/image-gallery-1",
+    "originalExt": "jpg",
+    "width": 654,
+    "height": 348,
+    "type": "product-gallery",
+    "productSlug": "xx99-mark-i",
+    "variantSlug": null,
+    "size": "mobile",
+    "galleryIndex": 1,
+    "folder": "products/xx99-mark-i",
+    "filename": "image-gallery-1.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/xx99-mark-i/gallery/mobile/image-gallery-1__thumbnail.webp",
+        "originalKey": "assets/products/xx99-mark-i/gallery/mobile/image-gallery-1__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/xx99-mark-i/gallery/mobile/image-gallery-1__medium.webp",
+        "originalKey": "assets/products/xx99-mark-i/gallery/mobile/image-gallery-1__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/xx99-mark-i/gallery/mobile/image-gallery-1__desktop.webp",
+        "originalKey": "assets/products/xx99-mark-i/gallery/mobile/image-gallery-1__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/xx99-mark-i/gallery/mobile/image-gallery-1__original.webp",
+        "originalKey": "assets/products/xx99-mark-i/gallery/mobile/image-gallery-1__original.jpg"
+      }
+    }
+  },
+  "assets/product-xx99-mark-one-headphones/mobile/image-gallery-2.jpg": {
+    "baseKey": "assets/products/xx99-mark-i/gallery/mobile/image-gallery-2",
+    "originalExt": "jpg",
+    "width": 654,
+    "height": 348,
+    "type": "product-gallery",
+    "productSlug": "xx99-mark-i",
+    "variantSlug": null,
+    "size": "mobile",
+    "galleryIndex": 2,
+    "folder": "products/xx99-mark-i",
+    "filename": "image-gallery-2.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/xx99-mark-i/gallery/mobile/image-gallery-2__thumbnail.webp",
+        "originalKey": "assets/products/xx99-mark-i/gallery/mobile/image-gallery-2__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/xx99-mark-i/gallery/mobile/image-gallery-2__medium.webp",
+        "originalKey": "assets/products/xx99-mark-i/gallery/mobile/image-gallery-2__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/xx99-mark-i/gallery/mobile/image-gallery-2__desktop.webp",
+        "originalKey": "assets/products/xx99-mark-i/gallery/mobile/image-gallery-2__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/xx99-mark-i/gallery/mobile/image-gallery-2__original.webp",
+        "originalKey": "assets/products/xx99-mark-i/gallery/mobile/image-gallery-2__original.jpg"
+      }
+    }
+  },
+  "assets/product-xx99-mark-one-headphones/mobile/image-gallery-3.jpg": {
+    "baseKey": "assets/products/xx99-mark-i/gallery/mobile/image-gallery-3",
+    "originalExt": "jpg",
+    "width": 654,
+    "height": 736,
+    "type": "product-gallery",
+    "productSlug": "xx99-mark-i",
+    "variantSlug": null,
+    "size": "mobile",
+    "galleryIndex": 3,
+    "folder": "products/xx99-mark-i",
+    "filename": "image-gallery-3.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/xx99-mark-i/gallery/mobile/image-gallery-3__thumbnail.webp",
+        "originalKey": "assets/products/xx99-mark-i/gallery/mobile/image-gallery-3__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/xx99-mark-i/gallery/mobile/image-gallery-3__medium.webp",
+        "originalKey": "assets/products/xx99-mark-i/gallery/mobile/image-gallery-3__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/xx99-mark-i/gallery/mobile/image-gallery-3__desktop.webp",
+        "originalKey": "assets/products/xx99-mark-i/gallery/mobile/image-gallery-3__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/xx99-mark-i/gallery/mobile/image-gallery-3__original.webp",
+        "originalKey": "assets/products/xx99-mark-i/gallery/mobile/image-gallery-3__original.jpg"
+      }
+    }
+  },
+  "assets/product-xx99-mark-one-headphones/mobile/image-product.jpg": {
+    "baseKey": "assets/products/xx99-mark-i/detail/mobile/image-product",
+    "originalExt": "jpg",
+    "width": 654,
+    "height": 654,
+    "type": "product-detail",
+    "productSlug": "xx99-mark-i",
+    "variantSlug": null,
+    "size": "mobile",
+    "galleryIndex": null,
+    "folder": "products/xx99-mark-i",
+    "filename": "image-product.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/xx99-mark-i/detail/mobile/image-product__thumbnail.webp",
+        "originalKey": "assets/products/xx99-mark-i/detail/mobile/image-product__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/xx99-mark-i/detail/mobile/image-product__medium.webp",
+        "originalKey": "assets/products/xx99-mark-i/detail/mobile/image-product__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/xx99-mark-i/detail/mobile/image-product__desktop.webp",
+        "originalKey": "assets/products/xx99-mark-i/detail/mobile/image-product__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/xx99-mark-i/detail/mobile/image-product__original.webp",
+        "originalKey": "assets/products/xx99-mark-i/detail/mobile/image-product__original.jpg"
+      }
+    }
+  },
+  "assets/product-xx99-mark-one-headphones/tablet/image-category-page-preview.jpg": {
+    "baseKey": "assets/products/xx99-mark-i/category-preview/tablet/image-category-page-preview",
+    "originalExt": "jpg",
+    "width": 1378,
+    "height": 704,
+    "type": "category-preview",
+    "productSlug": "xx99-mark-i",
+    "variantSlug": null,
+    "size": "tablet",
+    "galleryIndex": null,
+    "folder": "products/xx99-mark-i",
+    "filename": "image-category-page-preview.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/xx99-mark-i/category-preview/tablet/image-category-page-preview__thumbnail.webp",
+        "originalKey": "assets/products/xx99-mark-i/category-preview/tablet/image-category-page-preview__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/xx99-mark-i/category-preview/tablet/image-category-page-preview__medium.webp",
+        "originalKey": "assets/products/xx99-mark-i/category-preview/tablet/image-category-page-preview__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/xx99-mark-i/category-preview/tablet/image-category-page-preview__desktop.webp",
+        "originalKey": "assets/products/xx99-mark-i/category-preview/tablet/image-category-page-preview__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/xx99-mark-i/category-preview/tablet/image-category-page-preview__original.webp",
+        "originalKey": "assets/products/xx99-mark-i/category-preview/tablet/image-category-page-preview__original.jpg"
+      }
+    }
+  },
+  "assets/product-xx99-mark-one-headphones/tablet/image-gallery-1.jpg": {
+    "baseKey": "assets/products/xx99-mark-i/gallery/tablet/image-gallery-1",
+    "originalExt": "jpg",
+    "width": 554,
+    "height": 348,
+    "type": "product-gallery",
+    "productSlug": "xx99-mark-i",
+    "variantSlug": null,
+    "size": "tablet",
+    "galleryIndex": 1,
+    "folder": "products/xx99-mark-i",
+    "filename": "image-gallery-1.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/xx99-mark-i/gallery/tablet/image-gallery-1__thumbnail.webp",
+        "originalKey": "assets/products/xx99-mark-i/gallery/tablet/image-gallery-1__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/xx99-mark-i/gallery/tablet/image-gallery-1__medium.webp",
+        "originalKey": "assets/products/xx99-mark-i/gallery/tablet/image-gallery-1__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/xx99-mark-i/gallery/tablet/image-gallery-1__desktop.webp",
+        "originalKey": "assets/products/xx99-mark-i/gallery/tablet/image-gallery-1__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/xx99-mark-i/gallery/tablet/image-gallery-1__original.webp",
+        "originalKey": "assets/products/xx99-mark-i/gallery/tablet/image-gallery-1__original.jpg"
+      }
+    }
+  },
+  "assets/product-xx99-mark-one-headphones/tablet/image-gallery-2.jpg": {
+    "baseKey": "assets/products/xx99-mark-i/gallery/tablet/image-gallery-2",
+    "originalExt": "jpg",
+    "width": 554,
+    "height": 348,
+    "type": "product-gallery",
+    "productSlug": "xx99-mark-i",
+    "variantSlug": null,
+    "size": "tablet",
+    "galleryIndex": 2,
+    "folder": "products/xx99-mark-i",
+    "filename": "image-gallery-2.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/xx99-mark-i/gallery/tablet/image-gallery-2__thumbnail.webp",
+        "originalKey": "assets/products/xx99-mark-i/gallery/tablet/image-gallery-2__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/xx99-mark-i/gallery/tablet/image-gallery-2__medium.webp",
+        "originalKey": "assets/products/xx99-mark-i/gallery/tablet/image-gallery-2__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/xx99-mark-i/gallery/tablet/image-gallery-2__desktop.webp",
+        "originalKey": "assets/products/xx99-mark-i/gallery/tablet/image-gallery-2__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/xx99-mark-i/gallery/tablet/image-gallery-2__original.webp",
+        "originalKey": "assets/products/xx99-mark-i/gallery/tablet/image-gallery-2__original.jpg"
+      }
+    }
+  },
+  "assets/product-xx99-mark-one-headphones/tablet/image-gallery-3.jpg": {
+    "baseKey": "assets/products/xx99-mark-i/gallery/tablet/image-gallery-3",
+    "originalExt": "jpg",
+    "width": 790,
+    "height": 736,
+    "type": "product-gallery",
+    "productSlug": "xx99-mark-i",
+    "variantSlug": null,
+    "size": "tablet",
+    "galleryIndex": 3,
+    "folder": "products/xx99-mark-i",
+    "filename": "image-gallery-3.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/xx99-mark-i/gallery/tablet/image-gallery-3__thumbnail.webp",
+        "originalKey": "assets/products/xx99-mark-i/gallery/tablet/image-gallery-3__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/xx99-mark-i/gallery/tablet/image-gallery-3__medium.webp",
+        "originalKey": "assets/products/xx99-mark-i/gallery/tablet/image-gallery-3__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/xx99-mark-i/gallery/tablet/image-gallery-3__desktop.webp",
+        "originalKey": "assets/products/xx99-mark-i/gallery/tablet/image-gallery-3__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/xx99-mark-i/gallery/tablet/image-gallery-3__original.webp",
+        "originalKey": "assets/products/xx99-mark-i/gallery/tablet/image-gallery-3__original.jpg"
+      }
+    }
+  },
+  "assets/product-xx99-mark-one-headphones/tablet/image-product.jpg": {
+    "baseKey": "assets/products/xx99-mark-i/detail/tablet/image-product",
+    "originalExt": "jpg",
+    "width": 562,
+    "height": 960,
+    "type": "product-detail",
+    "productSlug": "xx99-mark-i",
+    "variantSlug": null,
+    "size": "tablet",
+    "galleryIndex": null,
+    "folder": "products/xx99-mark-i",
+    "filename": "image-product.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/xx99-mark-i/detail/tablet/image-product__thumbnail.webp",
+        "originalKey": "assets/products/xx99-mark-i/detail/tablet/image-product__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/xx99-mark-i/detail/tablet/image-product__medium.webp",
+        "originalKey": "assets/products/xx99-mark-i/detail/tablet/image-product__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/xx99-mark-i/detail/tablet/image-product__desktop.webp",
+        "originalKey": "assets/products/xx99-mark-i/detail/tablet/image-product__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/xx99-mark-i/detail/tablet/image-product__original.webp",
+        "originalKey": "assets/products/xx99-mark-i/detail/tablet/image-product__original.jpg"
+      }
+    }
+  },
+  "assets/product-xx99-mark-two-headphones/desktop/image-category-page-preview.jpg": {
+    "baseKey": "assets/products/xx99-mark-ii/category-preview/desktop/image-category-page-preview",
+    "originalExt": "jpg",
+    "width": 1080,
+    "height": 1120,
+    "type": "category-preview",
+    "productSlug": "xx99-mark-ii",
+    "variantSlug": null,
+    "size": "desktop",
+    "galleryIndex": null,
+    "folder": "products/xx99-mark-ii",
+    "filename": "image-category-page-preview.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/xx99-mark-ii/category-preview/desktop/image-category-page-preview__thumbnail.webp",
+        "originalKey": "assets/products/xx99-mark-ii/category-preview/desktop/image-category-page-preview__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/xx99-mark-ii/category-preview/desktop/image-category-page-preview__medium.webp",
+        "originalKey": "assets/products/xx99-mark-ii/category-preview/desktop/image-category-page-preview__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/xx99-mark-ii/category-preview/desktop/image-category-page-preview__desktop.webp",
+        "originalKey": "assets/products/xx99-mark-ii/category-preview/desktop/image-category-page-preview__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/xx99-mark-ii/category-preview/desktop/image-category-page-preview__original.webp",
+        "originalKey": "assets/products/xx99-mark-ii/category-preview/desktop/image-category-page-preview__original.jpg"
+      }
+    }
+  },
+  "assets/product-xx99-mark-two-headphones/desktop/image-gallery-1.jpg": {
+    "baseKey": "assets/products/xx99-mark-ii/gallery/desktop/image-gallery-1",
+    "originalExt": "jpg",
+    "width": 445,
+    "height": 280,
+    "type": "product-gallery",
+    "productSlug": "xx99-mark-ii",
+    "variantSlug": null,
+    "size": "desktop",
+    "galleryIndex": 1,
+    "folder": "products/xx99-mark-ii",
+    "filename": "image-gallery-1.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/xx99-mark-ii/gallery/desktop/image-gallery-1__thumbnail.webp",
+        "originalKey": "assets/products/xx99-mark-ii/gallery/desktop/image-gallery-1__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/xx99-mark-ii/gallery/desktop/image-gallery-1__medium.webp",
+        "originalKey": "assets/products/xx99-mark-ii/gallery/desktop/image-gallery-1__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/xx99-mark-ii/gallery/desktop/image-gallery-1__desktop.webp",
+        "originalKey": "assets/products/xx99-mark-ii/gallery/desktop/image-gallery-1__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/xx99-mark-ii/gallery/desktop/image-gallery-1__original.webp",
+        "originalKey": "assets/products/xx99-mark-ii/gallery/desktop/image-gallery-1__original.jpg"
+      }
+    }
+  },
+  "assets/product-xx99-mark-two-headphones/desktop/image-gallery-2.jpg": {
+    "baseKey": "assets/products/xx99-mark-ii/gallery/desktop/image-gallery-2",
+    "originalExt": "jpg",
+    "width": 445,
+    "height": 280,
+    "type": "product-gallery",
+    "productSlug": "xx99-mark-ii",
+    "variantSlug": null,
+    "size": "desktop",
+    "galleryIndex": 2,
+    "folder": "products/xx99-mark-ii",
+    "filename": "image-gallery-2.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/xx99-mark-ii/gallery/desktop/image-gallery-2__thumbnail.webp",
+        "originalKey": "assets/products/xx99-mark-ii/gallery/desktop/image-gallery-2__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/xx99-mark-ii/gallery/desktop/image-gallery-2__medium.webp",
+        "originalKey": "assets/products/xx99-mark-ii/gallery/desktop/image-gallery-2__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/xx99-mark-ii/gallery/desktop/image-gallery-2__desktop.webp",
+        "originalKey": "assets/products/xx99-mark-ii/gallery/desktop/image-gallery-2__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/xx99-mark-ii/gallery/desktop/image-gallery-2__original.webp",
+        "originalKey": "assets/products/xx99-mark-ii/gallery/desktop/image-gallery-2__original.jpg"
+      }
+    }
+  },
+  "assets/product-xx99-mark-two-headphones/desktop/image-gallery-3.jpg": {
+    "baseKey": "assets/products/xx99-mark-ii/gallery/desktop/image-gallery-3",
+    "originalExt": "jpg",
+    "width": 635,
+    "height": 592,
+    "type": "product-gallery",
+    "productSlug": "xx99-mark-ii",
+    "variantSlug": null,
+    "size": "desktop",
+    "galleryIndex": 3,
+    "folder": "products/xx99-mark-ii",
+    "filename": "image-gallery-3.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/xx99-mark-ii/gallery/desktop/image-gallery-3__thumbnail.webp",
+        "originalKey": "assets/products/xx99-mark-ii/gallery/desktop/image-gallery-3__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/xx99-mark-ii/gallery/desktop/image-gallery-3__medium.webp",
+        "originalKey": "assets/products/xx99-mark-ii/gallery/desktop/image-gallery-3__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/xx99-mark-ii/gallery/desktop/image-gallery-3__desktop.webp",
+        "originalKey": "assets/products/xx99-mark-ii/gallery/desktop/image-gallery-3__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/xx99-mark-ii/gallery/desktop/image-gallery-3__original.webp",
+        "originalKey": "assets/products/xx99-mark-ii/gallery/desktop/image-gallery-3__original.jpg"
+      }
+    }
+  },
+  "assets/product-xx99-mark-two-headphones/desktop/image-product.jpg": {
+    "baseKey": "assets/products/xx99-mark-ii/detail/desktop/image-product",
+    "originalExt": "jpg",
+    "width": 1080,
+    "height": 1120,
+    "type": "product-detail",
+    "productSlug": "xx99-mark-ii",
+    "variantSlug": null,
+    "size": "desktop",
+    "galleryIndex": null,
+    "folder": "products/xx99-mark-ii",
+    "filename": "image-product.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/xx99-mark-ii/detail/desktop/image-product__thumbnail.webp",
+        "originalKey": "assets/products/xx99-mark-ii/detail/desktop/image-product__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/xx99-mark-ii/detail/desktop/image-product__medium.webp",
+        "originalKey": "assets/products/xx99-mark-ii/detail/desktop/image-product__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/xx99-mark-ii/detail/desktop/image-product__desktop.webp",
+        "originalKey": "assets/products/xx99-mark-ii/detail/desktop/image-product__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/xx99-mark-ii/detail/desktop/image-product__original.webp",
+        "originalKey": "assets/products/xx99-mark-ii/detail/desktop/image-product__original.jpg"
+      }
+    }
+  },
+  "assets/product-xx99-mark-two-headphones/mobile/image-category-page-preview.jpg": {
+    "baseKey": "assets/products/xx99-mark-ii/category-preview/mobile/image-category-page-preview",
+    "originalExt": "jpg",
+    "width": 654,
+    "height": 704,
+    "type": "category-preview",
+    "productSlug": "xx99-mark-ii",
+    "variantSlug": null,
+    "size": "mobile",
+    "galleryIndex": null,
+    "folder": "products/xx99-mark-ii",
+    "filename": "image-category-page-preview.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/xx99-mark-ii/category-preview/mobile/image-category-page-preview__thumbnail.webp",
+        "originalKey": "assets/products/xx99-mark-ii/category-preview/mobile/image-category-page-preview__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/xx99-mark-ii/category-preview/mobile/image-category-page-preview__medium.webp",
+        "originalKey": "assets/products/xx99-mark-ii/category-preview/mobile/image-category-page-preview__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/xx99-mark-ii/category-preview/mobile/image-category-page-preview__desktop.webp",
+        "originalKey": "assets/products/xx99-mark-ii/category-preview/mobile/image-category-page-preview__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/xx99-mark-ii/category-preview/mobile/image-category-page-preview__original.webp",
+        "originalKey": "assets/products/xx99-mark-ii/category-preview/mobile/image-category-page-preview__original.jpg"
+      }
+    }
+  },
+  "assets/product-xx99-mark-two-headphones/mobile/image-gallery-1.jpg": {
+    "baseKey": "assets/products/xx99-mark-ii/gallery/mobile/image-gallery-1",
+    "originalExt": "jpg",
+    "width": 654,
+    "height": 348,
+    "type": "product-gallery",
+    "productSlug": "xx99-mark-ii",
+    "variantSlug": null,
+    "size": "mobile",
+    "galleryIndex": 1,
+    "folder": "products/xx99-mark-ii",
+    "filename": "image-gallery-1.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/xx99-mark-ii/gallery/mobile/image-gallery-1__thumbnail.webp",
+        "originalKey": "assets/products/xx99-mark-ii/gallery/mobile/image-gallery-1__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/xx99-mark-ii/gallery/mobile/image-gallery-1__medium.webp",
+        "originalKey": "assets/products/xx99-mark-ii/gallery/mobile/image-gallery-1__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/xx99-mark-ii/gallery/mobile/image-gallery-1__desktop.webp",
+        "originalKey": "assets/products/xx99-mark-ii/gallery/mobile/image-gallery-1__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/xx99-mark-ii/gallery/mobile/image-gallery-1__original.webp",
+        "originalKey": "assets/products/xx99-mark-ii/gallery/mobile/image-gallery-1__original.jpg"
+      }
+    }
+  },
+  "assets/product-xx99-mark-two-headphones/mobile/image-gallery-2.jpg": {
+    "baseKey": "assets/products/xx99-mark-ii/gallery/mobile/image-gallery-2",
+    "originalExt": "jpg",
+    "width": 654,
+    "height": 348,
+    "type": "product-gallery",
+    "productSlug": "xx99-mark-ii",
+    "variantSlug": null,
+    "size": "mobile",
+    "galleryIndex": 2,
+    "folder": "products/xx99-mark-ii",
+    "filename": "image-gallery-2.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/xx99-mark-ii/gallery/mobile/image-gallery-2__thumbnail.webp",
+        "originalKey": "assets/products/xx99-mark-ii/gallery/mobile/image-gallery-2__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/xx99-mark-ii/gallery/mobile/image-gallery-2__medium.webp",
+        "originalKey": "assets/products/xx99-mark-ii/gallery/mobile/image-gallery-2__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/xx99-mark-ii/gallery/mobile/image-gallery-2__desktop.webp",
+        "originalKey": "assets/products/xx99-mark-ii/gallery/mobile/image-gallery-2__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/xx99-mark-ii/gallery/mobile/image-gallery-2__original.webp",
+        "originalKey": "assets/products/xx99-mark-ii/gallery/mobile/image-gallery-2__original.jpg"
+      }
+    }
+  },
+  "assets/product-xx99-mark-two-headphones/mobile/image-gallery-3.jpg": {
+    "baseKey": "assets/products/xx99-mark-ii/gallery/mobile/image-gallery-3",
+    "originalExt": "jpg",
+    "width": 654,
+    "height": 736,
+    "type": "product-gallery",
+    "productSlug": "xx99-mark-ii",
+    "variantSlug": null,
+    "size": "mobile",
+    "galleryIndex": 3,
+    "folder": "products/xx99-mark-ii",
+    "filename": "image-gallery-3.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/xx99-mark-ii/gallery/mobile/image-gallery-3__thumbnail.webp",
+        "originalKey": "assets/products/xx99-mark-ii/gallery/mobile/image-gallery-3__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/xx99-mark-ii/gallery/mobile/image-gallery-3__medium.webp",
+        "originalKey": "assets/products/xx99-mark-ii/gallery/mobile/image-gallery-3__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/xx99-mark-ii/gallery/mobile/image-gallery-3__desktop.webp",
+        "originalKey": "assets/products/xx99-mark-ii/gallery/mobile/image-gallery-3__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/xx99-mark-ii/gallery/mobile/image-gallery-3__original.webp",
+        "originalKey": "assets/products/xx99-mark-ii/gallery/mobile/image-gallery-3__original.jpg"
+      }
+    }
+  },
+  "assets/product-xx99-mark-two-headphones/mobile/image-product.jpg": {
+    "baseKey": "assets/products/xx99-mark-ii/detail/mobile/image-product",
+    "originalExt": "jpg",
+    "width": 654,
+    "height": 654,
+    "type": "product-detail",
+    "productSlug": "xx99-mark-ii",
+    "variantSlug": null,
+    "size": "mobile",
+    "galleryIndex": null,
+    "folder": "products/xx99-mark-ii",
+    "filename": "image-product.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/xx99-mark-ii/detail/mobile/image-product__thumbnail.webp",
+        "originalKey": "assets/products/xx99-mark-ii/detail/mobile/image-product__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/xx99-mark-ii/detail/mobile/image-product__medium.webp",
+        "originalKey": "assets/products/xx99-mark-ii/detail/mobile/image-product__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/xx99-mark-ii/detail/mobile/image-product__desktop.webp",
+        "originalKey": "assets/products/xx99-mark-ii/detail/mobile/image-product__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/xx99-mark-ii/detail/mobile/image-product__original.webp",
+        "originalKey": "assets/products/xx99-mark-ii/detail/mobile/image-product__original.jpg"
+      }
+    }
+  },
+  "assets/product-xx99-mark-two-headphones/tablet/image-category-page-preview.jpg": {
+    "baseKey": "assets/products/xx99-mark-ii/category-preview/tablet/image-category-page-preview",
+    "originalExt": "jpg",
+    "width": 1378,
+    "height": 704,
+    "type": "category-preview",
+    "productSlug": "xx99-mark-ii",
+    "variantSlug": null,
+    "size": "tablet",
+    "galleryIndex": null,
+    "folder": "products/xx99-mark-ii",
+    "filename": "image-category-page-preview.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/xx99-mark-ii/category-preview/tablet/image-category-page-preview__thumbnail.webp",
+        "originalKey": "assets/products/xx99-mark-ii/category-preview/tablet/image-category-page-preview__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/xx99-mark-ii/category-preview/tablet/image-category-page-preview__medium.webp",
+        "originalKey": "assets/products/xx99-mark-ii/category-preview/tablet/image-category-page-preview__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/xx99-mark-ii/category-preview/tablet/image-category-page-preview__desktop.webp",
+        "originalKey": "assets/products/xx99-mark-ii/category-preview/tablet/image-category-page-preview__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/xx99-mark-ii/category-preview/tablet/image-category-page-preview__original.webp",
+        "originalKey": "assets/products/xx99-mark-ii/category-preview/tablet/image-category-page-preview__original.jpg"
+      }
+    }
+  },
+  "assets/product-xx99-mark-two-headphones/tablet/image-gallery-1.jpg": {
+    "baseKey": "assets/products/xx99-mark-ii/gallery/tablet/image-gallery-1",
+    "originalExt": "jpg",
+    "width": 554,
+    "height": 348,
+    "type": "product-gallery",
+    "productSlug": "xx99-mark-ii",
+    "variantSlug": null,
+    "size": "tablet",
+    "galleryIndex": 1,
+    "folder": "products/xx99-mark-ii",
+    "filename": "image-gallery-1.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/xx99-mark-ii/gallery/tablet/image-gallery-1__thumbnail.webp",
+        "originalKey": "assets/products/xx99-mark-ii/gallery/tablet/image-gallery-1__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/xx99-mark-ii/gallery/tablet/image-gallery-1__medium.webp",
+        "originalKey": "assets/products/xx99-mark-ii/gallery/tablet/image-gallery-1__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/xx99-mark-ii/gallery/tablet/image-gallery-1__desktop.webp",
+        "originalKey": "assets/products/xx99-mark-ii/gallery/tablet/image-gallery-1__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/xx99-mark-ii/gallery/tablet/image-gallery-1__original.webp",
+        "originalKey": "assets/products/xx99-mark-ii/gallery/tablet/image-gallery-1__original.jpg"
+      }
+    }
+  },
+  "assets/product-xx99-mark-two-headphones/tablet/image-gallery-2.jpg": {
+    "baseKey": "assets/products/xx99-mark-ii/gallery/tablet/image-gallery-2",
+    "originalExt": "jpg",
+    "width": 554,
+    "height": 348,
+    "type": "product-gallery",
+    "productSlug": "xx99-mark-ii",
+    "variantSlug": null,
+    "size": "tablet",
+    "galleryIndex": 2,
+    "folder": "products/xx99-mark-ii",
+    "filename": "image-gallery-2.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/xx99-mark-ii/gallery/tablet/image-gallery-2__thumbnail.webp",
+        "originalKey": "assets/products/xx99-mark-ii/gallery/tablet/image-gallery-2__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/xx99-mark-ii/gallery/tablet/image-gallery-2__medium.webp",
+        "originalKey": "assets/products/xx99-mark-ii/gallery/tablet/image-gallery-2__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/xx99-mark-ii/gallery/tablet/image-gallery-2__desktop.webp",
+        "originalKey": "assets/products/xx99-mark-ii/gallery/tablet/image-gallery-2__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/xx99-mark-ii/gallery/tablet/image-gallery-2__original.webp",
+        "originalKey": "assets/products/xx99-mark-ii/gallery/tablet/image-gallery-2__original.jpg"
+      }
+    }
+  },
+  "assets/product-xx99-mark-two-headphones/tablet/image-gallery-3.jpg": {
+    "baseKey": "assets/products/xx99-mark-ii/gallery/tablet/image-gallery-3",
+    "originalExt": "jpg",
+    "width": 790,
+    "height": 736,
+    "type": "product-gallery",
+    "productSlug": "xx99-mark-ii",
+    "variantSlug": null,
+    "size": "tablet",
+    "galleryIndex": 3,
+    "folder": "products/xx99-mark-ii",
+    "filename": "image-gallery-3.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/xx99-mark-ii/gallery/tablet/image-gallery-3__thumbnail.webp",
+        "originalKey": "assets/products/xx99-mark-ii/gallery/tablet/image-gallery-3__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/xx99-mark-ii/gallery/tablet/image-gallery-3__medium.webp",
+        "originalKey": "assets/products/xx99-mark-ii/gallery/tablet/image-gallery-3__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/xx99-mark-ii/gallery/tablet/image-gallery-3__desktop.webp",
+        "originalKey": "assets/products/xx99-mark-ii/gallery/tablet/image-gallery-3__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/xx99-mark-ii/gallery/tablet/image-gallery-3__original.webp",
+        "originalKey": "assets/products/xx99-mark-ii/gallery/tablet/image-gallery-3__original.jpg"
+      }
+    }
+  },
+  "assets/product-xx99-mark-two-headphones/tablet/image-product.jpg": {
+    "baseKey": "assets/products/xx99-mark-ii/detail/tablet/image-product",
+    "originalExt": "jpg",
+    "width": 562,
+    "height": 960,
+    "type": "product-detail",
+    "productSlug": "xx99-mark-ii",
+    "variantSlug": null,
+    "size": "tablet",
+    "galleryIndex": null,
+    "folder": "products/xx99-mark-ii",
+    "filename": "image-product.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/xx99-mark-ii/detail/tablet/image-product__thumbnail.webp",
+        "originalKey": "assets/products/xx99-mark-ii/detail/tablet/image-product__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/xx99-mark-ii/detail/tablet/image-product__medium.webp",
+        "originalKey": "assets/products/xx99-mark-ii/detail/tablet/image-product__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/xx99-mark-ii/detail/tablet/image-product__desktop.webp",
+        "originalKey": "assets/products/xx99-mark-ii/detail/tablet/image-product__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/xx99-mark-ii/detail/tablet/image-product__original.webp",
+        "originalKey": "assets/products/xx99-mark-ii/detail/tablet/image-product__original.jpg"
+      }
+    }
+  },
+  "assets/product-yx1-earphones/desktop/image-category-page-preview.jpg": {
+    "baseKey": "assets/products/yx1/category-preview/desktop/image-category-page-preview",
+    "originalExt": "jpg",
+    "width": 1080,
+    "height": 1120,
+    "type": "category-preview",
+    "productSlug": "yx1",
+    "variantSlug": null,
+    "size": "desktop",
+    "galleryIndex": null,
+    "folder": "products/yx1",
+    "filename": "image-category-page-preview.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/yx1/category-preview/desktop/image-category-page-preview__thumbnail.webp",
+        "originalKey": "assets/products/yx1/category-preview/desktop/image-category-page-preview__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/yx1/category-preview/desktop/image-category-page-preview__medium.webp",
+        "originalKey": "assets/products/yx1/category-preview/desktop/image-category-page-preview__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/yx1/category-preview/desktop/image-category-page-preview__desktop.webp",
+        "originalKey": "assets/products/yx1/category-preview/desktop/image-category-page-preview__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/yx1/category-preview/desktop/image-category-page-preview__original.webp",
+        "originalKey": "assets/products/yx1/category-preview/desktop/image-category-page-preview__original.jpg"
+      }
+    }
+  },
+  "assets/product-yx1-earphones/desktop/image-gallery-1.jpg": {
+    "baseKey": "assets/products/yx1/gallery/desktop/image-gallery-1",
+    "originalExt": "jpg",
+    "width": 445,
+    "height": 280,
+    "type": "product-gallery",
+    "productSlug": "yx1",
+    "variantSlug": null,
+    "size": "desktop",
+    "galleryIndex": 1,
+    "folder": "products/yx1",
+    "filename": "image-gallery-1.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/yx1/gallery/desktop/image-gallery-1__thumbnail.webp",
+        "originalKey": "assets/products/yx1/gallery/desktop/image-gallery-1__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/yx1/gallery/desktop/image-gallery-1__medium.webp",
+        "originalKey": "assets/products/yx1/gallery/desktop/image-gallery-1__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/yx1/gallery/desktop/image-gallery-1__desktop.webp",
+        "originalKey": "assets/products/yx1/gallery/desktop/image-gallery-1__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/yx1/gallery/desktop/image-gallery-1__original.webp",
+        "originalKey": "assets/products/yx1/gallery/desktop/image-gallery-1__original.jpg"
+      }
+    }
+  },
+  "assets/product-yx1-earphones/desktop/image-gallery-2.jpg": {
+    "baseKey": "assets/products/yx1/gallery/desktop/image-gallery-2",
+    "originalExt": "jpg",
+    "width": 445,
+    "height": 280,
+    "type": "product-gallery",
+    "productSlug": "yx1",
+    "variantSlug": null,
+    "size": "desktop",
+    "galleryIndex": 2,
+    "folder": "products/yx1",
+    "filename": "image-gallery-2.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/yx1/gallery/desktop/image-gallery-2__thumbnail.webp",
+        "originalKey": "assets/products/yx1/gallery/desktop/image-gallery-2__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/yx1/gallery/desktop/image-gallery-2__medium.webp",
+        "originalKey": "assets/products/yx1/gallery/desktop/image-gallery-2__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/yx1/gallery/desktop/image-gallery-2__desktop.webp",
+        "originalKey": "assets/products/yx1/gallery/desktop/image-gallery-2__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/yx1/gallery/desktop/image-gallery-2__original.webp",
+        "originalKey": "assets/products/yx1/gallery/desktop/image-gallery-2__original.jpg"
+      }
+    }
+  },
+  "assets/product-yx1-earphones/desktop/image-gallery-3.jpg": {
+    "baseKey": "assets/products/yx1/gallery/desktop/image-gallery-3",
+    "originalExt": "jpg",
+    "width": 635,
+    "height": 592,
+    "type": "product-gallery",
+    "productSlug": "yx1",
+    "variantSlug": null,
+    "size": "desktop",
+    "galleryIndex": 3,
+    "folder": "products/yx1",
+    "filename": "image-gallery-3.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/yx1/gallery/desktop/image-gallery-3__thumbnail.webp",
+        "originalKey": "assets/products/yx1/gallery/desktop/image-gallery-3__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/yx1/gallery/desktop/image-gallery-3__medium.webp",
+        "originalKey": "assets/products/yx1/gallery/desktop/image-gallery-3__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/yx1/gallery/desktop/image-gallery-3__desktop.webp",
+        "originalKey": "assets/products/yx1/gallery/desktop/image-gallery-3__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/yx1/gallery/desktop/image-gallery-3__original.webp",
+        "originalKey": "assets/products/yx1/gallery/desktop/image-gallery-3__original.jpg"
+      }
+    }
+  },
+  "assets/product-yx1-earphones/desktop/image-product.jpg": {
+    "baseKey": "assets/products/yx1/detail/desktop/image-product",
+    "originalExt": "jpg",
+    "width": 1080,
+    "height": 1120,
+    "type": "product-detail",
+    "productSlug": "yx1",
+    "variantSlug": null,
+    "size": "desktop",
+    "galleryIndex": null,
+    "folder": "products/yx1",
+    "filename": "image-product.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/yx1/detail/desktop/image-product__thumbnail.webp",
+        "originalKey": "assets/products/yx1/detail/desktop/image-product__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/yx1/detail/desktop/image-product__medium.webp",
+        "originalKey": "assets/products/yx1/detail/desktop/image-product__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/yx1/detail/desktop/image-product__desktop.webp",
+        "originalKey": "assets/products/yx1/detail/desktop/image-product__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/yx1/detail/desktop/image-product__original.webp",
+        "originalKey": "assets/products/yx1/detail/desktop/image-product__original.jpg"
+      }
+    }
+  },
+  "assets/product-yx1-earphones/mobile/image-category-page-preview.jpg": {
+    "baseKey": "assets/products/yx1/category-preview/mobile/image-category-page-preview",
+    "originalExt": "jpg",
+    "width": 654,
+    "height": 704,
+    "type": "category-preview",
+    "productSlug": "yx1",
+    "variantSlug": null,
+    "size": "mobile",
+    "galleryIndex": null,
+    "folder": "products/yx1",
+    "filename": "image-category-page-preview.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/yx1/category-preview/mobile/image-category-page-preview__thumbnail.webp",
+        "originalKey": "assets/products/yx1/category-preview/mobile/image-category-page-preview__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/yx1/category-preview/mobile/image-category-page-preview__medium.webp",
+        "originalKey": "assets/products/yx1/category-preview/mobile/image-category-page-preview__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/yx1/category-preview/mobile/image-category-page-preview__desktop.webp",
+        "originalKey": "assets/products/yx1/category-preview/mobile/image-category-page-preview__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/yx1/category-preview/mobile/image-category-page-preview__original.webp",
+        "originalKey": "assets/products/yx1/category-preview/mobile/image-category-page-preview__original.jpg"
+      }
+    }
+  },
+  "assets/product-yx1-earphones/mobile/image-gallery-1.jpg": {
+    "baseKey": "assets/products/yx1/gallery/mobile/image-gallery-1",
+    "originalExt": "jpg",
+    "width": 654,
+    "height": 348,
+    "type": "product-gallery",
+    "productSlug": "yx1",
+    "variantSlug": null,
+    "size": "mobile",
+    "galleryIndex": 1,
+    "folder": "products/yx1",
+    "filename": "image-gallery-1.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/yx1/gallery/mobile/image-gallery-1__thumbnail.webp",
+        "originalKey": "assets/products/yx1/gallery/mobile/image-gallery-1__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/yx1/gallery/mobile/image-gallery-1__medium.webp",
+        "originalKey": "assets/products/yx1/gallery/mobile/image-gallery-1__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/yx1/gallery/mobile/image-gallery-1__desktop.webp",
+        "originalKey": "assets/products/yx1/gallery/mobile/image-gallery-1__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/yx1/gallery/mobile/image-gallery-1__original.webp",
+        "originalKey": "assets/products/yx1/gallery/mobile/image-gallery-1__original.jpg"
+      }
+    }
+  },
+  "assets/product-yx1-earphones/mobile/image-gallery-2.jpg": {
+    "baseKey": "assets/products/yx1/gallery/mobile/image-gallery-2",
+    "originalExt": "jpg",
+    "width": 654,
+    "height": 348,
+    "type": "product-gallery",
+    "productSlug": "yx1",
+    "variantSlug": null,
+    "size": "mobile",
+    "galleryIndex": 2,
+    "folder": "products/yx1",
+    "filename": "image-gallery-2.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/yx1/gallery/mobile/image-gallery-2__thumbnail.webp",
+        "originalKey": "assets/products/yx1/gallery/mobile/image-gallery-2__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/yx1/gallery/mobile/image-gallery-2__medium.webp",
+        "originalKey": "assets/products/yx1/gallery/mobile/image-gallery-2__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/yx1/gallery/mobile/image-gallery-2__desktop.webp",
+        "originalKey": "assets/products/yx1/gallery/mobile/image-gallery-2__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/yx1/gallery/mobile/image-gallery-2__original.webp",
+        "originalKey": "assets/products/yx1/gallery/mobile/image-gallery-2__original.jpg"
+      }
+    }
+  },
+  "assets/product-yx1-earphones/mobile/image-gallery-3.jpg": {
+    "baseKey": "assets/products/yx1/gallery/mobile/image-gallery-3",
+    "originalExt": "jpg",
+    "width": 654,
+    "height": 736,
+    "type": "product-gallery",
+    "productSlug": "yx1",
+    "variantSlug": null,
+    "size": "mobile",
+    "galleryIndex": 3,
+    "folder": "products/yx1",
+    "filename": "image-gallery-3.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/yx1/gallery/mobile/image-gallery-3__thumbnail.webp",
+        "originalKey": "assets/products/yx1/gallery/mobile/image-gallery-3__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/yx1/gallery/mobile/image-gallery-3__medium.webp",
+        "originalKey": "assets/products/yx1/gallery/mobile/image-gallery-3__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/yx1/gallery/mobile/image-gallery-3__desktop.webp",
+        "originalKey": "assets/products/yx1/gallery/mobile/image-gallery-3__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/yx1/gallery/mobile/image-gallery-3__original.webp",
+        "originalKey": "assets/products/yx1/gallery/mobile/image-gallery-3__original.jpg"
+      }
+    }
+  },
+  "assets/product-yx1-earphones/mobile/image-product.jpg": {
+    "baseKey": "assets/products/yx1/detail/mobile/image-product",
+    "originalExt": "jpg",
+    "width": 654,
+    "height": 654,
+    "type": "product-detail",
+    "productSlug": "yx1",
+    "variantSlug": null,
+    "size": "mobile",
+    "galleryIndex": null,
+    "folder": "products/yx1",
+    "filename": "image-product.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/yx1/detail/mobile/image-product__thumbnail.webp",
+        "originalKey": "assets/products/yx1/detail/mobile/image-product__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/yx1/detail/mobile/image-product__medium.webp",
+        "originalKey": "assets/products/yx1/detail/mobile/image-product__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/yx1/detail/mobile/image-product__desktop.webp",
+        "originalKey": "assets/products/yx1/detail/mobile/image-product__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/yx1/detail/mobile/image-product__original.webp",
+        "originalKey": "assets/products/yx1/detail/mobile/image-product__original.jpg"
+      }
+    }
+  },
+  "assets/product-yx1-earphones/tablet/image-category-page-preview.jpg": {
+    "baseKey": "assets/products/yx1/category-preview/tablet/image-category-page-preview",
+    "originalExt": "jpg",
+    "width": 1378,
+    "height": 704,
+    "type": "category-preview",
+    "productSlug": "yx1",
+    "variantSlug": null,
+    "size": "tablet",
+    "galleryIndex": null,
+    "folder": "products/yx1",
+    "filename": "image-category-page-preview.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/yx1/category-preview/tablet/image-category-page-preview__thumbnail.webp",
+        "originalKey": "assets/products/yx1/category-preview/tablet/image-category-page-preview__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/yx1/category-preview/tablet/image-category-page-preview__medium.webp",
+        "originalKey": "assets/products/yx1/category-preview/tablet/image-category-page-preview__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/yx1/category-preview/tablet/image-category-page-preview__desktop.webp",
+        "originalKey": "assets/products/yx1/category-preview/tablet/image-category-page-preview__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/yx1/category-preview/tablet/image-category-page-preview__original.webp",
+        "originalKey": "assets/products/yx1/category-preview/tablet/image-category-page-preview__original.jpg"
+      }
+    }
+  },
+  "assets/product-yx1-earphones/tablet/image-gallery-1.jpg": {
+    "baseKey": "assets/products/yx1/gallery/tablet/image-gallery-1",
+    "originalExt": "jpg",
+    "width": 554,
+    "height": 348,
+    "type": "product-gallery",
+    "productSlug": "yx1",
+    "variantSlug": null,
+    "size": "tablet",
+    "galleryIndex": 1,
+    "folder": "products/yx1",
+    "filename": "image-gallery-1.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/yx1/gallery/tablet/image-gallery-1__thumbnail.webp",
+        "originalKey": "assets/products/yx1/gallery/tablet/image-gallery-1__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/yx1/gallery/tablet/image-gallery-1__medium.webp",
+        "originalKey": "assets/products/yx1/gallery/tablet/image-gallery-1__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/yx1/gallery/tablet/image-gallery-1__desktop.webp",
+        "originalKey": "assets/products/yx1/gallery/tablet/image-gallery-1__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/yx1/gallery/tablet/image-gallery-1__original.webp",
+        "originalKey": "assets/products/yx1/gallery/tablet/image-gallery-1__original.jpg"
+      }
+    }
+  },
+  "assets/product-yx1-earphones/tablet/image-gallery-2.jpg": {
+    "baseKey": "assets/products/yx1/gallery/tablet/image-gallery-2",
+    "originalExt": "jpg",
+    "width": 554,
+    "height": 348,
+    "type": "product-gallery",
+    "productSlug": "yx1",
+    "variantSlug": null,
+    "size": "tablet",
+    "galleryIndex": 2,
+    "folder": "products/yx1",
+    "filename": "image-gallery-2.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/yx1/gallery/tablet/image-gallery-2__thumbnail.webp",
+        "originalKey": "assets/products/yx1/gallery/tablet/image-gallery-2__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/yx1/gallery/tablet/image-gallery-2__medium.webp",
+        "originalKey": "assets/products/yx1/gallery/tablet/image-gallery-2__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/yx1/gallery/tablet/image-gallery-2__desktop.webp",
+        "originalKey": "assets/products/yx1/gallery/tablet/image-gallery-2__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/yx1/gallery/tablet/image-gallery-2__original.webp",
+        "originalKey": "assets/products/yx1/gallery/tablet/image-gallery-2__original.jpg"
+      }
+    }
+  },
+  "assets/product-yx1-earphones/tablet/image-gallery-3.jpg": {
+    "baseKey": "assets/products/yx1/gallery/tablet/image-gallery-3",
+    "originalExt": "jpg",
+    "width": 790,
+    "height": 736,
+    "type": "product-gallery",
+    "productSlug": "yx1",
+    "variantSlug": null,
+    "size": "tablet",
+    "galleryIndex": 3,
+    "folder": "products/yx1",
+    "filename": "image-gallery-3.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/yx1/gallery/tablet/image-gallery-3__thumbnail.webp",
+        "originalKey": "assets/products/yx1/gallery/tablet/image-gallery-3__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/yx1/gallery/tablet/image-gallery-3__medium.webp",
+        "originalKey": "assets/products/yx1/gallery/tablet/image-gallery-3__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/yx1/gallery/tablet/image-gallery-3__desktop.webp",
+        "originalKey": "assets/products/yx1/gallery/tablet/image-gallery-3__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/yx1/gallery/tablet/image-gallery-3__original.webp",
+        "originalKey": "assets/products/yx1/gallery/tablet/image-gallery-3__original.jpg"
+      }
+    }
+  },
+  "assets/product-yx1-earphones/tablet/image-product.jpg": {
+    "baseKey": "assets/products/yx1/detail/tablet/image-product",
+    "originalExt": "jpg",
+    "width": 562,
+    "height": 960,
+    "type": "product-detail",
+    "productSlug": "yx1",
+    "variantSlug": null,
+    "size": "tablet",
+    "galleryIndex": null,
+    "folder": "products/yx1",
+    "filename": "image-product.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/yx1/detail/tablet/image-product__thumbnail.webp",
+        "originalKey": "assets/products/yx1/detail/tablet/image-product__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/yx1/detail/tablet/image-product__medium.webp",
+        "originalKey": "assets/products/yx1/detail/tablet/image-product__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/yx1/detail/tablet/image-product__desktop.webp",
+        "originalKey": "assets/products/yx1/detail/tablet/image-product__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/yx1/detail/tablet/image-product__original.webp",
+        "originalKey": "assets/products/yx1/detail/tablet/image-product__original.jpg"
+      }
+    }
+  },
+  "assets/product-zx7-speaker/desktop/image-category-page-preview.jpg": {
+    "baseKey": "assets/products/zx7/category-preview/desktop/image-category-page-preview",
+    "originalExt": "jpg",
+    "width": 1080,
+    "height": 1120,
+    "type": "category-preview",
+    "productSlug": "zx7",
+    "variantSlug": null,
+    "size": "desktop",
+    "galleryIndex": null,
+    "folder": "products/zx7",
+    "filename": "image-category-page-preview.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/zx7/category-preview/desktop/image-category-page-preview__thumbnail.webp",
+        "originalKey": "assets/products/zx7/category-preview/desktop/image-category-page-preview__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/zx7/category-preview/desktop/image-category-page-preview__medium.webp",
+        "originalKey": "assets/products/zx7/category-preview/desktop/image-category-page-preview__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/zx7/category-preview/desktop/image-category-page-preview__desktop.webp",
+        "originalKey": "assets/products/zx7/category-preview/desktop/image-category-page-preview__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/zx7/category-preview/desktop/image-category-page-preview__original.webp",
+        "originalKey": "assets/products/zx7/category-preview/desktop/image-category-page-preview__original.jpg"
+      }
+    }
+  },
+  "assets/product-zx7-speaker/desktop/image-gallery-1.jpg": {
+    "baseKey": "assets/products/zx7/gallery/desktop/image-gallery-1",
+    "originalExt": "jpg",
+    "width": 445,
+    "height": 280,
+    "type": "product-gallery",
+    "productSlug": "zx7",
+    "variantSlug": null,
+    "size": "desktop",
+    "galleryIndex": 1,
+    "folder": "products/zx7",
+    "filename": "image-gallery-1.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/zx7/gallery/desktop/image-gallery-1__thumbnail.webp",
+        "originalKey": "assets/products/zx7/gallery/desktop/image-gallery-1__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/zx7/gallery/desktop/image-gallery-1__medium.webp",
+        "originalKey": "assets/products/zx7/gallery/desktop/image-gallery-1__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/zx7/gallery/desktop/image-gallery-1__desktop.webp",
+        "originalKey": "assets/products/zx7/gallery/desktop/image-gallery-1__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/zx7/gallery/desktop/image-gallery-1__original.webp",
+        "originalKey": "assets/products/zx7/gallery/desktop/image-gallery-1__original.jpg"
+      }
+    }
+  },
+  "assets/product-zx7-speaker/desktop/image-gallery-2.jpg": {
+    "baseKey": "assets/products/zx7/gallery/desktop/image-gallery-2",
+    "originalExt": "jpg",
+    "width": 445,
+    "height": 280,
+    "type": "product-gallery",
+    "productSlug": "zx7",
+    "variantSlug": null,
+    "size": "desktop",
+    "galleryIndex": 2,
+    "folder": "products/zx7",
+    "filename": "image-gallery-2.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/zx7/gallery/desktop/image-gallery-2__thumbnail.webp",
+        "originalKey": "assets/products/zx7/gallery/desktop/image-gallery-2__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/zx7/gallery/desktop/image-gallery-2__medium.webp",
+        "originalKey": "assets/products/zx7/gallery/desktop/image-gallery-2__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/zx7/gallery/desktop/image-gallery-2__desktop.webp",
+        "originalKey": "assets/products/zx7/gallery/desktop/image-gallery-2__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/zx7/gallery/desktop/image-gallery-2__original.webp",
+        "originalKey": "assets/products/zx7/gallery/desktop/image-gallery-2__original.jpg"
+      }
+    }
+  },
+  "assets/product-zx7-speaker/desktop/image-gallery-3.jpg": {
+    "baseKey": "assets/products/zx7/gallery/desktop/image-gallery-3",
+    "originalExt": "jpg",
+    "width": 635,
+    "height": 592,
+    "type": "product-gallery",
+    "productSlug": "zx7",
+    "variantSlug": null,
+    "size": "desktop",
+    "galleryIndex": 3,
+    "folder": "products/zx7",
+    "filename": "image-gallery-3.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/zx7/gallery/desktop/image-gallery-3__thumbnail.webp",
+        "originalKey": "assets/products/zx7/gallery/desktop/image-gallery-3__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/zx7/gallery/desktop/image-gallery-3__medium.webp",
+        "originalKey": "assets/products/zx7/gallery/desktop/image-gallery-3__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/zx7/gallery/desktop/image-gallery-3__desktop.webp",
+        "originalKey": "assets/products/zx7/gallery/desktop/image-gallery-3__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/zx7/gallery/desktop/image-gallery-3__original.webp",
+        "originalKey": "assets/products/zx7/gallery/desktop/image-gallery-3__original.jpg"
+      }
+    }
+  },
+  "assets/product-zx7-speaker/desktop/image-product.jpg": {
+    "baseKey": "assets/products/zx7/detail/desktop/image-product",
+    "originalExt": "jpg",
+    "width": 1080,
+    "height": 1120,
+    "type": "product-detail",
+    "productSlug": "zx7",
+    "variantSlug": null,
+    "size": "desktop",
+    "galleryIndex": null,
+    "folder": "products/zx7",
+    "filename": "image-product.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/zx7/detail/desktop/image-product__thumbnail.webp",
+        "originalKey": "assets/products/zx7/detail/desktop/image-product__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/zx7/detail/desktop/image-product__medium.webp",
+        "originalKey": "assets/products/zx7/detail/desktop/image-product__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/zx7/detail/desktop/image-product__desktop.webp",
+        "originalKey": "assets/products/zx7/detail/desktop/image-product__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/zx7/detail/desktop/image-product__original.webp",
+        "originalKey": "assets/products/zx7/detail/desktop/image-product__original.jpg"
+      }
+    }
+  },
+  "assets/product-zx7-speaker/mobile/image-category-page-preview.jpg": {
+    "baseKey": "assets/products/zx7/category-preview/mobile/image-category-page-preview",
+    "originalExt": "jpg",
+    "width": 654,
+    "height": 704,
+    "type": "category-preview",
+    "productSlug": "zx7",
+    "variantSlug": null,
+    "size": "mobile",
+    "galleryIndex": null,
+    "folder": "products/zx7",
+    "filename": "image-category-page-preview.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/zx7/category-preview/mobile/image-category-page-preview__thumbnail.webp",
+        "originalKey": "assets/products/zx7/category-preview/mobile/image-category-page-preview__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/zx7/category-preview/mobile/image-category-page-preview__medium.webp",
+        "originalKey": "assets/products/zx7/category-preview/mobile/image-category-page-preview__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/zx7/category-preview/mobile/image-category-page-preview__desktop.webp",
+        "originalKey": "assets/products/zx7/category-preview/mobile/image-category-page-preview__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/zx7/category-preview/mobile/image-category-page-preview__original.webp",
+        "originalKey": "assets/products/zx7/category-preview/mobile/image-category-page-preview__original.jpg"
+      }
+    }
+  },
+  "assets/product-zx7-speaker/mobile/image-gallery-1.jpg": {
+    "baseKey": "assets/products/zx7/gallery/mobile/image-gallery-1",
+    "originalExt": "jpg",
+    "width": 654,
+    "height": 348,
+    "type": "product-gallery",
+    "productSlug": "zx7",
+    "variantSlug": null,
+    "size": "mobile",
+    "galleryIndex": 1,
+    "folder": "products/zx7",
+    "filename": "image-gallery-1.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/zx7/gallery/mobile/image-gallery-1__thumbnail.webp",
+        "originalKey": "assets/products/zx7/gallery/mobile/image-gallery-1__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/zx7/gallery/mobile/image-gallery-1__medium.webp",
+        "originalKey": "assets/products/zx7/gallery/mobile/image-gallery-1__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/zx7/gallery/mobile/image-gallery-1__desktop.webp",
+        "originalKey": "assets/products/zx7/gallery/mobile/image-gallery-1__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/zx7/gallery/mobile/image-gallery-1__original.webp",
+        "originalKey": "assets/products/zx7/gallery/mobile/image-gallery-1__original.jpg"
+      }
+    }
+  },
+  "assets/product-zx7-speaker/mobile/image-gallery-2.jpg": {
+    "baseKey": "assets/products/zx7/gallery/mobile/image-gallery-2",
+    "originalExt": "jpg",
+    "width": 654,
+    "height": 348,
+    "type": "product-gallery",
+    "productSlug": "zx7",
+    "variantSlug": null,
+    "size": "mobile",
+    "galleryIndex": 2,
+    "folder": "products/zx7",
+    "filename": "image-gallery-2.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/zx7/gallery/mobile/image-gallery-2__thumbnail.webp",
+        "originalKey": "assets/products/zx7/gallery/mobile/image-gallery-2__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/zx7/gallery/mobile/image-gallery-2__medium.webp",
+        "originalKey": "assets/products/zx7/gallery/mobile/image-gallery-2__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/zx7/gallery/mobile/image-gallery-2__desktop.webp",
+        "originalKey": "assets/products/zx7/gallery/mobile/image-gallery-2__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/zx7/gallery/mobile/image-gallery-2__original.webp",
+        "originalKey": "assets/products/zx7/gallery/mobile/image-gallery-2__original.jpg"
+      }
+    }
+  },
+  "assets/product-zx7-speaker/mobile/image-gallery-3.jpg": {
+    "baseKey": "assets/products/zx7/gallery/mobile/image-gallery-3",
+    "originalExt": "jpg",
+    "width": 654,
+    "height": 736,
+    "type": "product-gallery",
+    "productSlug": "zx7",
+    "variantSlug": null,
+    "size": "mobile",
+    "galleryIndex": 3,
+    "folder": "products/zx7",
+    "filename": "image-gallery-3.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/zx7/gallery/mobile/image-gallery-3__thumbnail.webp",
+        "originalKey": "assets/products/zx7/gallery/mobile/image-gallery-3__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/zx7/gallery/mobile/image-gallery-3__medium.webp",
+        "originalKey": "assets/products/zx7/gallery/mobile/image-gallery-3__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/zx7/gallery/mobile/image-gallery-3__desktop.webp",
+        "originalKey": "assets/products/zx7/gallery/mobile/image-gallery-3__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/zx7/gallery/mobile/image-gallery-3__original.webp",
+        "originalKey": "assets/products/zx7/gallery/mobile/image-gallery-3__original.jpg"
+      }
+    }
+  },
+  "assets/product-zx7-speaker/mobile/image-product.jpg": {
+    "baseKey": "assets/products/zx7/detail/mobile/image-product",
+    "originalExt": "jpg",
+    "width": 654,
+    "height": 654,
+    "type": "product-detail",
+    "productSlug": "zx7",
+    "variantSlug": null,
+    "size": "mobile",
+    "galleryIndex": null,
+    "folder": "products/zx7",
+    "filename": "image-product.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/zx7/detail/mobile/image-product__thumbnail.webp",
+        "originalKey": "assets/products/zx7/detail/mobile/image-product__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/zx7/detail/mobile/image-product__medium.webp",
+        "originalKey": "assets/products/zx7/detail/mobile/image-product__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/zx7/detail/mobile/image-product__desktop.webp",
+        "originalKey": "assets/products/zx7/detail/mobile/image-product__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/zx7/detail/mobile/image-product__original.webp",
+        "originalKey": "assets/products/zx7/detail/mobile/image-product__original.jpg"
+      }
+    }
+  },
+  "assets/product-zx7-speaker/tablet/image-category-page-preview.jpg": {
+    "baseKey": "assets/products/zx7/category-preview/tablet/image-category-page-preview",
+    "originalExt": "jpg",
+    "width": 1378,
+    "height": 704,
+    "type": "category-preview",
+    "productSlug": "zx7",
+    "variantSlug": null,
+    "size": "tablet",
+    "galleryIndex": null,
+    "folder": "products/zx7",
+    "filename": "image-category-page-preview.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/zx7/category-preview/tablet/image-category-page-preview__thumbnail.webp",
+        "originalKey": "assets/products/zx7/category-preview/tablet/image-category-page-preview__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/zx7/category-preview/tablet/image-category-page-preview__medium.webp",
+        "originalKey": "assets/products/zx7/category-preview/tablet/image-category-page-preview__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/zx7/category-preview/tablet/image-category-page-preview__desktop.webp",
+        "originalKey": "assets/products/zx7/category-preview/tablet/image-category-page-preview__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/zx7/category-preview/tablet/image-category-page-preview__original.webp",
+        "originalKey": "assets/products/zx7/category-preview/tablet/image-category-page-preview__original.jpg"
+      }
+    }
+  },
+  "assets/product-zx7-speaker/tablet/image-gallery-1.jpg": {
+    "baseKey": "assets/products/zx7/gallery/tablet/image-gallery-1",
+    "originalExt": "jpg",
+    "width": 554,
+    "height": 348,
+    "type": "product-gallery",
+    "productSlug": "zx7",
+    "variantSlug": null,
+    "size": "tablet",
+    "galleryIndex": 1,
+    "folder": "products/zx7",
+    "filename": "image-gallery-1.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/zx7/gallery/tablet/image-gallery-1__thumbnail.webp",
+        "originalKey": "assets/products/zx7/gallery/tablet/image-gallery-1__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/zx7/gallery/tablet/image-gallery-1__medium.webp",
+        "originalKey": "assets/products/zx7/gallery/tablet/image-gallery-1__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/zx7/gallery/tablet/image-gallery-1__desktop.webp",
+        "originalKey": "assets/products/zx7/gallery/tablet/image-gallery-1__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/zx7/gallery/tablet/image-gallery-1__original.webp",
+        "originalKey": "assets/products/zx7/gallery/tablet/image-gallery-1__original.jpg"
+      }
+    }
+  },
+  "assets/product-zx7-speaker/tablet/image-gallery-2.jpg": {
+    "baseKey": "assets/products/zx7/gallery/tablet/image-gallery-2",
+    "originalExt": "jpg",
+    "width": 554,
+    "height": 348,
+    "type": "product-gallery",
+    "productSlug": "zx7",
+    "variantSlug": null,
+    "size": "tablet",
+    "galleryIndex": 2,
+    "folder": "products/zx7",
+    "filename": "image-gallery-2.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/zx7/gallery/tablet/image-gallery-2__thumbnail.webp",
+        "originalKey": "assets/products/zx7/gallery/tablet/image-gallery-2__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/zx7/gallery/tablet/image-gallery-2__medium.webp",
+        "originalKey": "assets/products/zx7/gallery/tablet/image-gallery-2__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/zx7/gallery/tablet/image-gallery-2__desktop.webp",
+        "originalKey": "assets/products/zx7/gallery/tablet/image-gallery-2__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/zx7/gallery/tablet/image-gallery-2__original.webp",
+        "originalKey": "assets/products/zx7/gallery/tablet/image-gallery-2__original.jpg"
+      }
+    }
+  },
+  "assets/product-zx7-speaker/tablet/image-gallery-3.jpg": {
+    "baseKey": "assets/products/zx7/gallery/tablet/image-gallery-3",
+    "originalExt": "jpg",
+    "width": 790,
+    "height": 736,
+    "type": "product-gallery",
+    "productSlug": "zx7",
+    "variantSlug": null,
+    "size": "tablet",
+    "galleryIndex": 3,
+    "folder": "products/zx7",
+    "filename": "image-gallery-3.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/zx7/gallery/tablet/image-gallery-3__thumbnail.webp",
+        "originalKey": "assets/products/zx7/gallery/tablet/image-gallery-3__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/zx7/gallery/tablet/image-gallery-3__medium.webp",
+        "originalKey": "assets/products/zx7/gallery/tablet/image-gallery-3__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/zx7/gallery/tablet/image-gallery-3__desktop.webp",
+        "originalKey": "assets/products/zx7/gallery/tablet/image-gallery-3__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/zx7/gallery/tablet/image-gallery-3__original.webp",
+        "originalKey": "assets/products/zx7/gallery/tablet/image-gallery-3__original.jpg"
+      }
+    }
+  },
+  "assets/product-zx7-speaker/tablet/image-product.jpg": {
+    "baseKey": "assets/products/zx7/detail/tablet/image-product",
+    "originalExt": "jpg",
+    "width": 562,
+    "height": 960,
+    "type": "product-detail",
+    "productSlug": "zx7",
+    "variantSlug": null,
+    "size": "tablet",
+    "galleryIndex": null,
+    "folder": "products/zx7",
+    "filename": "image-product.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/zx7/detail/tablet/image-product__thumbnail.webp",
+        "originalKey": "assets/products/zx7/detail/tablet/image-product__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/zx7/detail/tablet/image-product__medium.webp",
+        "originalKey": "assets/products/zx7/detail/tablet/image-product__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/zx7/detail/tablet/image-product__desktop.webp",
+        "originalKey": "assets/products/zx7/detail/tablet/image-product__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/zx7/detail/tablet/image-product__original.webp",
+        "originalKey": "assets/products/zx7/detail/tablet/image-product__original.jpg"
+      }
+    }
+  },
+  "assets/product-zx9-speaker/desktop/image-category-page-preview.jpg": {
+    "baseKey": "assets/products/zx9/category-preview/desktop/image-category-page-preview",
+    "originalExt": "jpg",
+    "width": 1080,
+    "height": 1120,
+    "type": "category-preview",
+    "productSlug": "zx9",
+    "variantSlug": null,
+    "size": "desktop",
+    "galleryIndex": null,
+    "folder": "products/zx9",
+    "filename": "image-category-page-preview.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/zx9/category-preview/desktop/image-category-page-preview__thumbnail.webp",
+        "originalKey": "assets/products/zx9/category-preview/desktop/image-category-page-preview__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/zx9/category-preview/desktop/image-category-page-preview__medium.webp",
+        "originalKey": "assets/products/zx9/category-preview/desktop/image-category-page-preview__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/zx9/category-preview/desktop/image-category-page-preview__desktop.webp",
+        "originalKey": "assets/products/zx9/category-preview/desktop/image-category-page-preview__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/zx9/category-preview/desktop/image-category-page-preview__original.webp",
+        "originalKey": "assets/products/zx9/category-preview/desktop/image-category-page-preview__original.jpg"
+      }
+    }
+  },
+  "assets/product-zx9-speaker/desktop/image-gallery-1.jpg": {
+    "baseKey": "assets/products/zx9/gallery/desktop/image-gallery-1",
+    "originalExt": "jpg",
+    "width": 445,
+    "height": 280,
+    "type": "product-gallery",
+    "productSlug": "zx9",
+    "variantSlug": null,
+    "size": "desktop",
+    "galleryIndex": 1,
+    "folder": "products/zx9",
+    "filename": "image-gallery-1.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/zx9/gallery/desktop/image-gallery-1__thumbnail.webp",
+        "originalKey": "assets/products/zx9/gallery/desktop/image-gallery-1__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/zx9/gallery/desktop/image-gallery-1__medium.webp",
+        "originalKey": "assets/products/zx9/gallery/desktop/image-gallery-1__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/zx9/gallery/desktop/image-gallery-1__desktop.webp",
+        "originalKey": "assets/products/zx9/gallery/desktop/image-gallery-1__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/zx9/gallery/desktop/image-gallery-1__original.webp",
+        "originalKey": "assets/products/zx9/gallery/desktop/image-gallery-1__original.jpg"
+      }
+    }
+  },
+  "assets/product-zx9-speaker/desktop/image-gallery-2.jpg": {
+    "baseKey": "assets/products/zx9/gallery/desktop/image-gallery-2",
+    "originalExt": "jpg",
+    "width": 445,
+    "height": 280,
+    "type": "product-gallery",
+    "productSlug": "zx9",
+    "variantSlug": null,
+    "size": "desktop",
+    "galleryIndex": 2,
+    "folder": "products/zx9",
+    "filename": "image-gallery-2.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/zx9/gallery/desktop/image-gallery-2__thumbnail.webp",
+        "originalKey": "assets/products/zx9/gallery/desktop/image-gallery-2__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/zx9/gallery/desktop/image-gallery-2__medium.webp",
+        "originalKey": "assets/products/zx9/gallery/desktop/image-gallery-2__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/zx9/gallery/desktop/image-gallery-2__desktop.webp",
+        "originalKey": "assets/products/zx9/gallery/desktop/image-gallery-2__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/zx9/gallery/desktop/image-gallery-2__original.webp",
+        "originalKey": "assets/products/zx9/gallery/desktop/image-gallery-2__original.jpg"
+      }
+    }
+  },
+  "assets/product-zx9-speaker/desktop/image-gallery-3.jpg": {
+    "baseKey": "assets/products/zx9/gallery/desktop/image-gallery-3",
+    "originalExt": "jpg",
+    "width": 635,
+    "height": 592,
+    "type": "product-gallery",
+    "productSlug": "zx9",
+    "variantSlug": null,
+    "size": "desktop",
+    "galleryIndex": 3,
+    "folder": "products/zx9",
+    "filename": "image-gallery-3.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/zx9/gallery/desktop/image-gallery-3__thumbnail.webp",
+        "originalKey": "assets/products/zx9/gallery/desktop/image-gallery-3__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/zx9/gallery/desktop/image-gallery-3__medium.webp",
+        "originalKey": "assets/products/zx9/gallery/desktop/image-gallery-3__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/zx9/gallery/desktop/image-gallery-3__desktop.webp",
+        "originalKey": "assets/products/zx9/gallery/desktop/image-gallery-3__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/zx9/gallery/desktop/image-gallery-3__original.webp",
+        "originalKey": "assets/products/zx9/gallery/desktop/image-gallery-3__original.jpg"
+      }
+    }
+  },
+  "assets/product-zx9-speaker/desktop/image-product.jpg": {
+    "baseKey": "assets/products/zx9/detail/desktop/image-product",
+    "originalExt": "jpg",
+    "width": 1080,
+    "height": 1120,
+    "type": "product-detail",
+    "productSlug": "zx9",
+    "variantSlug": null,
+    "size": "desktop",
+    "galleryIndex": null,
+    "folder": "products/zx9",
+    "filename": "image-product.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/zx9/detail/desktop/image-product__thumbnail.webp",
+        "originalKey": "assets/products/zx9/detail/desktop/image-product__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/zx9/detail/desktop/image-product__medium.webp",
+        "originalKey": "assets/products/zx9/detail/desktop/image-product__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/zx9/detail/desktop/image-product__desktop.webp",
+        "originalKey": "assets/products/zx9/detail/desktop/image-product__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/zx9/detail/desktop/image-product__original.webp",
+        "originalKey": "assets/products/zx9/detail/desktop/image-product__original.jpg"
+      }
+    }
+  },
+  "assets/product-zx9-speaker/mobile/image-category-page-preview.jpg": {
+    "baseKey": "assets/products/zx9/category-preview/mobile/image-category-page-preview",
+    "originalExt": "jpg",
+    "width": 654,
+    "height": 704,
+    "type": "category-preview",
+    "productSlug": "zx9",
+    "variantSlug": null,
+    "size": "mobile",
+    "galleryIndex": null,
+    "folder": "products/zx9",
+    "filename": "image-category-page-preview.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/zx9/category-preview/mobile/image-category-page-preview__thumbnail.webp",
+        "originalKey": "assets/products/zx9/category-preview/mobile/image-category-page-preview__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/zx9/category-preview/mobile/image-category-page-preview__medium.webp",
+        "originalKey": "assets/products/zx9/category-preview/mobile/image-category-page-preview__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/zx9/category-preview/mobile/image-category-page-preview__desktop.webp",
+        "originalKey": "assets/products/zx9/category-preview/mobile/image-category-page-preview__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/zx9/category-preview/mobile/image-category-page-preview__original.webp",
+        "originalKey": "assets/products/zx9/category-preview/mobile/image-category-page-preview__original.jpg"
+      }
+    }
+  },
+  "assets/product-zx9-speaker/mobile/image-gallery-1.jpg": {
+    "baseKey": "assets/products/zx9/gallery/mobile/image-gallery-1",
+    "originalExt": "jpg",
+    "width": 654,
+    "height": 348,
+    "type": "product-gallery",
+    "productSlug": "zx9",
+    "variantSlug": null,
+    "size": "mobile",
+    "galleryIndex": 1,
+    "folder": "products/zx9",
+    "filename": "image-gallery-1.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/zx9/gallery/mobile/image-gallery-1__thumbnail.webp",
+        "originalKey": "assets/products/zx9/gallery/mobile/image-gallery-1__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/zx9/gallery/mobile/image-gallery-1__medium.webp",
+        "originalKey": "assets/products/zx9/gallery/mobile/image-gallery-1__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/zx9/gallery/mobile/image-gallery-1__desktop.webp",
+        "originalKey": "assets/products/zx9/gallery/mobile/image-gallery-1__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/zx9/gallery/mobile/image-gallery-1__original.webp",
+        "originalKey": "assets/products/zx9/gallery/mobile/image-gallery-1__original.jpg"
+      }
+    }
+  },
+  "assets/product-zx9-speaker/mobile/image-gallery-2.jpg": {
+    "baseKey": "assets/products/zx9/gallery/mobile/image-gallery-2",
+    "originalExt": "jpg",
+    "width": 654,
+    "height": 348,
+    "type": "product-gallery",
+    "productSlug": "zx9",
+    "variantSlug": null,
+    "size": "mobile",
+    "galleryIndex": 2,
+    "folder": "products/zx9",
+    "filename": "image-gallery-2.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/zx9/gallery/mobile/image-gallery-2__thumbnail.webp",
+        "originalKey": "assets/products/zx9/gallery/mobile/image-gallery-2__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/zx9/gallery/mobile/image-gallery-2__medium.webp",
+        "originalKey": "assets/products/zx9/gallery/mobile/image-gallery-2__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/zx9/gallery/mobile/image-gallery-2__desktop.webp",
+        "originalKey": "assets/products/zx9/gallery/mobile/image-gallery-2__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/zx9/gallery/mobile/image-gallery-2__original.webp",
+        "originalKey": "assets/products/zx9/gallery/mobile/image-gallery-2__original.jpg"
+      }
+    }
+  },
+  "assets/product-zx9-speaker/mobile/image-gallery-3.jpg": {
+    "baseKey": "assets/products/zx9/gallery/mobile/image-gallery-3",
+    "originalExt": "jpg",
+    "width": 654,
+    "height": 736,
+    "type": "product-gallery",
+    "productSlug": "zx9",
+    "variantSlug": null,
+    "size": "mobile",
+    "galleryIndex": 3,
+    "folder": "products/zx9",
+    "filename": "image-gallery-3.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/zx9/gallery/mobile/image-gallery-3__thumbnail.webp",
+        "originalKey": "assets/products/zx9/gallery/mobile/image-gallery-3__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/zx9/gallery/mobile/image-gallery-3__medium.webp",
+        "originalKey": "assets/products/zx9/gallery/mobile/image-gallery-3__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/zx9/gallery/mobile/image-gallery-3__desktop.webp",
+        "originalKey": "assets/products/zx9/gallery/mobile/image-gallery-3__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/zx9/gallery/mobile/image-gallery-3__original.webp",
+        "originalKey": "assets/products/zx9/gallery/mobile/image-gallery-3__original.jpg"
+      }
+    }
+  },
+  "assets/product-zx9-speaker/mobile/image-product.jpg": {
+    "baseKey": "assets/products/zx9/detail/mobile/image-product",
+    "originalExt": "jpg",
+    "width": 654,
+    "height": 654,
+    "type": "product-detail",
+    "productSlug": "zx9",
+    "variantSlug": null,
+    "size": "mobile",
+    "galleryIndex": null,
+    "folder": "products/zx9",
+    "filename": "image-product.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/zx9/detail/mobile/image-product__thumbnail.webp",
+        "originalKey": "assets/products/zx9/detail/mobile/image-product__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/zx9/detail/mobile/image-product__medium.webp",
+        "originalKey": "assets/products/zx9/detail/mobile/image-product__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/zx9/detail/mobile/image-product__desktop.webp",
+        "originalKey": "assets/products/zx9/detail/mobile/image-product__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/zx9/detail/mobile/image-product__original.webp",
+        "originalKey": "assets/products/zx9/detail/mobile/image-product__original.jpg"
+      }
+    }
+  },
+  "assets/product-zx9-speaker/tablet/image-category-page-preview.jpg": {
+    "baseKey": "assets/products/zx9/category-preview/tablet/image-category-page-preview",
+    "originalExt": "jpg",
+    "width": 1378,
+    "height": 704,
+    "type": "category-preview",
+    "productSlug": "zx9",
+    "variantSlug": null,
+    "size": "tablet",
+    "galleryIndex": null,
+    "folder": "products/zx9",
+    "filename": "image-category-page-preview.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/zx9/category-preview/tablet/image-category-page-preview__thumbnail.webp",
+        "originalKey": "assets/products/zx9/category-preview/tablet/image-category-page-preview__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/zx9/category-preview/tablet/image-category-page-preview__medium.webp",
+        "originalKey": "assets/products/zx9/category-preview/tablet/image-category-page-preview__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/zx9/category-preview/tablet/image-category-page-preview__desktop.webp",
+        "originalKey": "assets/products/zx9/category-preview/tablet/image-category-page-preview__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/zx9/category-preview/tablet/image-category-page-preview__original.webp",
+        "originalKey": "assets/products/zx9/category-preview/tablet/image-category-page-preview__original.jpg"
+      }
+    }
+  },
+  "assets/product-zx9-speaker/tablet/image-gallery-1.jpg": {
+    "baseKey": "assets/products/zx9/gallery/tablet/image-gallery-1",
+    "originalExt": "jpg",
+    "width": 554,
+    "height": 348,
+    "type": "product-gallery",
+    "productSlug": "zx9",
+    "variantSlug": null,
+    "size": "tablet",
+    "galleryIndex": 1,
+    "folder": "products/zx9",
+    "filename": "image-gallery-1.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/zx9/gallery/tablet/image-gallery-1__thumbnail.webp",
+        "originalKey": "assets/products/zx9/gallery/tablet/image-gallery-1__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/zx9/gallery/tablet/image-gallery-1__medium.webp",
+        "originalKey": "assets/products/zx9/gallery/tablet/image-gallery-1__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/zx9/gallery/tablet/image-gallery-1__desktop.webp",
+        "originalKey": "assets/products/zx9/gallery/tablet/image-gallery-1__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/zx9/gallery/tablet/image-gallery-1__original.webp",
+        "originalKey": "assets/products/zx9/gallery/tablet/image-gallery-1__original.jpg"
+      }
+    }
+  },
+  "assets/product-zx9-speaker/tablet/image-gallery-2.jpg": {
+    "baseKey": "assets/products/zx9/gallery/tablet/image-gallery-2",
+    "originalExt": "jpg",
+    "width": 554,
+    "height": 348,
+    "type": "product-gallery",
+    "productSlug": "zx9",
+    "variantSlug": null,
+    "size": "tablet",
+    "galleryIndex": 2,
+    "folder": "products/zx9",
+    "filename": "image-gallery-2.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/zx9/gallery/tablet/image-gallery-2__thumbnail.webp",
+        "originalKey": "assets/products/zx9/gallery/tablet/image-gallery-2__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/zx9/gallery/tablet/image-gallery-2__medium.webp",
+        "originalKey": "assets/products/zx9/gallery/tablet/image-gallery-2__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/zx9/gallery/tablet/image-gallery-2__desktop.webp",
+        "originalKey": "assets/products/zx9/gallery/tablet/image-gallery-2__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/zx9/gallery/tablet/image-gallery-2__original.webp",
+        "originalKey": "assets/products/zx9/gallery/tablet/image-gallery-2__original.jpg"
+      }
+    }
+  },
+  "assets/product-zx9-speaker/tablet/image-gallery-3.jpg": {
+    "baseKey": "assets/products/zx9/gallery/tablet/image-gallery-3",
+    "originalExt": "jpg",
+    "width": 790,
+    "height": 736,
+    "type": "product-gallery",
+    "productSlug": "zx9",
+    "variantSlug": null,
+    "size": "tablet",
+    "galleryIndex": 3,
+    "folder": "products/zx9",
+    "filename": "image-gallery-3.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/zx9/gallery/tablet/image-gallery-3__thumbnail.webp",
+        "originalKey": "assets/products/zx9/gallery/tablet/image-gallery-3__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/zx9/gallery/tablet/image-gallery-3__medium.webp",
+        "originalKey": "assets/products/zx9/gallery/tablet/image-gallery-3__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/zx9/gallery/tablet/image-gallery-3__desktop.webp",
+        "originalKey": "assets/products/zx9/gallery/tablet/image-gallery-3__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/zx9/gallery/tablet/image-gallery-3__original.webp",
+        "originalKey": "assets/products/zx9/gallery/tablet/image-gallery-3__original.jpg"
+      }
+    }
+  },
+  "assets/product-zx9-speaker/tablet/image-product.jpg": {
+    "baseKey": "assets/products/zx9/detail/tablet/image-product",
+    "originalExt": "jpg",
+    "width": 562,
+    "height": 960,
+    "type": "product-detail",
+    "productSlug": "zx9",
+    "variantSlug": null,
+    "size": "tablet",
+    "galleryIndex": null,
+    "folder": "products/zx9",
+    "filename": "image-product.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/products/zx9/detail/tablet/image-product__thumbnail.webp",
+        "originalKey": "assets/products/zx9/detail/tablet/image-product__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/products/zx9/detail/tablet/image-product__medium.webp",
+        "originalKey": "assets/products/zx9/detail/tablet/image-product__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/products/zx9/detail/tablet/image-product__desktop.webp",
+        "originalKey": "assets/products/zx9/detail/tablet/image-product__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/products/zx9/detail/tablet/image-product__original.webp",
+        "originalKey": "assets/products/zx9/detail/tablet/image-product__original.jpg"
+      }
+    }
+  },
+  "assets/shared/desktop/image-best-gear.jpg": {
+    "baseKey": "assets/shared/desktop/image-best-gear",
+    "originalExt": "jpg",
+    "width": 540,
+    "height": 588,
+    "type": "shared",
+    "productSlug": null,
+    "variantSlug": null,
+    "size": "desktop",
+    "galleryIndex": null,
+    "folder": "shared",
+    "filename": "image-best-gear.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/shared/desktop/image-best-gear__thumbnail.webp",
+        "originalKey": "assets/shared/desktop/image-best-gear__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/shared/desktop/image-best-gear__medium.webp",
+        "originalKey": "assets/shared/desktop/image-best-gear__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/shared/desktop/image-best-gear__desktop.webp",
+        "originalKey": "assets/shared/desktop/image-best-gear__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/shared/desktop/image-best-gear__original.webp",
+        "originalKey": "assets/shared/desktop/image-best-gear__original.jpg"
+      }
+    }
+  },
+  "assets/shared/icon-arrow-right.svg": {
+    "baseKey": "assets/shared/icon-arrow-right",
+    "originalExt": "svg",
+    "width": 0,
+    "height": 0,
+    "type": "shared",
+    "productSlug": null,
+    "variantSlug": null,
+    "size": "single",
+    "galleryIndex": null,
+    "folder": "shared",
+    "filename": "icon-arrow-right.svg",
+    "variants": {}
+  },
+  "assets/shared/icon-cart.svg": {
+    "baseKey": "assets/shared/icon-cart",
+    "originalExt": "svg",
+    "width": 0,
+    "height": 0,
+    "type": "shared",
+    "productSlug": null,
+    "variantSlug": null,
+    "size": "single",
+    "galleryIndex": null,
+    "folder": "shared",
+    "filename": "icon-cart.svg",
+    "variants": {}
+  },
+  "assets/shared/icon-facebook.svg": {
+    "baseKey": "assets/shared/icon-facebook",
+    "originalExt": "svg",
+    "width": 0,
+    "height": 0,
+    "type": "shared",
+    "productSlug": null,
+    "variantSlug": null,
+    "size": "single",
+    "galleryIndex": null,
+    "folder": "shared",
+    "filename": "icon-facebook.svg",
+    "variants": {}
+  },
+  "assets/shared/icon-instagram.svg": {
+    "baseKey": "assets/shared/icon-instagram",
+    "originalExt": "svg",
+    "width": 0,
+    "height": 0,
+    "type": "shared",
+    "productSlug": null,
+    "variantSlug": null,
+    "size": "single",
+    "galleryIndex": null,
+    "folder": "shared",
+    "filename": "icon-instagram.svg",
+    "variants": {}
+  },
+  "assets/shared/icon-twitter.svg": {
+    "baseKey": "assets/shared/icon-twitter",
+    "originalExt": "svg",
+    "width": 0,
+    "height": 0,
+    "type": "shared",
+    "productSlug": null,
+    "variantSlug": null,
+    "size": "single",
+    "galleryIndex": null,
+    "folder": "shared",
+    "filename": "icon-twitter.svg",
+    "variants": {}
+  },
+  "assets/shared/mobile/image-best-gear.jpg": {
+    "baseKey": "assets/shared/mobile/image-best-gear",
+    "originalExt": "jpg",
+    "width": 654,
+    "height": 600,
+    "type": "shared",
+    "productSlug": null,
+    "variantSlug": null,
+    "size": "mobile",
+    "galleryIndex": null,
+    "folder": "shared",
+    "filename": "image-best-gear.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/shared/mobile/image-best-gear__thumbnail.webp",
+        "originalKey": "assets/shared/mobile/image-best-gear__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/shared/mobile/image-best-gear__medium.webp",
+        "originalKey": "assets/shared/mobile/image-best-gear__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/shared/mobile/image-best-gear__desktop.webp",
+        "originalKey": "assets/shared/mobile/image-best-gear__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/shared/mobile/image-best-gear__original.webp",
+        "originalKey": "assets/shared/mobile/image-best-gear__original.jpg"
+      }
+    }
+  },
+  "assets/shared/tablet/image-best-gear.jpg": {
+    "baseKey": "assets/shared/tablet/image-best-gear",
+    "originalExt": "jpg",
+    "width": 1378,
+    "height": 600,
+    "type": "shared",
+    "productSlug": null,
+    "variantSlug": null,
+    "size": "tablet",
+    "galleryIndex": null,
+    "folder": "shared",
+    "filename": "image-best-gear.jpg",
+    "variants": {
+      "thumbnail": {
+        "webpKey": "assets/shared/tablet/image-best-gear__thumbnail.webp",
+        "originalKey": "assets/shared/tablet/image-best-gear__thumbnail.jpg"
+      },
+      "medium": {
+        "webpKey": "assets/shared/tablet/image-best-gear__medium.webp",
+        "originalKey": "assets/shared/tablet/image-best-gear__medium.jpg"
+      },
+      "desktop": {
+        "webpKey": "assets/shared/tablet/image-best-gear__desktop.webp",
+        "originalKey": "assets/shared/tablet/image-best-gear__desktop.jpg"
+      },
+      "original": {
+        "webpKey": "assets/shared/tablet/image-best-gear__original.webp",
+        "originalKey": "assets/shared/tablet/image-best-gear__original.jpg"
+      }
+    }
+  }
+}
