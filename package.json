@@ -10,9 +10,9 @@
         "seed": "npm exec tsx lib/seed.ts",
         "postinstall": "prisma generate",
         "r2:list": "wrangler r2 bucket list",
-        "r2:create": "wrangler r2 bucket create audiophile-assets",
-        "r2:create:local": "wrangler r2 bucket create audiophile-assets --local",
-        "r2:delete": "wrangler r2 bucket delete audiophile-assets",
+        "r2:create": "wrangler r2 bucket create audiophile-media",
+        "r2:create:local": "wrangler r2 bucket create audiophile-media --local",
+        "r2:delete": "wrangler r2 bucket delete audiophile-media",
         "r2:upload": "npm exec tsx scripts/upload-assets-to-r2.ts"
     },
     "dependencies": {
