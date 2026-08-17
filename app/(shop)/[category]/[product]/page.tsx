@@ -10,6 +10,8 @@ import {
     ProductTitle,
 } from "@/components/ui/product-card";
 import ResponsiveImage from "@/components/ui/responsive-image";
+import ProductRecommendations from "@/components/ui/product-recommendations";
+import { getProductRecommendations } from "@/lib/recommendations";
 
 interface MediaAssetLike {
     url: string;
@@ -47,6 +49,14 @@ export default async function ProductPage({
     });
 
     if (!product) notFound();
+
+    const recommendations = await getProductRecommendations({
+        productId: product.id,
+        categoryId: product.categoryId,
+    }).catch((error) => {
+        console.error("Failed to load product recommendations", error);
+        return [];
+    });
 
     const detailRows = product.media.filter(
         (m) => m.purpose === "default" && m.isPrimary,
@@ -228,12 +238,7 @@ export default async function ProductPage({
                     </div>
                 )}
 
-                <div>
-                    <h2 className="text-h3 text-center">YOU MAY ALSO LIKE</h2>
-                    <p className="text-accent-foreground text-center mt-4">
-                        Coming soon
-                    </p>
-                </div>
+                <ProductRecommendations recommendations={recommendations} />
             </div>
         </div>
     );
