@@ -3,6 +3,7 @@
 import { useEffect, useState, useSyncExternalStore } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { IconTrash } from "@tabler/icons-react";
 import { Button } from "./button";
 import { Counter } from "./counter";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -56,9 +57,15 @@ function CartThumb({ src, alt }: { src?: string; alt: string }) {
     );
 }
 
-function CartItemRow({ item }: { item: CartItem }) {
+function CartItemRow({
+    item,
+    onUpdate,
+}: {
+    item: CartItem;
+    onUpdate: () => void;
+}) {
     return (
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 min-w-0">
             <CartThumb src={item.image} alt={item.name} />
             <div className="flex-1 min-w-0">
                 <p className="text-sm font-bold truncate">
@@ -76,9 +83,22 @@ function CartItemRow({ item }: { item: CartItem }) {
                     } else {
                         updateQuantity(item.variantId, q);
                     }
+                    onUpdate();
                 }}
                 className="h-8"
             />
+            <Button
+                variant="ghost"
+                size="icon-sm"
+                className="size-6 text-error hover:text-error hover:bg-error/10 shrink-0"
+                onClick={() => {
+                    removeFromCart(item.variantId);
+                    onUpdate();
+                }}
+                aria-label={`Remove ${item.name} from cart`}
+            >
+                <IconTrash className="size-4" />
+            </Button>
         </div>
     );
 }
@@ -163,11 +183,11 @@ export default function CartDialog() {
                 ) : (
                     <ul className="flex gap-6 flex-col">
                         {items.map((item) => (
-                            <li
-                                key={item.variantId}
-                                className="flex items-center gap-4"
-                            >
-                                <CartItemRow item={item} />
+<li
+    key={item.variantId}
+    className="flex items-center gap-4 min-w-0 overflow-hidden"
+>
+                                <CartItemRow item={item} onUpdate={refresh} />
                             </li>
                         ))}
                     </ul>

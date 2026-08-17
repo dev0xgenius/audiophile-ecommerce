@@ -37,6 +37,11 @@ export default function ResponsiveImage({
     const isValid = (src: string | StaticImageData) =>
         typeof src === "string" ? src.trim() !== "" : true;
 
+    const isStaticImageData = (
+        src: string | StaticImageData,
+    ): src is StaticImageData =>
+        typeof src === "object" && src !== null && "width" in src;
+
     const sources = [
         { src: desktopSrc, media: "(min-width: 1024px)" },
         { src: tabletSrc, media: "(min-width: 768px)" },
@@ -63,8 +68,19 @@ export default function ResponsiveImage({
         );
     }
 
-    const needsDimensions =
-        typeof baseSrc === "string" && !width && !props.fill;
+    const intrinsic =
+        isStaticImageData(baseSrc) && !props.fill
+            ? { width: baseSrc.width, height: baseSrc.height }
+            : undefined;
+
+    const imageWidth =
+        width ??
+        intrinsic?.width ??
+        (typeof baseSrc === "string" && !props.fill ? 540 : undefined);
+    const imageHeight =
+        height ??
+        intrinsic?.height ??
+        (typeof baseSrc === "string" && !props.fill ? 540 : undefined);
 
     return (
         <picture className={cn("block", className)}>
@@ -76,8 +92,8 @@ export default function ResponsiveImage({
             <Image
                 src={getSrc(baseSrc)}
                 alt={alt}
-                width={needsDimensions ? 540 : width}
-                height={needsDimensions ? 540 : height}
+                width={imageWidth}
+                height={imageHeight}
                 className={imageClass}
                 onError={() => setFailed(true)}
                 {...props}
